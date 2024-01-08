@@ -55,6 +55,9 @@ dependencies {
     implementation("com.google.firebase:firebase-database-ktx")
     implementation("com.google.firebase:firebase-storage-ktx")
 
+    // SplashScreen (For Android 12+)
+    implementation("androidx.core:core-splashscreen:1.0.1")
+
     // Tests
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
