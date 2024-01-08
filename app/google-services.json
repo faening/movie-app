@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "273576727290",
+    "project_id": "movie-app-5c9ee",
+    "storage_bucket": "movie-app-5c9ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273576727290:android:aff48f52034b0b8456ef43",
+        "android_client_info": {
+          "package_name": "com.github.faening.movieapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIbfSMyvaPRRjrLgHbNOjqCcUkfICadqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
