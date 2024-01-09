@@ -1,11 +1,23 @@
 <resources>
+    <!-- Common -->
     <string name="app_name">Movie App</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <!-- Common -->
-
     <!-- Onboarding Fragment-->
-    <string name="onboarding_fragment_background_content_description">Background Image</string>
-    <string name="onboarding_fragment_shadow_content_description">Background Image Shadow</string>
+    <string name="onboarding_fragment_content_description_background_image">Background Image</string>
+    <string name="onboarding_fragment_content_description_background_shadow">Background Image Shadow</string>
+    <string name="onboarding_fragment_text_button_get_started">Iniciar</string>
+
+    <!-- Home Auth Fragment -->
+    <string name="home_auth_fragment_content_description_image_home">Image Logo</string>
+    <string name="home_auth_fragment_content_description_ic_facebook">Facebook Icon</string>
+    <string name="home_auth_fragment_content_description_ic_google">Google Icon</string>
+    <string name="home_auth_fragment_title">Entrar com</string>
+    <string name="home_auth_fragment_text_button_continue_with_facebook">Continuar com o Facebook</string>
+    <string name="home_auth_fragment_text_button_continue_with_google">Continuar com o Google</string>
+    <string name="home_auth_fragment_text_social_or_password">ou</string>
+    <string name="home_auth_fragment_text_button_sign_in_with_password">Entrar com senha</string>
+    <string name="home_auth_fragment_text_dont_have_an_account">Não tem uma conta?</string>
+    <string name="home_auth_fragment_text_sign_up">Inscrever-se</string>
 
 </resources>

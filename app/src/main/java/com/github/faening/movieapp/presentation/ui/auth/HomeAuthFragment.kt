@@ -1,15 +1,15 @@
-package com.github.faening.movieapp.presentation.ui.onboard
+package com.github.faening.movieapp.presentation.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.github.faening.movieapp.databinding.FragmentOnboardingBinding
+import com.github.faening.movieapp.databinding.FragmentHomeAuthBinding
 
-class OnboardingFragment : Fragment() {
+class HomeAuthFragment : Fragment() {
 
-    private var _binding: FragmentOnboardingBinding? = null
+    private var _binding: FragmentHomeAuthBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class OnboardingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentOnboardingBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeAuthBinding.inflate(inflater, container, false)
         return binding.root
     }
 
