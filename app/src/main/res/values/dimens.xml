@@ -37,7 +37,7 @@
     <dimen name="home_auth_fragment_cover_width">0dp</dimen>
 
     <!-- Sign Up Fragment -->
-    <dimen name="sign_up_fragment_logo_height">120dp</dimen>
-    <dimen name="sign_up_fragment_logo_width">120dp</dimen>
+    <dimen name="sign_up_fragment_logo_height">100dp</dimen>
+    <dimen name="sign_up_fragment_logo_width">100dp</dimen>
 
 </resources>

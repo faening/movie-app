@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_signup_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".presentation.ui.auth.SignUpFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/fragment_signup_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingHorizontal="@dimen/padding_medium"
+            android:paddingTop="@dimen/padding_large"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_signup_toolbar">
+
+            <ImageView
+                android:id="@+id/fragment_signup_logo"
+                android:layout_width="@dimen/sign_up_fragment_logo_width"
+                android:layout_height="@dimen/sign_up_fragment_logo_height"
+                android:contentDescription="@string/signup_fragment_content_description_logo"
+                android:src="@drawable/logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fragment_signup_title"
+                style="@style/CustomTextAppearance.TextHeadline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_extra_large"
+                android:text="@string/signup_fragment_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_signup_logo" />
+
+            <EditText
+                android:id="@+id/fragment_signup_edit_text_email"
+                style="@style/CustomTextAppearance.EditText"
+                android:layout_marginTop="@dimen/margin_extra_large"
+                android:autofillHints="auto"
+                android:hint="@string/signup_fragment_text_hint_edit_email"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_signup_title"
+                tools:ignore="LabelFor" />
+
+            <EditText
+                android:id="@+id/fragment_signup_edit_text_password2"
+                style="@style/CustomTextAppearance.EditText"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:autofillHints="auto"
+                android:hint="@string/signup_fragment_text_hint_edit_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_signup_edit_text_email"
+                tools:ignore="LabelFor,TextFields" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fragment_signup_button_register"
+                style="@style/CustomTextAppearance.Button.Primary.WithElevation"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="@string/signup_fragment_text_button_sign_up"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_signup_edit_text_password2"
+                tools:ignore="MissingClass" />
+
+            <LinearLayout
+                android:id="@+id/fragment_home_auth_divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_signup_button_register">
+
+                <View
+                    android:id="@+id/fragment_home_auth_divider_view_left"
+                    style="@style/CustomTextAppearance.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/fragment_home_auth_divider_text"
+                    style="@style/CustomTextAppearance.TextBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
+                    android:text="@string/signup_fragment_text_continue_social_network" />
+
+                <View
+                    android:id="@+id/fragment_home_auth_divider_view_right"
+                    style="@style/CustomTextAppearance.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_home_auth_divider">
+
+                <LinearLayout
+                    android:id="@+id/fragment_signup_button_create_account_with_facebook"
+                    style="@style/CustomTextAppearance.Button.Secondary.Rounded"
+
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/signup_fragment_content_description_ic_facebook"
+                        android:src="@drawable/ic_facebook" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_signup_button_create_account_with_google"
+                    style="@style/CustomTextAppearance.Button.Secondary.Rounded"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/signup_fragment_content_description_ic_google"
+                        android:src="@drawable/ic_google" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_home_auth_button_dont_have_an_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <TextView
+                    android:id="@+id/fragment_sign_up_text_button_already_have_account"
+                    style="@style/CustomTextAppearance.TextBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:text="@string/signup_fragment_text_already_account" />
+
+                <TextView
+                    android:id="@+id/fragment_sign_up_button_already_have_account_anchor_to_sign_in"
+                    style="@style/CustomTextAppearance.TextBody.Link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/signup_fragment_text_button_sign_in" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

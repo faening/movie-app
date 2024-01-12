@@ -65,7 +65,7 @@
     <color name="button_secondary_border_disabled">@color/black_500</color>
 
     <!-- Inputs -->
-    <color name="input_background">@color/white</color>
-    <color name="input_border">@color/black_500</color>
+    <color name="input_background">@color/neutral</color>
+    <color name="input_border">@color/neutral_200</color>
     <color name="input_text_color">@color/black_500</color>
 </resources>
