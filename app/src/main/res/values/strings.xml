@@ -21,16 +21,16 @@
     <string name="home_auth_fragment_text_sign_up">Subscribe</string>
 
     <!-- Sign Up Fragment-->
-    <string name="signup_fragment_content_description_logo">App Logo</string>
-    <string name="signup_fragment_content_description_ic_google">Google Icon</string>
-    <string name="signup_fragment_content_description_ic_facebook">Facebook Icon</string>
-    <string name="signup_fragment_title">Create your account</string>
-    <string name="signup_fragment_text_hint_edit_email">Email</string>
-    <string name="signup_fragment_text_hint_edit_password">Password</string>
-    <string name="signup_fragment_text_button_sign_up">Sign Up</string>
-    <string name="signup_fragment_text_continue_social_network">or continue with</string>
-    <string name="signup_fragment_text_already_account">Already have an account?</string>
-    <string name="signup_fragment_text_button_sign_in">Sign In</string>
-    <string name="signup_fragment_text_email_empty">Enter a valid email address</string>
-    <string name="signup_fragment_text_password_empty">Enter a password</string>
+    <string name="sign_up_fragment_content_description_logo">App Logo</string>
+    <string name="sign_up_fragment_content_description_ic_google">Google Icon</string>
+    <string name="sign_up_fragment_content_description_ic_facebook">Facebook Icon</string>
+    <string name="sign_up_fragment_title">Create your account</string>
+    <string name="sign_up_fragment_text_hint_edit_email">Email</string>
+    <string name="sign_up_fragment_text_hint_edit_password">Password</string>
+    <string name="sign_up_fragment_text_button_sign_up">Sign Up</string>
+    <string name="sign_up_fragment_text_continue_social_network">or continue with</string>
+    <string name="sign_up_fragment_text_already_account">Already have an account?</string>
+    <string name="sign_up_fragment_text_button_sign_in">Sign In</string>
+    <string name="sign_up_fragment_text_email_empty">Enter a valid email address</string>
+    <string name="sign_up_fragment_text_password_empty">Enter a password</string>
 </resources>

@@ -22,16 +22,16 @@
     <string name="home_auth_fragment_text_sign_up">Inscreva-se</string>
 
     <!-- Sign Up Fragment-->
-    <string name="signup_fragment_content_description_logo">Logo do Aplicativo</string>
-    <string name="signup_fragment_content_description_ic_google">Ícone do Google</string>
-    <string name="signup_fragment_content_description_ic_facebook">Ícone do Facebook</string>
-    <string name="signup_fragment_title">Crie sua conta</string>
-    <string name="signup_fragment_text_hint_edit_email">E-mail</string>
-    <string name="signup_fragment_text_hint_edit_password">Senha</string>
-    <string name="signup_fragment_text_button_sign_up">Inscrever-se</string>
-    <string name="signup_fragment_text_continue_social_network">ou continue com</string>
-    <string name="signup_fragment_text_already_account">Já possui uma conta?</string>
-    <string name="signup_fragment_text_button_sign_in">Entre</string>
-    <string name="signup_fragment_text_email_empty">Informe um e-mail válido</string>
-    <string name="signup_fragment_text_password_empty">Informe uma senha</string>
+    <string name="sign_up_fragment_content_description_logo">Logo do Aplicativo</string>
+    <string name="sign_up_fragment_content_description_ic_google">Ícone do Google</string>
+    <string name="sign_up_fragment_content_description_ic_facebook">Ícone do Facebook</string>
+    <string name="sign_up_fragment_title">Crie sua conta</string>
+    <string name="sign_up_fragment_text_hint_edit_email">E-mail</string>
+    <string name="sign_up_fragment_text_hint_edit_password">Senha</string>
+    <string name="sign_up_fragment_text_button_sign_up">Inscrever-se</string>
+    <string name="sign_up_fragment_text_continue_social_network">ou continue com</string>
+    <string name="sign_up_fragment_text_already_account">Já possui uma conta?</string>
+    <string name="sign_up_fragment_text_button_sign_in">Entre</string>
+    <string name="sign_up_fragment_text_email_empty">Informe um e-mail válido</string>
+    <string name="sign_up_fragment_text_password_empty">Informe uma senha</string>
 </resources>
