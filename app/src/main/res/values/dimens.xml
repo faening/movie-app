@@ -5,17 +5,39 @@
     <dimen name="padding_medium">16dp</dimen>
     <dimen name="padding_large">24dp</dimen>
     <dimen name="padding_extra_large">32dp</dimen>
+    <dimen name="padding_huge">64dp</dimen>
 
     <!-- Margins -->
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_large">24dp</dimen>
     <dimen name="margin_extra_large">32dp</dimen>
+    <dimen name="margin_huge">64dp</dimen>
 
     <!-- Fonts -->
+    <dimen name="text_headline1">44sp</dimen>
+    <dimen name="text_headline2">36sp</dimen>
+    <dimen name="text_headline3">28sp</dimen>
+    <dimen name="text_headline4">20sp</dimen>
+    <dimen name="text_body">16sp</dimen>
+    <dimen name="text_small">12sp</dimen>
 
     <!-- Buttons -->
-    <dimen name="button_default_height">50dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="button_rounded_size">56dp</dimen>
     <dimen name="button_radius">100dp</dimen>
+    <dimen name="button_elevation">4dp</dimen>
+
+    <!-- Inputs -->
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="input_radius">100dp</dimen>
+
+    <!-- Home Auth Fragment -->
+    <dimen name="home_auth_fragment_cover_height">200dp</dimen>
+    <dimen name="home_auth_fragment_cover_width">0dp</dimen>
+
+    <!-- Sign Up Fragment -->
+    <dimen name="sign_up_fragment_logo_height">120dp</dimen>
+    <dimen name="sign_up_fragment_logo_width">120dp</dimen>
 
 </resources>

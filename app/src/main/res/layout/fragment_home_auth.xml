@@ -21,8 +21,8 @@
 
         <ImageView
             android:id="@+id/fragment_home_auth_image_home"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/home_auth_fragment_cover_width"
+            android:layout_height="@dimen/home_auth_fragment_cover_height"
             android:layout_marginTop="@dimen/margin_large"
             android:contentDescription="@string/home_auth_fragment_content_description_image_home"
             android:src="@drawable/ic_image_home_auth"
@@ -33,30 +33,26 @@
 
         <TextView
             android:id="@+id/fragment_home_auth_title"
+            style="@style/CustomTextAppearance.TextHeadline3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_extra_large"
-            android:fontFamily="@font/urbanist_700"
             android:text="@string/home_auth_fragment_title"
-            android:textColor="@color/black"
-            android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragment_home_auth_image_home" />
 
         <LinearLayout
             android:id="@+id/fragment_home_auth_button_facebook"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_large"
-            android:background="@drawable/bg_button_white"
+            style="@style/CustomTextAppearance.Button.Secondary"
+            android:layout_marginTop="@dimen/margin_extra_large"
             android:gravity="center"
-            android:minHeight="@dimen/button_default_height"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_home_auth_title">
+            app:layout_constraintTop_toBottomOf="@+id/fragment_home_auth_title"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/fragment_home_auth_ic_facebook"
@@ -67,28 +63,24 @@
 
             <TextView
                 android:id="@+id/fragment_home_auth_text_facebook"
+                style="@style/CustomTextAppearance.TextBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
-                android:fontFamily="@font/urbanist_400"
-                android:text="@string/home_auth_fragment_text_button_continue_with_facebook"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:text="@string/home_auth_fragment_text_button_continue_with_facebook" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/fragment_home_auth_button_google"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/CustomTextAppearance.Button.Secondary"
             android:layout_marginTop="@dimen/margin_medium"
-            android:background="@drawable/bg_button_white"
             android:gravity="center"
-            android:minHeight="@dimen/button_default_height"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_home_auth_button_facebook">
+            app:layout_constraintTop_toBottomOf="@+id/fragment_home_auth_button_facebook"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/fragment_home_auth_ic_google"
@@ -99,13 +91,11 @@
 
             <TextView
                 android:id="@+id/fragment_home_auth_text_google"
+                style="@style/CustomTextAppearance.TextBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
-                android:fontFamily="@font/urbanist_400"
-                android:text="@string/home_auth_fragment_text_button_continue_with_google"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:text="@string/home_auth_fragment_text_button_continue_with_google" />
         </LinearLayout>
 
         <LinearLayout
@@ -122,37 +112,31 @@
 
             <View
                 android:id="@+id/fragment_home_auth_divider_view_left"
+                style="@style/CustomTextAppearance.Divider"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:background="@color/stroke" />
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/fragment_home_auth_divider_text"
+                style="@style/CustomTextAppearance.TextBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/margin_large"
-                android:fontFamily="@font/urbanist_400"
-                android:text="@string/home_auth_fragment_text_social_or_password"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:text="@string/home_auth_fragment_text_social_or_password" />
 
             <View
                 android:id="@+id/fragment_home_auth_divider_view_right"
+                style="@style/CustomTextAppearance.Divider"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_weight="1"
-                android:background="@color/stroke" />
+                android:layout_weight="1" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/fragment_home_auth_button_login_with_password"
-            style="@style/ThemeButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/CustomTextAppearance.Button.Primary.WithElevation"
             android:layout_marginTop="@dimen/margin_extra_large"
             android:gravity="center"
-            android:minHeight="@dimen/button_default_height"
+            android:minHeight="@dimen/button_height"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -161,19 +145,18 @@
 
             <TextView
                 android:id="@+id/fragment_home_auth_text_button_login_with_password"
+                style="@style/CustomTextAppearance.TextBody.Light.Bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/home_auth_fragment_text_button_sign_in_with_password"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:theme="@style/ThemeButton" />
+                android:textAlignment="center" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/fragment_home_auth_button_dont_have_an_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_extra_large"
+            android:layout_marginTop="@dimen/margin_large"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -183,24 +166,18 @@
 
             <TextView
                 android:id="@+id/fragment_home_auth_text_button_dont_have_an_account"
+                style="@style/CustomTextAppearance.TextBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_small"
-                android:fontFamily="@font/urbanist_400"
-                android:text="@string/home_auth_fragment_text_dont_have_an_account"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:layout_marginEnd="4dp"
+                android:text="@string/home_auth_fragment_text_dont_have_an_account" />
 
             <TextView
                 android:id="@+id/fragment_home_auth_button_dont_have_an_account_anchor_to_signup"
+                style="@style/CustomTextAppearance.TextBody.Link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/urbanist_400"
-                android:text="@string/home_auth_fragment_text_sign_up"
-                android:textColor="@color/color_default"
-                android:textSize="16sp" />
+                android:text="@string/home_auth_fragment_text_sign_up" />
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>
