@@ -153,7 +153,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/fragment_home_auth_button_dont_have_an_account"
+            android:id="@+id/fragment_home_auth_dont_have_account_wrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
@@ -165,7 +165,7 @@
             app:layout_constraintTop_toBottomOf="@+id/fragment_home_auth_button_login_with_password">
 
             <TextView
-                android:id="@+id/fragment_home_auth_text_button_dont_have_an_account"
+                android:id="@+id/fragment_home_auth_text_dont_have_account"
                 style="@style/CustomTextAppearance.TextBody"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -173,7 +173,7 @@
                 android:text="@string/home_auth_fragment_text_dont_have_an_account" />
 
             <TextView
-                android:id="@+id/fragment_home_auth_button_dont_have_an_account_anchor_to_signup"
+                android:id="@+id/fragment_home_auth_button_dont_have_account"
                 style="@style/CustomTextAppearance.TextBody.Link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
