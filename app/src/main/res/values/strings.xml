@@ -3,7 +3,7 @@
     <string name="app_name" translatable="false">Movie App</string>
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
-    <!-- Onboarding Fragment-->
+    <!-- Onboarding Fragment -->
     <string name="onboarding_fragment_content_description_background_image">Background Image</string>
     <string name="onboarding_fragment_content_description_background_shadow">Background Image Shadow</string>
     <string name="onboarding_fragment_text_button_get_started">Get Started</string>
@@ -20,7 +20,7 @@
     <string name="home_auth_fragment_text_dont_have_an_account">Don\'t have an account?</string>
     <string name="home_auth_fragment_text_sign_up">Subscribe</string>
 
-    <!-- Sign Up Fragment-->
+    <!-- Sign Up Fragment -->
     <string name="sign_up_fragment_content_description_logo">App Logo</string>
     <string name="sign_up_fragment_content_description_ic_google">Google Icon</string>
     <string name="sign_up_fragment_content_description_ic_facebook">Facebook Icon</string>
@@ -33,4 +33,17 @@
     <string name="sign_up_fragment_text_button_sign_in">Sign In</string>
     <string name="sign_up_fragment_text_email_empty">Enter a valid email address</string>
     <string name="sign_up_fragment_text_password_empty">Enter a password</string>
+
+    <!-- Sign In Fragment -->
+    <string name="sign_in_fragment_content_description_logo">App Logo</string>
+    <string name="sign_in_fragment_content_description_ic_google">Google Icon</string>
+    <string name="sign_in_fragment_content_description_ic_facebook">Facebook Icon</string>
+    <string name="sign_in_fragment_title">Sign in with your account</string>
+    <string name="sign_in_fragment_text_hint_edit_email">Email</string>
+    <string name="sign_in_fragment_text_hint_edit_password">Password</string>
+    <string name="sign_in_fragment_text_button_sign_in">Sign In</string>
+    <string name="sign_in_fragment_text_forgot_password">Forgot passowrd?</string>
+    <string name="sign_in_fragment_text_continue_social_network">or continue with</string>
+    <string name="sign_in_fragment_text_dont_have_an_account">Don\'t have an account?</string>
+    <string name="sign_in_fragment_text_sign_up">Subscribe</string>
 </resources>
