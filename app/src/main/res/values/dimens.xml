@@ -32,6 +32,9 @@
     <dimen name="input_height">56dp</dimen>
     <dimen name="input_radius">100dp</dimen>
 
+    <!-- Loading -->
+    <dimen name="loading_size">56dp</dimen>
+
     <!-- Home Auth Fragment -->
     <dimen name="home_auth_fragment_cover_height">200dp</dimen>
     <dimen name="home_auth_fragment_cover_width">0dp</dimen>
@@ -40,4 +43,6 @@
     <dimen name="sign_up_fragment_logo_height">100dp</dimen>
     <dimen name="sign_up_fragment_logo_width">100dp</dimen>
 
+    <!-- Forgot Password Fragment-->
+    <dimen name="forgot_passowrd_fragment_cover_height">200dp</dimen>
 </resources>

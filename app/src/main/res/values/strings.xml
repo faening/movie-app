@@ -46,4 +46,9 @@
     <string name="sign_in_fragment_text_continue_social_network">or continue with</string>
     <string name="sign_in_fragment_text_dont_have_an_account">Don\'t have an account?</string>
     <string name="sign_in_fragment_text_sign_up">Subscribe</string>
+
+    <!-- Forgot Password Fragment -->
+    <string name="forgot_password_fragment_title">Create a new password</string>
+    <string name="forgot_password_fragment_text_hint_edit_email">Email</string>
+    <string name="forgot_password_fragment_text_button_forgot">Retrieve account</string>
 </resources>
