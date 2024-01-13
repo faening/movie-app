@@ -10,7 +10,7 @@
     <string name="onboarding_fragment_text_button_get_started">Iniciar</string>
 
     <!-- Home Auth Fragment -->
-    <string name="home_auth_fragment_content_description_image_home">Capa da Tela</string>
+    <string name="home_auth_fragment_content_description_cover">Capa da Tela</string>
     <string name="home_auth_fragment_content_description_ic_facebook">Ícone do Facebook</string>
     <string name="home_auth_fragment_content_description_ic_google">Ícone do Google</string>
     <string name="home_auth_fragment_title">Acessar com\.\.\.</string>

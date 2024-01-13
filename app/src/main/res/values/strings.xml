@@ -9,7 +9,7 @@
     <string name="onboarding_fragment_text_button_get_started">Get Started</string>
 
     <!-- Home Auth Fragment -->
-    <string name="home_auth_fragment_content_description_image_home">Screen Cover</string>
+    <string name="home_auth_fragment_content_description_cover">Screen Cover</string>
     <string name="home_auth_fragment_content_description_ic_facebook">Facebook Icon</string>
     <string name="home_auth_fragment_content_description_ic_google">Google Icon</string>
     <string name="home_auth_fragment_title">Login with…</string>

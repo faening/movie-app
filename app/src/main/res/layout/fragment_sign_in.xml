@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_sign_in_container"
+    android:id="@+id/sign_in_scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".presentation.ui.auth.SignInFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sign_in_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/fragment_sign_in_toolbar"
+            android:id="@+id/sign_in_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -22,6 +23,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sign_in_wrapper"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:paddingHorizontal="@dimen/padding_medium"
@@ -30,10 +32,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_sign_in_toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_toolbar">
 
-            <ImageView
-                android:id="@+id/fragment_sign_in_logo"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/sign_in_logo"
                 android:layout_width="@dimen/sign_up_fragment_logo_width"
                 android:layout_height="@dimen/sign_up_fragment_logo_height"
                 android:contentDescription="@string/sign_in_fragment_content_description_logo"
@@ -43,8 +45,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/fragment_sign_in_title"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sign_in_title"
                 style="@style/CustomTextAppearance.TextHeadline3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -53,10 +55,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sign_in_logo" />
+                app:layout_constraintTop_toBottomOf="@+id/sign_in_logo" />
 
-            <EditText
-                android:id="@+id/fragment_sign_in_email"
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/sign_in_email"
                 style="@style/CustomTextAppearance.EditText"
                 android:layout_marginTop="@dimen/margin_extra_large"
                 android:autofillHints="auto"
@@ -64,11 +66,11 @@
                 android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sign_in_title"
+                app:layout_constraintTop_toBottomOf="@+id/sign_in_title"
                 tools:ignore="LabelFor" />
 
-            <EditText
-                android:id="@+id/fragment_sign_in_password"
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/sign_in_password"
                 style="@style/CustomTextAppearance.EditText"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:autofillHints="auto"
@@ -76,31 +78,31 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sign_in_email"
+                app:layout_constraintTop_toBottomOf="@+id/sign_in_email"
                 tools:ignore="LabelFor,TextFields" />
 
-            <TextView
-                android:id="@+id/fragment_sign_in_forgot_password"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sign_in_forgot_password"
                 style="@style/CustomTextAppearance.TextBody.Link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
                 android:text="@string/sign_in_fragment_text_forgot_password"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sign_in_password" />
+                app:layout_constraintTop_toBottomOf="@+id/sign_in_password" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/fragment_sign_in_button_login"
+                android:id="@+id/sign_in_button_login"
                 style="@style/CustomTextAppearance.Button.Primary.WithElevation"
                 android:layout_marginTop="@dimen/margin_large"
                 android:text="@string/sign_in_fragment_text_button_sign_in"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sign_in_forgot_password"
+                app:layout_constraintTop_toBottomOf="@+id/sign_in_forgot_password"
                 tools:ignore="MissingClass" />
 
-            <LinearLayout
-                android:id="@+id/fragment_sign_in_divider"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/sign_in_divider_wrapper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_large"
@@ -109,16 +111,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sign_in_button_login">
+                app:layout_constraintTop_toBottomOf="@+id/sign_in_button_login">
 
                 <View
-                    android:id="@+id/fragment_sign_in_divider_left"
+                    android:id="@+id/sign_in_divider_left"
                     style="@style/CustomTextAppearance.Divider"
                     android:layout_width="match_parent"
                     android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/fragment_sign_in_divider_text"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sign_in_divider_text"
                     style="@style/CustomTextAppearance.TextBody"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -126,14 +128,14 @@
                     android:text="@string/sign_in_fragment_text_continue_social_network" />
 
                 <View
-                    android:id="@+id/fragment_sign_in_divider_right"
+                    android:id="@+id/sign_in_divider_right"
                     style="@style/CustomTextAppearance.Divider"
                     android:layout_width="match_parent"
                     android:layout_weight="1" />
-            </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <LinearLayout
-                android:id="@+id/fragment_sign_in_social_media_buttons"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/sign_in_social_media_buttons_wrapper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_large"
@@ -142,38 +144,40 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sign_in_divider">
+                app:layout_constraintTop_toBottomOf="@+id/sign_in_divider_wrapper">
 
-                <LinearLayout
-                    android:id="@+id/fragment_sign_in_button_login_with_facebook"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/sign_in_button_login_with_facebook"
                     style="@style/CustomTextAppearance.Button.Secondary.Rounded"
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/sign_in_icon_button_login_with_facebook"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/sign_in_fragment_content_description_ic_facebook"
                         android:src="@drawable/ic_facebook" />
-                </LinearLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <LinearLayout
-                    android:id="@+id/fragment_sign_in_button_login_with_google"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/sign_in_button_login_with_google"
                     style="@style/CustomTextAppearance.Button.Secondary.Rounded"
                     android:layout_marginStart="@dimen/margin_medium"
                     android:gravity="center"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/sign_in_icon_button_login_with_google"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/sign_in_fragment_content_description_ic_google"
                         android:src="@drawable/ic_google" />
-                </LinearLayout>
-            </LinearLayout>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <LinearLayout
-                android:id="@+id/fragment_sign_in_dont_have_account_wrapper"
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/sign_in_dont_have_account_wrapper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_large"
@@ -182,23 +186,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_sign_in_social_media_buttons">
+                app:layout_constraintTop_toBottomOf="@+id/sign_in_social_media_buttons_wrapper">
 
-                <TextView
-                    android:id="@+id/fragment_sign_in_text_dont_have_account"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sign_in_text_dont_have_account"
                     style="@style/CustomTextAppearance.TextBody"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
                     android:text="@string/sign_in_fragment_text_dont_have_an_account" />
 
-                <TextView
-                    android:id="@+id/fragment_sign_in_button_dont_have_account"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sign_in_button_dont_have_account"
                     style="@style/CustomTextAppearance.TextBody.Link"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sign_in_fragment_text_sign_up" />
-            </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
