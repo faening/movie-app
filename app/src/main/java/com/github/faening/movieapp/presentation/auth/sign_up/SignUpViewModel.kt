@@ -1,4 +1,4 @@
-package com.github.faening.movieapp.presentation.viewmodel
+package com.github.faening.movieapp.presentation.auth.sign_up
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData

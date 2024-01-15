@@ -1,4 +1,4 @@
-package com.github.faening.movieapp.presentation.ui.auth
+package com.github.faening.movieapp.presentation.auth.sign_up
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,7 +11,6 @@ import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentSignUpBinding
-import com.github.faening.movieapp.presentation.viewmodel.SignUpViewModel
 import com.github.faening.movieapp.utils.StateView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,7 +19,7 @@ class SignUpFragment : Fragment() {
 
     private var _binding: FragmentSignUpBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: SignUpViewModel by viewModels()
+    private val model: SignUpViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,12 +49,6 @@ class SignUpFragment : Fragment() {
         buttonSignUp.setOnClickListener { validateData() }
     }
 
-    private fun progressLoadingListener() {
-        val progressLoading = binding.signUpProgressLoading
-        val progressLoadingImage = R.drawable.loading
-        Glide.with(requireContext()).load(progressLoadingImage).into(progressLoading)
-    }
-
     private fun validateData() {
         val email = binding.signUpEmail.text.toString().trim()
         val password = binding.signUpPassword.text.toString().trim()
@@ -67,7 +60,7 @@ class SignUpFragment : Fragment() {
     }
 
     private fun signUpUser(email: String, password: String) {
-        viewModel.signUp(email, password).observe(viewLifecycleOwner) { stateView ->
+        model.signUp(email, password).observe(viewLifecycleOwner) { stateView ->
             val progressLoading = binding.signUpProgressLoading
 
             when(stateView) {
@@ -83,6 +76,12 @@ class SignUpFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun progressLoadingListener() {
+        val progressLoading = binding.signUpProgressLoading
+        val progressLoadingImage = R.drawable.loading
+        Glide.with(requireContext()).load(progressLoadingImage).into(progressLoading)
     }
 
 }

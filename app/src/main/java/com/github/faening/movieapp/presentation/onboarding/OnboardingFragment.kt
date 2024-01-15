@@ -1,4 +1,4 @@
-package com.github.faening.movieapp.presentation.ui.onboard
+package com.github.faening.movieapp.presentation.onboarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

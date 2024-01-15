@@ -1,4 +1,4 @@
-package com.github.faening.movieapp.presentation.ui
+package com.github.faening.movieapp.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
