@@ -12,6 +12,9 @@ import com.bumptech.glide.Glide
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentSignUpBinding
 import com.github.faening.movieapp.utils.StateView
+import com.github.faening.movieapp.utils.hideKeyboard
+import com.github.faening.movieapp.utils.isEmailValid
+import com.github.faening.movieapp.utils.isPasswordValid
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,6 +35,7 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initializeListeners()
+        setupProgressLoading()
     }
 
     override fun onDestroyView() {
@@ -41,28 +45,27 @@ class SignUpFragment : Fragment() {
 
     private fun initializeListeners() {
         buttonSignUpListener()
-        progressLoadingListener()
     }
 
     private fun buttonSignUpListener() {
-        val buttonSignUp = binding.signUpButtonRegister
-        buttonSignUp.setOnClickListener { validateData() }
+        binding.signUpButtonRegister.setOnClickListener {
+            val email = binding.signUpEmail.text.toString().trim()
+            val password = binding.signUpEmail.text.toString().trim()
+            val formIsValid = validateFormInputs(email, password)
+            if (formIsValid) {
+                hideKeyboard()
+                signUpUser(email, password)
+            }
+        }
     }
 
-    private fun validateData() {
-        val email = binding.signUpEmail.text.toString().trim()
-        val password = binding.signUpPassword.text.toString().trim()
-
-        // TODO: Melhorar as validações do formulário posteriormente
-        if (email.isNotEmpty() && password.isNotEmpty()) {
-            signUpUser(email, password)
-        }
+    private fun validateFormInputs(email: String, password: String): Boolean {
+        return email.isEmailValid() && password.isPasswordValid()
     }
 
     private fun signUpUser(email: String, password: String) {
         model.signUp(email, password).observe(viewLifecycleOwner) { stateView ->
             val progressLoading = binding.signUpProgressLoading
-
             when(stateView) {
                 is StateView.Loading -> {
                     progressLoading.isVisible = true
@@ -78,7 +81,7 @@ class SignUpFragment : Fragment() {
         }
     }
 
-    private fun progressLoadingListener() {
+    private fun setupProgressLoading() {
         val progressLoading = binding.signUpProgressLoading
         val progressLoadingImage = R.drawable.loading
         Glide.with(requireContext()).load(progressLoadingImage).into(progressLoading)

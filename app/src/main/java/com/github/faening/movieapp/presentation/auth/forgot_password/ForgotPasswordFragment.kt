@@ -8,17 +8,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.LifecycleCoroutineScope
-import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentForgotPasswordBinding
 import com.github.faening.movieapp.utils.StateView
+import com.github.faening.movieapp.utils.hideKeyboard
+import com.github.faening.movieapp.utils.isEmailValid
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ForgotPasswordFragment : Fragment() {
@@ -51,21 +47,23 @@ class ForgotPasswordFragment : Fragment() {
     }
 
     private fun buttonRetrieveAccountListener() {
-        val buttonRetrieveAccount = binding.forgotPasswordButtonRetrieveAccount
-        buttonRetrieveAccount.setOnClickListener {
+        binding.forgotPasswordButtonRetrieveAccount.setOnClickListener {
             val email = binding.forgotPasswordEmail.text.toString().trim()
-            if ( validateFormInputs(email) ) retrieveAccount(email)
+            val formIsValid = validateFormInput(email)
+            if (formIsValid) {
+                hideKeyboard()
+                retrieveAccount(email)
+            }
         }
     }
 
-    private fun validateFormInputs(email: String): Boolean {
-        return email.isNotEmpty()
+    private fun validateFormInput(email: String): Boolean {
+        return email.isEmailValid()
     }
 
     private fun retrieveAccount(email: String) {
         model.forgotPassword(email).observe(viewLifecycleOwner) { stateView ->
             val progressLoading = binding.forgotPasswordProgressLoading
-
             when(stateView) {
                 is StateView.Loading -> {
                     progressLoading.isVisible = true
@@ -86,6 +84,5 @@ class ForgotPasswordFragment : Fragment() {
         val progressLoadingImage = R.drawable.loading
         Glide.with(requireContext()).load(progressLoadingImage).into(progressLoading)
     }
-
 
 }
