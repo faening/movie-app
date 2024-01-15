@@ -11,5 +11,5 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 abstract class DomainModule {
     @Binds
-    abstract fun bindsFirebaseAuth(firebaseAuth: FirebaseAuth) : Auth
+    abstract fun bindFirebaseAuth(firebaseAuth: FirebaseAuth) : Auth
 }
