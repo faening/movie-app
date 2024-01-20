@@ -1,20 +1,20 @@
-package com.github.faening.movieapp.presentation
+package com.github.faening.movieapp.presentation.auth.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.github.faening.movieapp.R
+import com.github.faening.movieapp.databinding.ActivityAuthBinding
 import com.github.faening.movieapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class AuthActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityAuthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        // installSplashScreen()
+        binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 }
