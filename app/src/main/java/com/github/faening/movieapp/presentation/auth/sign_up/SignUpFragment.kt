@@ -50,7 +50,7 @@ class SignUpFragment : Fragment() {
     private fun buttonSignUpListener() {
         binding.signUpButtonRegister.setOnClickListener {
             val email = binding.signUpEmail.text.toString().trim()
-            val password = binding.signUpEmail.text.toString().trim()
+            val password = binding.signUpPassword.text.toString().trim()
             val formIsValid = validateFormInputs(email, password)
             if (formIsValid) {
                 hideKeyboard()
