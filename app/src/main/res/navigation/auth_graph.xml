@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_onboarding" >
         <action
             android:id="@+id/action_onboardingFragment_to_navigation"
-            app:destination="@id/autentication" />
+            app:destination="@id/autentication"
+            app:popUpToInclusive="true"
+            app:popUpTo="@+id/onboardingFragment" />
     </fragment>
     <navigation android:id="@+id/autentication"
         app:startDestination="@id/homeAuthFragment">

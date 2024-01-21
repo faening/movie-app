@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentOnboardingBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -23,9 +25,24 @@ class OnboardingFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initializeListeners()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun initializeListeners() {
+        buttonLoginListener()
+    }
+
+    private fun buttonLoginListener() {
+        binding.onboardButtonLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_onboardingFragment_to_navigation)
+        }
     }
 
 }

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentSignInBinding
@@ -45,6 +46,7 @@ class SignInFragment : Fragment() {
 
     private fun initializeListeners() {
         buttonSignInListener()
+        buttonForgotPasswordListener()
     }
 
     private fun buttonSignInListener() {
@@ -78,6 +80,12 @@ class SignInFragment : Fragment() {
                     Toast.makeText(requireContext(), stateView.message, Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+    }
+
+    private fun buttonForgotPasswordListener() {
+        binding.signInForgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_forgotPasswordFragment)
         }
     }
 
