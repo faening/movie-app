@@ -1,7 +1,7 @@
 plugins {
-    alias(libs.plugins.gradle)
+    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin)
-    alias(libs.plugins.googleservices)
+    alias(libs.plugins.google.services)
     alias(libs.plugins.hilt)
     kotlin("kapt")
 }
@@ -46,40 +46,40 @@ android {
 
 dependencies {
     // Common
-    implementation(libs.android.ktx)
+    implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
-    implementation(libs.constraintlayout)
+    implementation(libs.constraint.layout)
 
     // Firebase
     implementation(platform(libs.firebase))
-    implementation(libs.firebaseanalytics)
-    implementation(libs.firebaseauth)
-    implementation(libs.firebasedatabase)
-    implementation(libs.firebasestorage)
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.storage)
 
     // SplashScreen (For Android 12+)
     implementation(libs.splashscreen)
 
     // Dagger Hilt
-    implementation(libs.hilt)
-    kapt(libs.hiltcompiler)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     // Lifecycle
-    implementation(libs.lifecycleviewmodel)
-    implementation(libs.lifecyclelivedata)
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.lifecycle.livedata)
 
     // Navigation
-    implementation(libs.navigationfragment)
-    implementation(libs.navigationui)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
 
     // Glide
     implementation(libs.glide)
 
     // Tests
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidxtest)
-    androidTestImplementation(libs.androidxtestespresso)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso)
 }
 
 kapt {
