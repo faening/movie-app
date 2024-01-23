@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.androidapplication)
+    alias(libs.plugins.gradle)
     alias(libs.plugins.kotlin)
     alias(libs.plugins.googleservices)
     alias(libs.plugins.hilt)

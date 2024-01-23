@@ -30,11 +30,11 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraint-lay
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 # Firebase
-firebase = { group = "com.google.firebase", name = "firebase", version.ref = "firebase" }
-firebaseanalytics = { group = "com.google.firebase", name = "firebase-analytics" }
-firebaseauth = { group = "com.google.firebase", name = "firebase-auth" }
-firebasedatabase = { group = "com.google.firebase", name = "firebase-database" }
-firebasestorage = { group = "com.google.firebase", name = "firebase-storage" }
+firebase = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
+firebaseanalytics = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+firebaseauth = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+firebasedatabase = { group = "com.google.firebase", name = "firebase-database-ktx" }
+firebasestorage = { group = "com.google.firebase", name = "firebase-storage-ktx" }
 
 # SplashScreen (For Android 12+)
 splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
@@ -55,13 +55,13 @@ navigationui = { group = "androidx.navigation", name = "navigation-ui-ktx", vers
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 
 # Tests
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidxtest = { group = "androidx.test.ext", name = "junit", version.ref = "androidxtest" }
+junit = { group = "junit", name = "junit-ktxt", version.ref = "junit" }
+androidxtest = { group = "androidx.test.ext", name = "junit-ktxit", version.ref = "androidxtest" }
 androidxtestespresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxtestespresso" }
 
 
 [plugins]
-androidapplication = { id = "com.android.application", version.ref = "gradle" }
+gradle = { id = "com.android.application", version.ref = "gradle" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 googleservices = { id = "com.google.gms.google-services", version.ref = "googleservices" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
