@@ -11,10 +11,13 @@ import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentForgotPasswordBinding
+import com.github.faening.movieapp.utils.FirebaseHelper
 import com.github.faening.movieapp.utils.StateView
 import com.github.faening.movieapp.utils.hideKeyboard
 import com.github.faening.movieapp.utils.initializeToolbar
 import com.github.faening.movieapp.utils.isEmailValid
+import com.github.faening.movieapp.utils.isPasswordValid
+import com.github.faening.movieapp.utils.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -60,22 +63,37 @@ class ForgotPasswordFragment : Fragment() {
     }
 
     private fun validateFormInput(email: String): Boolean {
-        return email.isEmailValid()
+        return when {
+            email.isEmpty() -> {
+                showSnackBar(R.string.text_validation_email_empty)
+                false
+            }
+
+            !email.isEmailValid() -> {
+                showSnackBar(R.string.text_validation_email_invalid)
+                false
+            }
+
+            else -> true
+        }
     }
 
     private fun retrieveAccount(email: String) {
         model.forgotPassword(email).observe(viewLifecycleOwner) { stateView ->
             val progressLoading = binding.forgotPasswordProgressLoading
-            when(stateView) {
+            when (stateView) {
                 is StateView.Loading -> {
                     progressLoading.isVisible = true
                 }
+
                 is StateView.Success -> {
-                    Toast.makeText(requireContext(), "E-mail enviado com sucessso", Toast.LENGTH_SHORT).show()
+                    showSnackBar(R.string.forgot_password_fragment_email_recovery_sent)
                 }
+
                 is StateView.Error -> {
+                    val firebaseErrorMessage = FirebaseHelper.checkError(stateView.message.toString())
+                    showSnackBar(firebaseErrorMessage)
                     progressLoading.isVisible = false
-                    Toast.makeText(requireContext(), stateView.message, Toast.LENGTH_SHORT).show()
                 }
             }
         }

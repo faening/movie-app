@@ -31,8 +31,6 @@
     <string name="sign_up_fragment_text_continue_social_network">or continue with</string>
     <string name="sign_up_fragment_text_already_account">Already have an account?</string>
     <string name="sign_up_fragment_text_button_sign_in">Sign In</string>
-    <string name="sign_up_fragment_text_email_empty">Enter a valid email address</string>
-    <string name="sign_up_fragment_text_password_empty">Enter a password</string>
 
     <!-- Sign In Fragment -->
     <string name="sign_in_fragment_content_description_logo">App Logo</string>
@@ -51,4 +49,23 @@
     <string name="forgot_password_fragment_title">Create a new password</string>
     <string name="forgot_password_fragment_text_hint_edit_email">Email</string>
     <string name="forgot_password_fragment_text_button_forgot">Retrieve account</string>
+    <string name="forgot_password_fragment_email_recovery_sent">Recovery email sent successfully</string>
+
+    <!-- Generic Validations -->
+    <string name="text_validation_name_empty">Type your name</string>
+    <string name="text_validation_email_empty">Type your email</string>
+    <string name="text_validation_email_invalid">Enter a valid email</string>
+    <string name="text_validation_phone_empty">Type your phone</string>
+    <string name="text_validation_phone_invalid">Enter a valid phone number</string>
+    <string name="text_validation_password_empty">Type your password</string>
+    <string name="text_validation_password_invalid">Enter a valid password</string>
+    <string name="text_validation_generic_error">An error occurred, please try again later</string>
+    <string name="text_validation_formated_value">$ %1$s</string>
+
+    <!-- Firebase Authentication Erros -->
+    <string name="firebase_auth_error_account_not_registered">No accounts found with this email</string>
+    <string name="firebase_auth_error_invalid_email">Enter a valid email</string>
+    <string name="firebase_auth_error_invalid_password">Invalid password, try again</string>
+    <string name="firebase_auth_error_email_in_use">This email is already in use</string>
+    <string name="firebase_auth_error_strong_password">Enter a stronger password</string>
 </resources>
