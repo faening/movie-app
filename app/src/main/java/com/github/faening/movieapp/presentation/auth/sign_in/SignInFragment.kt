@@ -14,6 +14,7 @@ import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentSignInBinding
 import com.github.faening.movieapp.utils.StateView
 import com.github.faening.movieapp.utils.hideKeyboard
+import com.github.faening.movieapp.utils.initializeToolbar
 import com.github.faening.movieapp.utils.isEmailValid
 import com.github.faening.movieapp.utils.isPasswordValid
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,6 +36,7 @@ class SignInFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initializeToolbar(binding.signInToolbar)
         initializeListeners()
         setupProgressLoading()
     }
