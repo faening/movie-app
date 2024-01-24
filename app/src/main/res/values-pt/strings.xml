@@ -76,4 +76,7 @@
     <string name="firebase_auth_error_invalid_password">Senha inválida, tente novamente.</string>
     <string name="firebase_auth_error_email_in_use">Este e-mail já está em uso.</string>
     <string name="firebase_auth_error_strong_password">Insira uma senha mais forte.</string>
+
+    <!-- Genre Item -->
+    <string name="genre_item_show_all">Show All</string>
 </resources>
