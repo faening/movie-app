@@ -51,6 +51,13 @@
     <string name="forgot_password_fragment_text_button_forgot">Retrieve account</string>
     <string name="forgot_password_fragment_email_recovery_sent">Recovery email sent successfully</string>
 
+    <!-- Bottom Bar Menu -->
+    <string name="bottom_bar_title_menu_home">Home</string>
+    <string name="bottom_bar_title_menu_search">Search</string>
+    <string name="bottom_bar_title_menu_favorite">Favorite</string>
+    <string name="bottom_bar_title_menu_download">Download</string>
+    <string name="bottom_bar_title_menu_profile">Profile</string>
+
     <!-- Generic Validations -->
     <string name="text_validation_name_empty">Type your name</string>
     <string name="text_validation_email_empty">Type your email</string>

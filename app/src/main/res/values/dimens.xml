@@ -22,6 +22,9 @@
     <dimen name="text_body">16sp</dimen>
     <dimen name="text_small">12sp</dimen>
 
+    <!-- BottomBar Menu -->
+    <dimen name="bottom_bar_menu_height">78dp</dimen>
+
     <!-- Buttons -->
     <dimen name="button_height">56dp</dimen>
     <dimen name="button_rounded_size">56dp</dimen>

@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentSignUpBinding
-import com.github.faening.movieapp.presentation.MainActivity
+import com.github.faening.movieapp.presentation.main.activity.MainActivity
 import com.github.faening.movieapp.utils.FirebaseHelper
 import com.github.faening.movieapp.utils.StateView
 import com.github.faening.movieapp.utils.hideKeyboard

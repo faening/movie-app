@@ -64,6 +64,10 @@
     <color name="button_secondary_border">@color/black_500</color>
     <color name="button_secondary_border_disabled">@color/black_500</color>
 
+    <!-- Menu -->
+    <color name="bottom_bar_menu_icon">@color/neutral_700</color>
+    <color name="bottom_bar_menu_icon_selected">@color/red</color>
+
     <!-- Inputs -->
     <color name="input_background">@color/neutral</color>
     <color name="input_border">@color/neutral_200</color>

@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentSignInBinding
-import com.github.faening.movieapp.presentation.MainActivity
+import com.github.faening.movieapp.presentation.main.activity.MainActivity
 import com.github.faening.movieapp.utils.FirebaseHelper
 import com.github.faening.movieapp.utils.StateView
 import com.github.faening.movieapp.utils.hideKeyboard
@@ -29,9 +29,7 @@ class SignInFragment : Fragment() {
     private val binding get() = _binding!!
     private val model: SignInViewModel by viewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
     }

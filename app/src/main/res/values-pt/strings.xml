@@ -52,6 +52,13 @@
     <string name="forgot_password_fragment_text_button_forgot">Recuperar conta</string>
     <string name="forgot_password_fragment_email_recovery_sent">E-mail de recuperação enviado com sucesso</string>
 
+    <!-- Bottom Bar Menu -->
+    <string name="bottom_bar_title_menu_home">Início</string>
+    <string name="bottom_bar_title_menu_search">Pesquisar</string>
+    <string name="bottom_bar_title_menu_favorite">Favorite</string>
+    <string name="bottom_bar_title_menu_download">Baixar</string>
+    <string name="bottom_bar_title_menu_profile">Perfil</string>
+
     <!-- Generic Validations -->
     <string name="text_validation_name_empty">Digite seu nome</string>
     <string name="text_validation_email_empty">Digite seu e-mail</string>
