@@ -68,6 +68,10 @@ glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "gl
 # https://square.github.io/retrofit/
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 
+# Gson
+# https://github.com/google/gson
+gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+
 # Ok Http
 # https://square.github.io/okhttp/
 ok-http-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "ok-http" }

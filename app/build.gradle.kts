@@ -77,6 +77,8 @@ dependencies {
 
     implementation(libs.retrofit)
 
+    implementation(libs.gson)
+
     implementation(platform(libs.ok.http.bom))
     implementation(libs.ok.http)
     implementation(libs.ok.http.logging.interceptor)
