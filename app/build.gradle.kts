@@ -75,6 +75,8 @@ dependencies {
 
     implementation(libs.glide)
 
+    implementation(libs.retrofit)
+
     implementation(platform(libs.ok.http.bom))
     implementation(libs.ok.http)
     implementation(libs.ok.http.logging.interceptor)
