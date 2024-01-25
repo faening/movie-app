@@ -1,7 +1,6 @@
 # https://developer.android.com/studio/build/migrate-to-catalogs?hl=pt-br
 
 [versions]
-# Libraries
 ktx = "1.12.0"
 appcompat = "1.6.1"
 constraint-layout = "2.1.4"
@@ -16,19 +15,15 @@ hilt = "2.50"
 lifecycle = "2.7.0"
 navigation = "2.7.6"
 glide = "4.16.0"
+ok-http = "4.12.0"
 secrets-gradle = "2.0.1"
-
-# Test
 junit = "4.13.2"
 androidx-junit = "1.1.5"
 androidx-espresso = "3.5.1"
 
-# Plugins
 android-application = "8.2.1"
 kotlin = "1.9.10"
 google-services = "4.4.0"
-
-
 
 [libraries]
 # Common
@@ -38,6 +33,7 @@ constraint-layout = { group = "androidx.constraintlayout", name = "constraintlay
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 # Firebase
+# https://firebase.google.com/docs/android/setup?hl=pt-br
 firebase = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics-ktx", version.ref = "firebase-analytics" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebase-auth" }
@@ -45,32 +41,42 @@ firebase-database = { group = "com.google.firebase", name = "firebase-database-k
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage-ktx", version.ref = "firebase-storage" }
 
 # SplashScreen (For Android 12+)
+# https://developer.android.com/develop/ui/views/launch/splash-screen?hl=pt-br
 splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
 
 # Hilt
+# https://developer.android.com/training/dependency-injection/hilt-android?hl=pt-br
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 
 # Lifecycle
+# https://developer.android.com/jetpack/androidx/releases/lifecycle?hl=pt-br
 lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
 
 # Navigation
+# https://developer.android.com/guide/navigation/navigation-getting-started?hl=pt-br
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
 
 # Glide
+# https://github.com/bumptech/glide
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 
+# Ok Http
+# https://square.github.io/okhttp/
+ok-http-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "ok-http" }
+ok-http = { group = "com.squareup.okhttp3", name = "okhttp" }
+ok-http-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor" }
+
 # Secrets Gradle
+# https://developers.google.com/maps/documentation/android-sdk/secrets-gradle-plugin?hl=pt-br#kotlin
 secrets-gradle = { group = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", name = "secrets-gradle-plugin", version.ref = "secrets-gradle" }
 
 # Tests
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-junit" }
 androidx-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-espresso" }
-
-
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-application" }

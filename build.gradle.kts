@@ -1,8 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     dependencies {
-        // Gradle Secrets
-        // https://developers.google.com/maps/documentation/android-sdk/secrets-gradle-plugin?hl=pt-br#kotlin
         classpath(libs.secrets.gradle)
     }
 }

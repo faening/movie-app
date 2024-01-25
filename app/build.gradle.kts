@@ -51,38 +51,34 @@ android {
 }
 
 dependencies {
-    // Common
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraint.layout)
 
-    // Firebase
     implementation(platform(libs.firebase))
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.auth)
     implementation(libs.firebase.database)
     implementation(libs.firebase.storage)
 
-    // SplashScreen (For Android 12+)
     implementation(libs.splashscreen)
 
-    // Dagger Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
-    // Lifecycle
     implementation(libs.lifecycle.viewmodel)
     implementation(libs.lifecycle.livedata)
 
-    // Navigation
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
 
-    // Glide
     implementation(libs.glide)
 
-    // Tests
+    implementation(platform(libs.ok.http.bom))
+    implementation(libs.ok.http)
+    implementation(libs.ok.http.logging.interceptor)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso)
