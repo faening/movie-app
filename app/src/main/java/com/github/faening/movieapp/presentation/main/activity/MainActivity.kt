@@ -1,13 +1,12 @@
 package com.github.faening.movieapp.presentation.main.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.github.faening.movieapp.BuildConfig
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-     private lateinit var navController: NavController
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         // installSplashScreen()
         initializeNavigation()
+        BuildConfig.TMBD_API_KEY
     }
 
     private fun initializeNavigation() {
@@ -37,10 +37,10 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             binding.mainBottombarMenu.isVisible =
                 destination.id == R.id.menu_home ||
-                destination.id == R.id.menu_search ||
-                destination.id == R.id.menu_favorite ||
-                destination.id == R.id.menu_download ||
-                destination.id == R.id.menu_profile
+                        destination.id == R.id.menu_search ||
+                        destination.id == R.id.menu_favorite ||
+                        destination.id == R.id.menu_download ||
+                        destination.id == R.id.menu_profile
         }
     }
 
