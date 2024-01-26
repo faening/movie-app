@@ -1,13 +1,11 @@
-package com.github.faening.movieapp.data.firebase.repository.auth
+package com.github.faening.movieapp.data.repository.auth
 
-import com.github.faening.movieapp.domain.repository.auth.Auth
+import com.github.faening.movieapp.domain.repository.auth.AuthRepository
 import com.google.firebase.auth.FirebaseAuth
 import javax.inject.Inject
 import kotlin.coroutines.suspendCoroutine
 
-class FirebaseAuth @Inject constructor(
-    private val firebaseAuth: FirebaseAuth
-) : Auth {
+class AuthRepositoryImp @Inject constructor(private val firebaseAuth: FirebaseAuth) : AuthRepository {
     override suspend fun signIn(email: String, password: String) {
         return suspendCoroutine { continuation ->
             firebaseAuth.signInWithEmailAndPassword(email, password)

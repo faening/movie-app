@@ -1,12 +1,12 @@
 package com.github.faening.movieapp.domain.usecase.auth
 
-import com.github.faening.movieapp.domain.repository.auth.Auth
+import com.github.faening.movieapp.domain.repository.auth.AuthRepository
 import javax.inject.Inject
 
 class SignUpUseCase @Inject constructor(
-    private val auth: Auth
+    private val authRepository: AuthRepository
 ) {
     suspend operator fun invoke(email: String, password: String) {
-        auth.signUp(email, password)
+        authRepository.signUp(email, password)
     }
 }

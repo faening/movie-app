@@ -1,6 +1,6 @@
 package com.github.faening.movieapp.domain.repository.auth
 
-interface Auth {
+interface AuthRepository {
     suspend fun signIn(email: String, password: String)
 
     suspend fun signUp(email: String, password: String)
