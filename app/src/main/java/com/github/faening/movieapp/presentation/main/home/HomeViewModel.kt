@@ -21,12 +21,29 @@ class HomeViewModel @Inject constructor(
     fun getAllGenres() = liveData(Dispatchers.IO) {
         try {
             emit(StateView.Loading())
-
             val genres = getAllGenresUseCase.invoke(
                 language = Movie.LANGUAGE
             ).map { it.toPresentation() }
-
             emit(StateView.Success(genres))
+        } catch (exception: HttpException) {
+            exception.printStackTrace()
+            emit(StateView.Error(message = exception.message))
+        } catch (exception: Exception) {
+            exception.printStackTrace()
+            emit(StateView.Error(message = exception.message))
+        }
+    }
+
+    fun getMoviesByGenre(genreId: Int?) = liveData(Dispatchers.IO) {
+        try {
+            emit(StateView.Loading())
+
+            val movies = getMoviesByGenreUseCase.invoke(
+                language = Movie.LANGUAGE,
+                genreId = genreId
+            )
+
+            emit(StateView.Success(movies))
         } catch (exception: HttpException) {
             exception.printStackTrace()
             emit(StateView.Error(message = exception.message))

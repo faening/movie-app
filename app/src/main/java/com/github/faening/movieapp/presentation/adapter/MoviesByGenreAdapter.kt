@@ -36,10 +36,10 @@ class MoviesByGenreAdapter : ListAdapter<GenrePresentation, MoviesByGenreAdapter
         val layoutManager = LinearLayoutManager(holder.binding.root.context, LinearLayoutManager.HORIZONTAL, false)
 
         holder.binding.genreItemName.text = genre.name
-//        holder.binding.genreItemRecyclerView.layoutManager = layoutManager
-//        holder.binding.genreItemRecyclerView.setHasFixedSize(true)
-//        holder.binding.genreItemRecyclerView.adapter = movieAdapter
-//        movieAdapter.submitList(genre.movies)
+        holder.binding.genreItemRecyclerView.layoutManager = layoutManager
+        holder.binding.genreItemRecyclerView.setHasFixedSize(true)
+        holder.binding.genreItemRecyclerView.adapter = movieAdapter
+        movieAdapter.submitList(genre.movies)
     }
 
     inner class ViewHolder(val binding: GenreItemBinding) : RecyclerView.ViewHolder(binding.root)

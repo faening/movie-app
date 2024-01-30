@@ -5,11 +5,12 @@ import com.github.faening.movieapp.domain.model.Movie
 import com.github.faening.movieapp.domain.repository.movie.MovieRepository
 import javax.inject.Inject
 
-class GetMoviesByGenreUseCase @Inject constructor(private val movieRepository: MovieRepository) {
-     suspend operator fun invoke(language: String?, genreId: String?): List<Movie> {
-         return movieRepository.getAllMoviesByGenre(
-             language = language,
-             genreId = genreId
-         ).map { it.toDomain() }
-     }
+class GetMoviesByGenreUseCase @Inject constructor(
+    private val movieRepository: MovieRepository
+) {
+    suspend operator fun invoke(language: String?, genreId: Int?): List<Movie> {
+        return movieRepository.getAllMoviesByGenre(
+            language = language, genreId = genreId
+        ).map { it.toDomain() }
+    }
 }

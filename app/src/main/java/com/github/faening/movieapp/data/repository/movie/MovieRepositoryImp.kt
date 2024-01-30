@@ -15,7 +15,7 @@ class MovieRepositoryImp @Inject constructor(
         )
     }
 
-    override suspend fun getAllMoviesByGenre(language: String?, genreId: String?): List<MovieResponse> {
+    override suspend fun getAllMoviesByGenre(language: String?, genreId: Int?): List<MovieResponse> {
         return serviceApi.getAllMoviesByGenre(
             language = language,
             genreId = genreId

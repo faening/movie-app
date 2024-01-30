@@ -20,7 +20,7 @@ interface ServiceApi {
     @Headers("Authorization: Bearer ${BuildConfig.TMBD_API_TOKEN}")
     suspend fun getAllMoviesByGenre(
         @Query("language") language: String?,
-        @Query("with_genres") genreId: String?,
+        @Query("with_genres") genreId: Int?,
     ): BasePaginationRemote<List<MovieResponse>>
 
 }
