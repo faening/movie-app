@@ -9,16 +9,14 @@ import javax.inject.Inject
 class MovieRepositoryImp @Inject constructor(
     private val serviceApi: ServiceApi
 ) : MovieRepository {
-    override suspend fun getAllGenres(authorization: String, language: String?): GenresResponse {
+    override suspend fun getAllGenres(language: String?): GenresResponse {
         return serviceApi.getAllGenres(
-            authorization = "Bearer $authorization",
             language = language
         )
     }
 
-    override suspend fun getAllMoviesByGenre(authorization: String, language: String?, genreId: String?): List<MovieResponse> {
+    override suspend fun getAllMoviesByGenre(language: String?, genreId: String?): List<MovieResponse> {
         return serviceApi.getAllMoviesByGenre(
-            authorization = "Bearer $authorization",
             language = language,
             genreId = genreId
         ).results ?: emptyList()

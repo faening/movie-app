@@ -4,6 +4,7 @@ import com.github.faening.movieapp.data.model.GenreResponse
 import com.github.faening.movieapp.data.model.MovieResponse
 import com.github.faening.movieapp.domain.model.Genre
 import com.github.faening.movieapp.domain.model.Movie
+import com.github.faening.movieapp.presentation.model.GenrePresentation
 
 fun GenreResponse.toDomain(): Genre {
     return Genre(
@@ -28,5 +29,13 @@ fun MovieResponse.toDomain(): Movie {
         video = video,
         voteAverage = voteAverage,
         voteCount = voteCount
+    )
+}
+
+fun Genre.toPresentation(): GenrePresentation {
+    return GenrePresentation(
+        id = id,
+        name = name,
+        movies = emptyList()
     )
 }
