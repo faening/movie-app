@@ -4,7 +4,7 @@ import com.github.faening.movieapp.data.model.GenreResponse
 import com.github.faening.movieapp.data.model.MovieResponse
 import com.github.faening.movieapp.domain.model.Genre
 import com.github.faening.movieapp.domain.model.Movie
-import com.github.faening.movieapp.presentation.model.GenrePresentation
+import com.github.faening.movieapp.ui.model.GenrePresentation
 
 fun GenreResponse.toDomain(): Genre {
     return Genre(

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/onboardingFragment"
-        android:name="com.github.faening.movieapp.presentation.onboarding.OnboardingFragment"
+        android:name="com.github.faening.movieapp.ui.fragment.onboarding.OnboardingFragment"
         android:label="fragment_onboarding"
         tools:layout="@layout/fragment_onboarding" >
         <action
@@ -20,7 +20,7 @@
         app:startDestination="@id/homeAuthFragment">
         <fragment
             android:id="@+id/homeAuthFragment"
-            android:name="com.github.faening.movieapp.presentation.auth.home_auth.HomeAuthFragment"
+            android:name="com.github.faening.movieapp.ui.fragment.auth.HomeAuthFragment"
             android:label="fragment_home_auth"
             tools:layout="@layout/fragment_home_auth" >
             <action
@@ -32,12 +32,12 @@
         </fragment>
         <fragment
             android:id="@+id/signUpFragment"
-            android:name="com.github.faening.movieapp.presentation.auth.sign_up.SignUpFragment"
+            android:name="com.github.faening.movieapp.ui.fragment.auth.SignUpFragment"
             android:label="fragment_sign_up"
             tools:layout="@layout/fragment_sign_up" />
         <fragment
             android:id="@+id/signInFragment"
-            android:name="com.github.faening.movieapp.presentation.auth.sign_in.SignInFragment"
+            android:name="com.github.faening.movieapp.ui.fragment.auth.SignInFragment"
             android:label="fragment_sign_in"
             tools:layout="@layout/fragment_sign_in" >
             <action
@@ -46,7 +46,7 @@
         </fragment>
         <fragment
             android:id="@+id/forgotPasswordFragment"
-            android:name="com.github.faening.movieapp.presentation.auth.forgot_password.ForgotPasswordFragment"
+            android:name="com.github.faening.movieapp.ui.fragment.auth.ForgotPasswordFragment"
             android:label="fragment_forgot_password"
             tools:layout="@layout/fragment_forgot_password" />
     </navigation>

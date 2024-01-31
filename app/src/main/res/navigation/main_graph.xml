@@ -7,27 +7,27 @@
 
     <fragment
         android:id="@+id/menu_home"
-        android:name="com.github.faening.movieapp.presentation.main.home.HomeFragment"
+        android:name="com.github.faening.movieapp.ui.fragment.main.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/menu_search"
-        android:name="com.github.faening.movieapp.presentation.main.search.SearchFragment"
+        android:name="com.github.faening.movieapp.ui.fragment.main.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/menu_favorite"
-        android:name="com.github.faening.movieapp.presentation.main.favorite.FavoriteFragment"
+        android:name="com.github.faening.movieapp.ui.fragment.main.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/menu_download"
-        android:name="com.github.faening.movieapp.presentation.main.download.DownloadFragment"
+        android:name="com.github.faening.movieapp.ui.fragment.main.DownloadFragment"
         android:label="fragment_download"
         tools:layout="@layout/fragment_download" />
     <fragment
         android:id="@+id/menu_profile"
-        android:name="com.github.faening.movieapp.presentation.main.profile.ProfileFragment"
+        android:name="com.github.faening.movieapp.ui.fragment.main.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

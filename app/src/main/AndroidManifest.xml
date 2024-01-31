@@ -19,12 +19,12 @@
             android:value="${TMBD_API_KEY}" />
 
         <activity
-            android:name=".presentation.main.activity.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:exported="true">
         </activity>
 
         <activity
-            android:name=".presentation.auth.activity.AuthActivity"
+            android:name=".ui.activity.AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

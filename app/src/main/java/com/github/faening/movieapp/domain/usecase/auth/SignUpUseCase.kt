@@ -1,6 +1,6 @@
 package com.github.faening.movieapp.domain.usecase.auth
 
-import com.github.faening.movieapp.domain.repository.auth.AuthRepository
+import com.github.faening.movieapp.domain.repository.AuthRepository
 import javax.inject.Inject
 
 class SignUpUseCase @Inject constructor(

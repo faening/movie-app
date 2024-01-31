@@ -3,7 +3,7 @@ package com.github.faening.movieapp.data.repository.movie
 import com.github.faening.movieapp.data.api.ServiceApi
 import com.github.faening.movieapp.data.model.GenresResponse
 import com.github.faening.movieapp.data.model.MovieResponse
-import com.github.faening.movieapp.domain.repository.movie.MovieRepository
+import com.github.faening.movieapp.domain.repository.MovieRepository
 import javax.inject.Inject
 
 class MovieRepositoryImp @Inject constructor(

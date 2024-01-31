@@ -9,7 +9,6 @@ import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface ServiceApi {
-
     @GET("genre/movie/list")
     @Headers("Authorization: Bearer ${BuildConfig.TMBD_API_TOKEN}")
     suspend fun getAllGenres(
@@ -22,5 +21,4 @@ interface ServiceApi {
         @Query("language") language: String?,
         @Query("with_genres") genreId: Int?,
     ): BasePaginationRemote<List<MovieResponse>>
-
 }

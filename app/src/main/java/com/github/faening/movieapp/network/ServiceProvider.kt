@@ -9,12 +9,10 @@ import java.util.concurrent.TimeUnit
 
 class ServiceProvider {
 
-    private val DEFAULT_TIMEOUT = 30L
-
     private val client = OkHttpClient
         .Builder()
-        .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
-        .readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+        .connectTimeout(Companion.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+        .readTimeout(Companion.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
         .addInterceptor(HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         })
@@ -28,4 +26,8 @@ class ServiceProvider {
         .build()
 
     fun <API> createService(apiClass: Class<API>): API = retrofit.create(apiClass)
+
+    companion object {
+        private const val DEFAULT_TIMEOUT = 30L
+    }
 }

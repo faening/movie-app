@@ -2,8 +2,8 @@ package com.github.faening.movieapp.di
 
 import com.github.faening.movieapp.data.repository.auth.AuthRepositoryImp
 import com.github.faening.movieapp.data.repository.movie.MovieRepositoryImp
-import com.github.faening.movieapp.domain.repository.auth.AuthRepository
-import com.github.faening.movieapp.domain.repository.movie.MovieRepository
+import com.github.faening.movieapp.domain.repository.AuthRepository
+import com.github.faening.movieapp.domain.repository.MovieRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
