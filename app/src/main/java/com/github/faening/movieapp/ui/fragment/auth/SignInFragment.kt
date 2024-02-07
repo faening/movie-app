@@ -42,6 +42,7 @@ class SignInFragment : Fragment() {
     private fun initializeListeners() {
         buttonSignInListener()
         buttonForgotPasswordListener()
+        buttonSubscribeListener()
     }
 
     private fun buttonSignInListener() {
@@ -107,6 +108,12 @@ class SignInFragment : Fragment() {
     private fun buttonForgotPasswordListener() {
         binding.signInForgotPassword.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_forgotPasswordFragment)
+        }
+    }
+
+    private fun buttonSubscribeListener() {
+        binding.signInButtonDontHaveAccount.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
         }
     }
 
