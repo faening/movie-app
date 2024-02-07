@@ -1,5 +1,6 @@
 package com.github.faening.movieapp.ui.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,6 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.ActivityAuthBinding
+import com.github.faening.movieapp.utils.FirebaseHelper
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,8 +20,16 @@ class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        isAuthenticated()
         initNavController()
         setTransparentStatusBar()
+    }
+
+    private fun isAuthenticated() {
+        if (FirebaseHelper.isAuthenticated()) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
     }
 
     private fun initNavController() {
@@ -42,6 +52,4 @@ class AuthActivity : AppCompatActivity() {
             View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
             View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
     }
-
-
 }
