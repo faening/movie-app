@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.github.faening.movieapp.databinding.FragmentHomeBinding
 import com.github.faening.movieapp.ui.adapter.MoviesByGenreAdapter
 import com.github.faening.movieapp.ui.model.GenrePresentation
@@ -20,7 +21,7 @@ import kotlinx.coroutines.launch
 class HomeFragment : Fragment() {
     private val binding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<HomeViewModel>()
-    private val moviesByGenreAdapter by lazy { MoviesByGenreAdapter() }
+    private lateinit var moviesByGenreAdapter : MoviesByGenreAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return binding.root
@@ -33,6 +34,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun initializeRecyclerView() {
+        moviesByGenreAdapter = MoviesByGenreAdapter { genreId ->
+            val action = HomeFragmentDirections.actionMenuHomeToMovieGenreFragment(genreId)
+            findNavController().navigate(action)
+        }
+
         with(binding.homeList) {
             setHasFixedSize(true)
             adapter = moviesByGenreAdapter

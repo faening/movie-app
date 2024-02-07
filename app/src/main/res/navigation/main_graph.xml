@@ -9,7 +9,11 @@
         android:id="@+id/menu_home"
         android:name="com.github.faening.movieapp.ui.fragment.main.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_menu_home_to_movieGenreFragment"
+            app:destination="@id/movieGenreFragment" />
+    </fragment>
     <fragment
         android:id="@+id/menu_search"
         android:name="com.github.faening.movieapp.ui.fragment.main.SearchFragment"
@@ -30,4 +34,13 @@
         android:name="com.github.faening.movieapp.ui.fragment.main.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/movieGenreFragment"
+        android:name="com.github.faening.movieapp.ui.fragment.movie_genre.MovieGenreFragment"
+        android:label="fragment_movie_genre"
+        tools:layout="@layout/fragment_movie_genre" >
+        <argument
+            android:name="genre_id"
+            app:argType="integer" />
+    </fragment>
 </navigation>
