@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.secrets.gradle)
+    alias(libs.plugins.safe.args)
     kotlin("kapt")
 }
 

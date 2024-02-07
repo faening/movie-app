@@ -13,7 +13,7 @@ firebase-storage = "20.3.0"
 splashscreen = "1.0.1"
 hilt = "2.50"
 lifecycle = "2.7.0"
-navigation = "2.7.6"
+navigation = "2.7.7"
 glide = "4.16.0"
 retrofit = "2.9.0"
 ok-http = "4.12.0"
@@ -60,6 +60,10 @@ lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
 
+# Safe Args
+# https://developer.android.com/guide/navigation/use-graph/safe-args?hl=pt-br
+safe-args = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigation" }
+
 # Glide
 # https://github.com/bumptech/glide
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
@@ -94,3 +98,4 @@ google-services = { id = "com.google.gms.google-services", version.ref = "google
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 secrets-gradle = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref="secrets-gradle" }
+safe-args = { id = "androidx.navigation.safeargs.kotlin" , version.ref = "navigation" }

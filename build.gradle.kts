@@ -2,6 +2,7 @@
 buildscript {
     dependencies {
         classpath(libs.secrets.gradle)
+        classpath(libs.safe.args)
     }
 }
 
@@ -12,4 +13,5 @@ plugins {
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.kotlin.parcelize) apply false
     alias(libs.plugins.secrets.gradle) apply false
+    alias(libs.plugins.safe.args) apply false
 }
