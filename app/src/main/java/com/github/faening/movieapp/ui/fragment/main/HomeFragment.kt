@@ -70,7 +70,7 @@ class HomeFragment : Fragment() {
                     }
 
                     is StateView.Success -> {
-                        val movies = stateView.data ?: emptyList()
+                        val movies = stateView.data?.take(10) ?: emptyList()
                         genresMutableList[index] = genre.copy(movies = movies)
                         lifecycleScope.launch {
                             delay(1000)
