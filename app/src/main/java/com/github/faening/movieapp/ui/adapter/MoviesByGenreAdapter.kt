@@ -35,7 +35,10 @@ class MoviesByGenreAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val genre = getItem(position)
-        val movieAdapter = MovieAdapter(holder.binding.root.context)
+        val movieAdapter = MovieAdapter(
+            context = holder.binding.root.context,
+            layoutInflater = com.github.faening.movieapp.R.layout.movie_item_home
+        )
         val layoutManager = LinearLayoutManager(holder.binding.root.context, LinearLayoutManager.HORIZONTAL, false)
 
         with(holder.binding) {

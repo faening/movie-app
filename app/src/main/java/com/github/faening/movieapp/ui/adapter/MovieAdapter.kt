@@ -2,16 +2,18 @@ package com.github.faening.movieapp.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.github.faening.movieapp.databinding.MovieItemBinding
 import com.github.faening.movieapp.domain.model.Movie
 
 class MovieAdapter(
-    private val context: Context
+    private val context: Context,
+    private val layoutInflater: Int
 ) : ListAdapter<Movie, MovieAdapter.ViewHolder>(DIFF_CALLBACK) {
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Movie>() {
@@ -27,9 +29,8 @@ class MovieAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            MovieItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        )
+        val view = LayoutInflater.from(parent.context).inflate(layoutInflater, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -37,8 +38,10 @@ class MovieAdapter(
         Glide
             .with(context)
             .load("https://image.tmdb.org/t/p/w500${movie.posterPath}")
-            .into(holder.binding.movieItemImage)
+            .into(holder.movieImage)
     }
 
-    inner class ViewHolder(val binding: MovieItemBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val movieImage: ImageView = itemView.findViewById(com.github.faening.movieapp.R.id.movie_item_image)
+    }
 }

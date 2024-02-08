@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
 class HomeFragment : Fragment() {
     private val binding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<HomeViewModel>()
-    private lateinit var moviesByGenreAdapter : MoviesByGenreAdapter
+    private lateinit var moviesByGenreAdapter: MoviesByGenreAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return binding.root
@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
         viewModel.getAllGenres().observe(viewLifecycleOwner) { stateView ->
             when (stateView) {
                 is StateView.Loading -> {
-
+                    // TODO: Not yet implemented
                 }
 
                 is StateView.Success -> {
@@ -59,7 +59,7 @@ class HomeFragment : Fragment() {
                 }
 
                 is StateView.Error -> {
-
+                    // TODO: Not yet implemented
                 }
             }
         }
@@ -72,7 +72,7 @@ class HomeFragment : Fragment() {
             viewModel.getMoviesByGenre(genre.id).observe(viewLifecycleOwner) { stateView ->
                 when (stateView) {
                     is StateView.Loading -> {
-
+                        // TODO: Not yet implemented
                     }
 
                     is StateView.Success -> {
@@ -85,7 +85,7 @@ class HomeFragment : Fragment() {
                     }
 
                     is StateView.Error -> {
-
+                        // TODO: Not yet implemented
                     }
                 }
             }
