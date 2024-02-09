@@ -145,4 +145,25 @@
         <item name="android:textColor">@color/input_text_color</item>
         <item name="android:textSize">@dimen/text_body</item>
     </style>
+
+    <!-- Simple Search View -->
+    <style name="CustomTextAppearance.ThemeToolbarSimpleSearchView">
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
+
+    <style name="CustomTextAppearance.ToolbarTitleAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/text_headline4</item>
+        <item name="android:fontFamily">@font/urbanist_500</item>
+    </style>
+
+    <style name="CustomTextAppearance.SearchViewTheme">
+        <item name="colorSecondary">@color/red</item>
+        <item name="searchBackground">@color/white</item>
+        <item name="android:inputType">text</item>
+        <item name="android:hint">@string/search_hint</item>
+        <item name="hintColor">@color/black_200</item>
+        <item name="backIconTint">@color/red</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="iconsTint">@color/black</item>
+    </style>
 </resources>
