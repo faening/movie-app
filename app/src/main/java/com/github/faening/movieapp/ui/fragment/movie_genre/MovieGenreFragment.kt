@@ -23,7 +23,7 @@ class MovieGenreFragment : Fragment() {
         context = requireContext(),
         layoutInflater = com.github.faening.movieapp.R.layout.movie_item
     ) }
-    private val genreId by lazy { MovieGenreFragmentArgs.fromBundle(requireArguments()).genreId }
+    private val args by lazy { MovieGenreFragmentArgs.fromBundle(requireArguments()) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return binding.root
@@ -31,7 +31,10 @@ class MovieGenreFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initializeToolbar(binding.movieGenreToolbar)
+        binding.movieGenreToolbarTitle.text = args.genreName
+
         initializeRecyclerView()
         getMoviesByGenre()
     }
@@ -45,7 +48,7 @@ class MovieGenreFragment : Fragment() {
     }
 
     private fun getMoviesByGenre() {
-        viewModel.getMoviesByGenre(genreId).observe(viewLifecycleOwner) { stateView ->
+        viewModel.getMoviesByGenre(args.genreId).observe(viewLifecycleOwner) { stateView ->
             when (stateView) {
                 is StateView.Loading -> {
                     toggleProgressBarVisibility(true)

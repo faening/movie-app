@@ -42,5 +42,8 @@
         <argument
             android:name="genre_id"
             app:argType="integer" />
+        <argument
+            android:name="genre_name"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -1,6 +1,7 @@
 package com.github.faening.movieapp.ui.adapter
 
 import android.content.Context
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,6 +29,10 @@ class MovieAdapter(
         }
     }
 
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val movieImage: ImageView = itemView.findViewById(com.github.faening.movieapp.R.id.movie_item_image)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(layoutInflater, parent, false)
         return ViewHolder(view)
@@ -39,9 +44,32 @@ class MovieAdapter(
             .with(context)
             .load("https://image.tmdb.org/t/p/w500${movie.posterPath}")
             .into(holder.movieImage)
+
+        // Aplicar margem para o último item da lista
+        if (layoutInflater == com.github.faening.movieapp.R.layout.movie_item_home && position == itemCount - 1) {
+            applyMarginToLastItem(holder.itemView)
+        } else {
+            resetMargin(holder.itemView)
+        }
     }
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val movieImage: ImageView = itemView.findViewById(com.github.faening.movieapp.R.id.movie_item_image)
+    private fun applyMarginToLastItem(view: View) {
+        val layoutParams = view.layoutParams as ViewGroup.MarginLayoutParams
+        layoutParams.marginEnd = 16.dpToPx(view.context) // Convertendo 16 dp para pixels
+        view.layoutParams = layoutParams
     }
+
+    private fun resetMargin(view: View) {
+        val layoutParams = view.layoutParams as ViewGroup.MarginLayoutParams
+        layoutParams.marginEnd = 0 // Resetando margem para outros itens
+        view.layoutParams = layoutParams
+    }
+}
+
+fun Int.dpToPx(context: Context): Int {
+    return TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_DIP,
+        this.toFloat(),
+        context.resources.displayMetrics
+    ).toInt()
 }

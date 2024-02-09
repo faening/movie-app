@@ -10,7 +10,7 @@ import com.google.android.material.snackbar.Snackbar
 
 fun Fragment.initializeToolbar(toolbar: Toolbar, showIconNavigation: Boolean = true) {
     (activity as AppCompatActivity).setSupportActionBar(toolbar)
-    (activity as AppCompatActivity).title = ""
+    (activity as AppCompatActivity).title = "Teste"
 
     if (showIconNavigation) {
         (activity as AppCompatActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)

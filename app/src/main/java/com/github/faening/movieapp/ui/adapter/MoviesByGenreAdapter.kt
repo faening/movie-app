@@ -10,7 +10,7 @@ import com.github.faening.movieapp.databinding.GenreItemBinding
 import com.github.faening.movieapp.ui.model.GenrePresentation
 
 class MoviesByGenreAdapter(
-    var buttonShowAllListener: (Int) -> Unit
+    var buttonShowAllListener: (Int, String) -> Unit
 ) : ListAdapter<GenrePresentation, MoviesByGenreAdapter.ViewHolder>(DIFF_CALLBACK) {
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<GenrePresentation>() {
@@ -43,7 +43,7 @@ class MoviesByGenreAdapter(
 
         with(holder.binding) {
             genreItemName.text = genre.name
-            genreItemShowAll.setOnClickListener { genre.id?.let { buttonShowAllListener(it) } }
+            genreItemShowAll.setOnClickListener { genre.id?.let { buttonShowAllListener(genre.id, genre.name ?: "") } }
             genreItemRecyclerView.layoutManager = layoutManager
             genreItemRecyclerView.setHasFixedSize(true)
             genreItemRecyclerView.adapter = movieAdapter
