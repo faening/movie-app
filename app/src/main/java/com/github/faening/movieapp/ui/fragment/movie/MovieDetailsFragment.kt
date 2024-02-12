@@ -14,8 +14,10 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MovieDetailsFragment : Fragment() {
+
     private val binding by lazy { FragmentMovieDetailsBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<MovieDetailsViewModel>()
+    private val args by lazy { MovieDetailsFragmentArgs.fromBundle(requireArguments()) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +32,7 @@ class MovieDetailsFragment : Fragment() {
     }
 
     private fun getMovieDetails() {
-        viewModel.getMovieDetails(movieId = 0).observe(viewLifecycleOwner) { stateView ->
+        viewModel.getMovieDetails(movieId = args.movieId).observe(viewLifecycleOwner) { stateView ->
             when (stateView) {
                 is StateView.Loading -> {}
 
