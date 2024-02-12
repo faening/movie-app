@@ -36,7 +36,7 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/movieGenreFragment"
-        android:name="com.github.faening.movieapp.ui.fragment.movie_genre.MovieGenreFragment"
+        android:name="com.github.faening.movieapp.ui.fragment.movie.MovieGenreFragment"
         android:label="fragment_movie_genre"
         tools:layout="@layout/fragment_movie_genre" >
         <argument

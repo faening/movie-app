@@ -1,4 +1,4 @@
-package com.github.faening.movieapp.ui.fragment.movie_genre
+package com.github.faening.movieapp.ui.fragment.movie
 
 import android.os.Bundle
 import android.util.Log
