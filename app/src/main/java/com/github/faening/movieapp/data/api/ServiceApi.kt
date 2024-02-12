@@ -21,4 +21,11 @@ interface ServiceApi {
         @Query("language") language: String?,
         @Query("with_genres") genreId: Int?,
     ): BasePaginationRemote<List<MovieResponse>>
+
+    @GET("search/movie")
+    @Headers("Authorization: Bearer ${BuildConfig.TMBD_API_TOKEN}")
+    suspend fun searchMovies(
+        @Query("language") language: String?,
+        @Query("query") query: String,
+    ): BasePaginationRemote<List<MovieResponse>>
 }

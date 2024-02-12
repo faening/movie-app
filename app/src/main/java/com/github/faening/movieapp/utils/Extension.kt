@@ -1,9 +1,11 @@
 package com.github.faening.movieapp.utils
 
 import android.content.Context
+import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.github.faening.movieapp.R
 import com.google.android.material.snackbar.Snackbar
@@ -29,6 +31,10 @@ fun Fragment.hideKeyboard() {
         imm.hideSoftInputFromWindow(view.windowToken, 0)
         view.clearFocus()
     }
+}
+
+fun Fragment.setComponentVisibility(view: View, isVisible: Boolean) {
+    view.isVisible = isVisible
 }
 
 fun Fragment.showSnackBar(message: Int, duration: Int = Snackbar.LENGTH_SHORT) {

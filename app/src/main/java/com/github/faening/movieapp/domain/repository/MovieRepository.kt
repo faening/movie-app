@@ -6,4 +6,5 @@ import com.github.faening.movieapp.data.model.MovieResponse
 interface MovieRepository {
     suspend fun getAllGenres(language: String?): GenresResponse
     suspend fun getAllMoviesByGenre(language: String?, genreId: Int?): List<MovieResponse>
+    suspend fun searchMovies(language: String?, query: String): List<MovieResponse>
 }

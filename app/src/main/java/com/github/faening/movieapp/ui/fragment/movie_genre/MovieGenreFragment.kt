@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
@@ -16,7 +15,9 @@ import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentMovieGenreBinding
 import com.github.faening.movieapp.ui.adapter.MovieAdapter
 import com.github.faening.movieapp.utils.StateView
+import com.github.faening.movieapp.utils.hideKeyboard
 import com.github.faening.movieapp.utils.initializeToolbar
+import com.github.faening.movieapp.utils.setComponentVisibility
 import com.github.faening.movieapp.viewmodel.MovieGenreViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -47,10 +48,10 @@ class MovieGenreFragment : Fragment() {
 
         initializeToolbar(binding.moviGenreToolbar, true)
         binding.moviGenreToolbar.title = args.genreName
-        initializeSearchView()
 
         initializeRecyclerView()
         getMoviesByGenre()
+        initializeSearchView()
     }
 
     @Deprecated("Deprecated in Java")
@@ -59,25 +60,6 @@ class MovieGenreFragment : Fragment() {
         val item = menu.findItem(R.id.action_search)
         binding.movieGenreSearchView.setMenuItem(item)
         super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    private fun initializeSearchView() {
-        binding.movieGenreSearchView.setOnQueryTextListener(object : SimpleSearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
-                Log.d("SimpleSearchView", "Submit:$query")
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String): Boolean {
-                Log.d("SimpleSearchView", "Text changed:$newText")
-                return false
-            }
-
-            override fun onQueryTextCleared(): Boolean {
-                Log.d("SimpleSearchView", "Text cleared")
-                return false
-            }
-        })
     }
 
     private fun initializeRecyclerView() {
@@ -92,22 +74,62 @@ class MovieGenreFragment : Fragment() {
         viewModel.getMoviesByGenre(args.genreId).observe(viewLifecycleOwner) { stateView ->
             when (stateView) {
                 is StateView.Loading -> {
-                    toggleProgressBarVisibility(true)
+                    setComponentVisibility(binding.movieGenreProgressBar, true)
+                    setComponentVisibility(binding.movieGenreRecyclerView, false)
                 }
 
                 is StateView.Success -> {
                     movieAdapter.submitList(stateView.data ?: emptyList())
-                    toggleProgressBarVisibility(false)
+                    setComponentVisibility(binding.movieGenreProgressBar, false)
+                    setComponentVisibility(binding.movieGenreRecyclerView, true)
                 }
 
                 is StateView.Error -> {
-                    toggleProgressBarVisibility(false)
+                    setComponentVisibility(binding.movieGenreProgressBar, false)
                 }
             }
         }
     }
 
-    private fun toggleProgressBarVisibility(isVisible: Boolean) {
-        binding.movieGenreProgressBar.isVisible = isVisible
+    private fun initializeSearchView() {
+        binding.movieGenreSearchView.setOnQueryTextListener(object : SimpleSearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                hideKeyboard()
+                if (query.isNotEmpty()) searchMovies(query)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                Log.d("SimpleSearchView", "Text changed:$newText")
+                return false
+            }
+
+            override fun onQueryTextCleared(): Boolean {
+                Log.d("SimpleSearchView", "Text cleared")
+                return false
+            }
+        })
+    }
+
+    private fun searchMovies(query: String) {
+        viewModel.searchMovies(query).observe(viewLifecycleOwner) { stateView ->
+            when (stateView) {
+                is StateView.Loading -> {
+                    setComponentVisibility(binding.movieGenreProgressBar, true)
+                    setComponentVisibility(binding.movieGenreRecyclerView, false)
+
+                }
+
+                is StateView.Success -> {
+                    movieAdapter.submitList(stateView.data ?: emptyList())
+                    setComponentVisibility(binding.movieGenreProgressBar, false)
+                    setComponentVisibility(binding.movieGenreRecyclerView, true)
+                }
+
+                is StateView.Error -> {
+                    setComponentVisibility(binding.movieGenreProgressBar, false)
+                }
+            }
+        }
     }
 }

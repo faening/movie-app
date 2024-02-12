@@ -21,4 +21,11 @@ class MovieRepositoryImp @Inject constructor(
             genreId = genreId
         ).results ?: emptyList()
     }
+
+    override suspend fun searchMovies(language: String?, query: String): List<MovieResponse> {
+        return serviceApi.searchMovies(
+            language = language,
+            query = query
+        ).results ?: emptyList()
+    }
 }
