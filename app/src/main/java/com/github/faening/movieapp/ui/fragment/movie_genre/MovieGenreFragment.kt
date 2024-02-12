@@ -50,8 +50,8 @@ class MovieGenreFragment : Fragment() {
         binding.moviGenreToolbar.title = args.genreName
 
         initializeRecyclerView()
-        getMoviesByGenre()
         initializeSearchView()
+        getMoviesByGenre()
     }
 
     @Deprecated("Deprecated in Java")
@@ -68,6 +68,37 @@ class MovieGenreFragment : Fragment() {
             setHasFixedSize(true)
             adapter = movieAdapter
         }
+    }
+
+    private fun initializeSearchView() {
+        binding.movieGenreSearchView.setOnQueryTextListener(object : SimpleSearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                hideKeyboard()
+                if (query.isNotEmpty()) searchMovies(query)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                Log.d("SimpleSearchView", "Text changed:$newText")
+                return false
+            }
+
+            override fun onQueryTextCleared(): Boolean {
+                return false
+            }
+        })
+
+        binding.movieGenreSearchView.setOnSearchViewListener(object : SimpleSearchView.SearchViewListener {
+            override fun onSearchViewShown() { }
+
+            override fun onSearchViewShownAnimation() { }
+
+            override fun onSearchViewClosed() {
+                getMoviesByGenre()
+            }
+
+            override fun onSearchViewClosedAnimation() { }
+        })
     }
 
     private fun getMoviesByGenre() {
@@ -89,26 +120,6 @@ class MovieGenreFragment : Fragment() {
                 }
             }
         }
-    }
-
-    private fun initializeSearchView() {
-        binding.movieGenreSearchView.setOnQueryTextListener(object : SimpleSearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String): Boolean {
-                hideKeyboard()
-                if (query.isNotEmpty()) searchMovies(query)
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String): Boolean {
-                Log.d("SimpleSearchView", "Text changed:$newText")
-                return false
-            }
-
-            override fun onQueryTextCleared(): Boolean {
-                Log.d("SimpleSearchView", "Text cleared")
-                return false
-            }
-        })
     }
 
     private fun searchMovies(query: String) {
