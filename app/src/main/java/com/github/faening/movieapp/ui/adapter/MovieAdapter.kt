@@ -14,7 +14,8 @@ import com.github.faening.movieapp.domain.model.Movie
 
 class MovieAdapter(
     private val context: Context,
-    private val layoutInflater: Int
+    private val layoutInflater: Int,
+    private val onMovieClickListener: (Int?) -> Unit
 ) : ListAdapter<Movie, MovieAdapter.ViewHolder>(DIFF_CALLBACK) {
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Movie>() {
@@ -51,6 +52,9 @@ class MovieAdapter(
         } else {
             resetMargin(holder.itemView)
         }
+
+        // Clique no item
+        holder.itemView.setOnClickListener { onMovieClickListener(movie.id) }
     }
 
     private fun applyMarginToLastItem(view: View) {

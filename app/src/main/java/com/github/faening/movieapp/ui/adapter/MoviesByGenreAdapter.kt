@@ -10,7 +10,8 @@ import com.github.faening.movieapp.databinding.GenreItemBinding
 import com.github.faening.movieapp.ui.model.GenrePresentation
 
 class MoviesByGenreAdapter(
-    var buttonShowAllListener: (Int, String) -> Unit
+    var buttonShowAllListener: (Int, String) -> Unit,
+    private val onMovieClickListener: (Int?) -> Unit
 ) : ListAdapter<GenrePresentation, MoviesByGenreAdapter.ViewHolder>(DIFF_CALLBACK) {
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<GenrePresentation>() {
@@ -37,7 +38,8 @@ class MoviesByGenreAdapter(
         val genre = getItem(position)
         val movieAdapter = MovieAdapter(
             context = holder.binding.root.context,
-            layoutInflater = com.github.faening.movieapp.R.layout.movie_item_home
+            layoutInflater = com.github.faening.movieapp.R.layout.movie_item_home,
+            onMovieClickListener = onMovieClickListener
         )
         val layoutManager = LinearLayoutManager(holder.binding.root.context, LinearLayoutManager.HORIZONTAL, false)
 

@@ -6,6 +6,7 @@ import com.github.faening.movieapp.data.model.GenresResponse
 import com.github.faening.movieapp.data.model.MovieResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ServiceApi {
@@ -28,4 +29,11 @@ interface ServiceApi {
         @Query("language") language: String?,
         @Query("query") query: String,
     ): BasePaginationRemote<List<MovieResponse>>
+
+    @GET("movie/{movie_id}")
+    @Headers("Authorization: Bearer ${BuildConfig.TMBD_API_TOKEN}")
+    suspend fun getMovieDetails(
+        @Path("movie_id") movieId: Int,
+        @Query("language") language: String?
+    ): MovieResponse
 }
