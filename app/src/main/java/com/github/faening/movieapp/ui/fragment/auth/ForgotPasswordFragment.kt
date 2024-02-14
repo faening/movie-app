@@ -21,6 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ForgotPasswordFragment : Fragment() {
+
     private val binding by lazy { FragmentForgotPasswordBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<ForgotPasswordViewModel>()
 
@@ -30,7 +31,7 @@ class ForgotPasswordFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initializeToolbar(binding.forgotPasswordToolbar)
+        initializeToolbar(toolbar = binding.forgotPasswordToolbar, showBackButton = true)
         initializeListeners()
         setupProgressLoading()
     }

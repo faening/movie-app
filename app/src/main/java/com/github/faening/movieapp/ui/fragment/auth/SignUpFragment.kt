@@ -34,7 +34,7 @@ class SignUpFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initializeToolbar(binding.signUpToolbar)
+        initializeToolbar(toolbar = binding.signUpToolbar, showBackButton = true)
         initializeListeners()
         setupProgressLoading()
     }

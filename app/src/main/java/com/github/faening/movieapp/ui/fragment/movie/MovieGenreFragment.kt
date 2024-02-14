@@ -53,9 +53,7 @@ class MovieGenreFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initializeToolbar(binding.moviGenreToolbar, true)
-        binding.moviGenreToolbar.title = args.genreName
-
+        initializeToolbar(toolbar = binding.moviGenreToolbar, title = args.genreName, showBackButton = true)
         initializeRecyclerView()
         initializeSearchView()
         getMoviesByGenre()

@@ -10,12 +10,19 @@ import androidx.fragment.app.Fragment
 import com.github.faening.movieapp.R
 import com.google.android.material.snackbar.Snackbar
 
-fun Fragment.initializeToolbar(toolbar: Toolbar, showIconNavigation: Boolean = true) {
-    (activity as AppCompatActivity).setSupportActionBar(toolbar)
-    (activity as AppCompatActivity).title = "Teste"
+fun Fragment.initializeToolbar(
+    toolbar: Toolbar,
+    title: String = "",
+    showBackButton: Boolean = false,
+    backButtonLight: Boolean = false
+) {
+    val iconBack = if (backButtonLight) R.drawable.ic_back_white else R.drawable.ic_back_black
 
-    if (showIconNavigation) {
-        (activity as AppCompatActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back)
+    (activity as AppCompatActivity).setSupportActionBar(toolbar)
+    (activity as AppCompatActivity).title = title.trim()
+
+    if (showBackButton) {
+        (activity as AppCompatActivity).supportActionBar?.setHomeAsUpIndicator(iconBack)
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
