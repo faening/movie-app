@@ -112,7 +112,7 @@ class SignUpFragment : Fragment() {
 
     private fun setupProgressLoading() {
         val progressLoading = binding.signUpProgressLoading
-        val progressLoadingImage = R.drawable.loading
+        val progressLoadingImage = R.drawable.img_loading
         Glide.with(requireContext()).load(progressLoadingImage).into(progressLoading)
     }
 }

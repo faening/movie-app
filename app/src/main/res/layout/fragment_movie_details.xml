@@ -22,7 +22,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription"
-            tools:src="@drawable/movie_poster" />
+            tools:src="@drawable/img_movie_poster" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/movie_details_toolbar"
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:paddingEnd="@dimen/padding_medium"
-                android:src="@drawable/ic_cast"
+                android:src="@drawable/ic_cast_outlined_white"
                 tools:ignore="RtlSymmetry" />
         </androidx.appcompat.widget.Toolbar>
 
@@ -79,14 +79,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/margin_large"
-                    android:src="@drawable/ic_bookmark"
+                    android:src="@drawable/ic_bookmark_outlined_black"
                     tools:ignore="ContentDescription" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/movie_details_send"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_send"
+                    android:src="@drawable/ic_send_black"
                     tools:ignore="ContentDescription" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -115,7 +115,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginEnd="@dimen/margin_small"
-                        android:src="@drawable/ic_star"
+                        android:src="@drawable/ic_star_red"
                         android:visibility="gone"
                         tools:visibility="visible" />
 
@@ -124,20 +124,9 @@
                         style="@style/CustomTextAppearance.TextBody.Link"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_medium"
                         android:visibility="gone"
                         tools:text="9.8"
-                        tools:visibility="visible" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/movie_details_divider1"
-                        style="@style/CustomTextAppearance.TextBody"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_medium"
-                        android:layout_marginEnd="@dimen/margin_medium"
-                        android:text="|"
-                        android:visibility="gone"
-                        tools:ignore="HardcodedText"
                         tools:visibility="visible" />
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -145,44 +134,80 @@
                         style="@style/CustomTextAppearance.TextBody"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_medium"
                         android:visibility="gone"
                         tools:text="2024"
                         tools:visibility="visible" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/movie_details_divider2"
-                        style="@style/CustomTextAppearance.TextBody"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_medium"
-                        android:layout_marginEnd="@dimen/margin_medium"
-                        android:text="|"
-                        android:visibility="gone"
-                        tools:ignore="HardcodedText"
-                        tools:visibility="visible" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/movie_details_parental_rating"
-                        style="@style/CustomTextAppearance.Pill.Primary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginEnd="@dimen/margin_medium"
+                        style="@style/CustomTextAppearance.Pill.Tertiary"
+                        android:layout_marginEnd="@dimen/margin_small"
                         android:visibility="gone"
                         tools:text="PG"
                         tools:visibility="visible" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/movie_details_production_country"
-                        style="@style/CustomTextAppearance.Pill.Primary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
+                        style="@style/CustomTextAppearance.Pill.Tertiary"
                         android:visibility="gone"
                         tools:text="United States of America"
                         tools:visibility="visible" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </HorizontalScrollView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/movie_details_buttons_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movie_details_info_scroll">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/movie_details_button_play"
+                    style="@style/CustomTextAppearance.Button.Primary.Smash"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:id="@+id/movie_details_icon_button_play"
+                        style="@style/CustomTextAppearance.Button.Primary.Icon"
+                        android:contentDescription="@string/movie_details_content_description_button_play"
+                        android:src="@drawable/ic_play_white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/movie_details_text_button_play"
+                        style="@style/CustomTextAppearance.Button.Primary.Text"
+                        android:text="@string/movie_details_button_play" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/movie_details_button_download"
+                    style="@style/CustomTextAppearance.Button.Secondary.Smash"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterView
+                        android:id="@+id/movie_details_icon_button_download"
+                        style="@style/CustomTextAppearance.Button.Secondary.Icon"
+                        android:contentDescription="@string/movie_details_content_description_button_download"
+                        android:src="@drawable/ic_download_filled_red" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/movie_details_text_button_download"
+                        style="@style/CustomTextAppearance.Button.Secondary.Text"
+                        android:text="@string/movie_details_button_download" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,16 +30,17 @@
             android:paddingTop="@dimen/padding_large"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sign_in_toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_toolbar"
+            app:layout_constraintVertical_bias="0.0">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/sign_in_logo"
                 android:layout_width="@dimen/sign_up_fragment_logo_width"
                 android:layout_height="@dimen/sign_up_fragment_logo_height"
                 android:contentDescription="@string/sign_in_fragment_content_description_logo"
-                android:src="@drawable/logo"
+                android:src="@drawable/img_logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +63,7 @@
                 style="@style/CustomTextAppearance.EditText"
                 android:layout_marginTop="@dimen/margin_extra_large"
                 android:autofillHints="auto"
-                android:drawableStart="@drawable/ic_email"
+                android:drawableStart="@drawable/ic_email_outlined_gray"
                 android:drawablePadding="@dimen/padding_small"
                 android:hint="@string/sign_in_fragment_text_hint_edit_email"
                 android:inputType="textEmailAddress"
@@ -76,7 +77,7 @@
                 style="@style/CustomTextAppearance.EditText"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:autofillHints="auto"
-                android:drawableStart="@drawable/ic_password"
+                android:drawableStart="@drawable/ic_password_filled_gray"
                 android:drawablePadding="@dimen/padding_small"
                 android:hint="@string/sign_in_fragment_text_hint_edit_password"
                 android:inputType="textPassword"
@@ -110,7 +111,7 @@
                 android:layout_width="@dimen/loading_size"
                 android:layout_height="@dimen/loading_size"
                 android:layout_marginTop="@dimen/margin_large"
-                android:src="@drawable/loading"
+                android:src="@drawable/img_loading"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -174,7 +175,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/sign_in_fragment_content_description_ic_facebook"
-                        android:src="@drawable/ic_facebook" />
+                        android:src="@drawable/ic_facebook_colorized" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
@@ -189,7 +190,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/sign_in_fragment_content_description_ic_google"
-                        android:src="@drawable/ic_google" />
+                        android:src="@drawable/ic_google_colorized" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.appcompat.widget.LinearLayoutCompat>
 

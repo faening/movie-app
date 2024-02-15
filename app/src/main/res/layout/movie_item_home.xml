@@ -15,5 +15,5 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         tools:ignore="ContentDescription"
-        tools:src="@drawable/movie" />
+        tools:src="@drawable/img_movie_cover" />
 </androidx.cardview.widget.CardView>

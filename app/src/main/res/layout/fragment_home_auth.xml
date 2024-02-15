@@ -26,7 +26,7 @@
             android:layout_height="@dimen/home_auth_fragment_cover_height"
             android:layout_marginTop="@dimen/margin_large"
             android:contentDescription="@string/home_auth_fragment_content_description_cover"
-            android:src="@drawable/ic_image_home_auth"
+            android:src="@drawable/img_home_auth"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,54 +45,46 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/home_auth_button_facebook"
-            style="@style/CustomTextAppearance.Button.Secondary"
+            style="@style/CustomTextAppearance.Button.Tertiary"
             android:layout_marginTop="@dimen/margin_extra_large"
-            android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_auth_title"
             tools:ignore="UseCompoundDrawables">
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/home_auth_icon_button_facebook"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/CustomTextAppearance.Button.Tertiary.Icon"
                 android:contentDescription="@string/home_auth_fragment_content_description_ic_facebook"
-                android:src="@drawable/ic_facebook" />
+                android:src="@drawable/ic_facebook_colorized" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/home_auth_text_button_facebook"
-                style="@style/CustomTextAppearance.TextBody"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/CustomTextAppearance.Button.Tertiary.Text"
                 android:layout_marginStart="@dimen/margin_small"
                 android:text="@string/home_auth_fragment_text_button_continue_with_facebook" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/home_auth_button_google"
-            style="@style/CustomTextAppearance.Button.Secondary"
+            style="@style/CustomTextAppearance.Button.Tertiary"
             android:layout_marginTop="@dimen/margin_medium"
-            android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_auth_button_facebook"
             tools:ignore="UseCompoundDrawables">
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
                 android:id="@+id/home_auth_icon_button_google"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/CustomTextAppearance.Button.Tertiary.Icon"
                 android:contentDescription="@string/home_auth_fragment_content_description_ic_google"
-                android:src="@drawable/ic_google" />
+                android:src="@drawable/ic_google_colorized" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/home_auth_text_button_google"
-                style="@style/CustomTextAppearance.TextBody"
+                style="@style/CustomTextAppearance.Button.Tertiary.Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_small"
@@ -136,21 +128,14 @@
             android:id="@+id/home_auth_button_login_with_account"
             style="@style/CustomTextAppearance.Button.Primary.WithElevation"
             android:layout_marginTop="@dimen/margin_large"
-            android:gravity="center"
-            android:minHeight="@dimen/button_height"
-            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/home_auth_divider_wrapper">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/home_auth_text_button_login_with_account"
-                style="@style/CustomTextAppearance.TextBody.Light.Bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_auth_fragment_text_button_sign_in_with_password"
-                android:textAlignment="center" />
+                style="@style/CustomTextAppearance.Button.Primary.Text"
+                android:text="@string/home_auth_fragment_text_button_sign_in_with_password" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
