@@ -52,6 +52,13 @@
     <string name="forgot_password_fragment_text_button_forgot">Retrieve account</string>
     <string name="forgot_password_fragment_email_recovery_sent">Recovery email sent successfully</string>
 
+    <!-- Genre Item Fragment -->
+    <string name="genre_item_show_all">Show All</string>
+
+    <!-- Movie Detail Fragment -->
+    <string name="movie_detail_parental_rating_adult">18+</string>
+    <string name="movie_detail_parental_rating_general">General Public</string>
+
     <!-- Bottom Bar Menu -->
     <string name="bottom_bar_title_menu_home">Home</string>
     <string name="bottom_bar_title_menu_search">Search</string>
@@ -76,7 +83,4 @@
     <string name="firebase_auth_error_invalid_password">Invalid password, try again</string>
     <string name="firebase_auth_error_email_in_use">This email is already in use</string>
     <string name="firebase_auth_error_strong_password">Enter a stronger password</string>
-
-    <!-- Genre Item -->
-    <string name="genre_item_show_all">Show All</string>
 </resources>

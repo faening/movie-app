@@ -30,6 +30,9 @@ data class MovieResponse(
     @SerializedName("poster_path")
     val posterPath: String?,
 
+    @SerializedName("production_countries")
+    val productionCountries: List<CountryResponse>?,
+
     @SerializedName("release_date")
     val releaseDate: String?,
 

@@ -53,6 +53,13 @@
     <string name="forgot_password_fragment_text_button_forgot">Recuperar conta</string>
     <string name="forgot_password_fragment_email_recovery_sent">E-mail de recuperação enviado com sucesso</string>
 
+    <!-- Genre Item Fragment -->
+    <string name="genre_item_show_all">Ver todos</string>
+
+    <!-- Movie Detail Fragment -->
+    <string name="movie_detail_parental_rating_adult">18+</string>
+    <string name="movie_detail_parental_rating_general">Público Geral</string>
+
     <!-- Bottom Bar Menu -->
     <string name="bottom_bar_title_menu_home">Início</string>
     <string name="bottom_bar_title_menu_search">Pesquisar</string>
@@ -77,7 +84,4 @@
     <string name="firebase_auth_error_invalid_password">Senha inválida, tente novamente.</string>
     <string name="firebase_auth_error_email_in_use">Este e-mail já está em uso.</string>
     <string name="firebase_auth_error_strong_password">Insira uma senha mais forte.</string>
-
-    <!-- Genre Item -->
-    <string name="genre_item_show_all">Ver todos</string>
 </resources>

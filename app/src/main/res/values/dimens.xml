@@ -31,6 +31,9 @@
     <dimen name="button_radius">100dp</dimen>
     <dimen name="button_elevation">4dp</dimen>
 
+    <!-- Pils -->
+    <dimen name="pill_radius">6dp</dimen>
+
     <!-- Inputs -->
     <dimen name="input_height">56dp</dimen>
     <dimen name="input_radius">100dp</dimen>

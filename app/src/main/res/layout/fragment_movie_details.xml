@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin_large"
                 android:ellipsize="end"
-                android:maxLines="2"
+                android:maxLines="1"
                 app:layout_constraintEnd_toStartOf="@+id/movie_details_options_container"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -89,6 +89,100 @@
                     android:src="@drawable/ic_send"
                     tools:ignore="ContentDescription" />
             </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <HorizontalScrollView
+                android:id="@+id/movie_details_info_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movie_details_title">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/movie_details_info_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/movie_details_title">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/movie_details_vote_average_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="@dimen/margin_small"
+                        android:src="@drawable/ic_star"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/movie_details_vote_average"
+                        style="@style/CustomTextAppearance.TextBody.Link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:text="9.8"
+                        tools:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/movie_details_divider1"
+                        style="@style/CustomTextAppearance.TextBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:layout_marginEnd="@dimen/margin_medium"
+                        android:text="|"
+                        android:visibility="gone"
+                        tools:ignore="HardcodedText"
+                        tools:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/movie_details_release_date"
+                        style="@style/CustomTextAppearance.TextBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:text="2024"
+                        tools:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/movie_details_divider2"
+                        style="@style/CustomTextAppearance.TextBody"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_medium"
+                        android:layout_marginEnd="@dimen/margin_medium"
+                        android:text="|"
+                        android:visibility="gone"
+                        tools:ignore="HardcodedText"
+                        tools:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/movie_details_parental_rating"
+                        style="@style/CustomTextAppearance.Pill.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/margin_medium"
+                        android:visibility="gone"
+                        tools:text="PG"
+                        tools:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/movie_details_production_country"
+                        style="@style/CustomTextAppearance.Pill.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:visibility="gone"
+                        tools:text="United States of America"
+                        tools:visibility="visible" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </HorizontalScrollView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

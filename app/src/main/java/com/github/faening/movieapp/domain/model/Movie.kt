@@ -1,6 +1,7 @@
 package com.github.faening.movieapp.domain.model
 
 import android.os.Parcelable
+import com.github.faening.movieapp.data.model.CountryResponse
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -14,6 +15,7 @@ data class Movie(
     val overview: String?,
     val popularity: Float?,
     val posterPath: String?,
+    val productionCountries: List<Country>?,
     val releaseDate: String?,
     val title: String?,
     val video: Boolean?,

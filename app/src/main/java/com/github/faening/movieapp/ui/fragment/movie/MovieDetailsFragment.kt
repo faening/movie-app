@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
+import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentMovieDetailsBinding
 import com.github.faening.movieapp.domain.model.Movie
 import com.github.faening.movieapp.utils.StateView
 import com.github.faening.movieapp.utils.initializeToolbar
+import com.github.faening.movieapp.utils.setComponentVisibility
 import com.github.faening.movieapp.viewmodel.MovieDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -56,6 +58,32 @@ class MovieDetailsFragment : Fragment() {
                 .into(this.movieDetailsCover)
 
             this.movieDetailsTitle.text = movie.title
+
+            movie.voteAverage?.let {
+                setComponentVisibility(this.movieDetailsVoteAverage, true)
+                setComponentVisibility(this.movieDetailsVoteAverageIcon, true)
+                this.movieDetailsVoteAverage.text = String.format("%.1f", it)
+            }
+
+            movie.releaseDate?.let {
+                setComponentVisibility(this.movieDetailsReleaseDate, true)
+                setComponentVisibility(this.movieDetailsDivider1, true)
+                this.movieDetailsReleaseDate.text = it.substring(0, 4)
+            }
+
+            movie.adult?.let {
+                val parentalRatingAdult = getString(R.string.movie_detail_parental_rating_adult)
+                val parentalRatingGeneral = getString(R.string.movie_detail_parental_rating_general)
+                setComponentVisibility(this.movieDetailsParentalRating, true)
+                setComponentVisibility(this.movieDetailsDivider2, true)
+                this.movieDetailsParentalRating.text = if (it) parentalRatingAdult else parentalRatingGeneral
+            }
+
+            movie.productionCountries?.get(0)?.name?.let {
+                setComponentVisibility(this.movieDetailsProductionCountry, true)
+                setComponentVisibility(this.movieDetailsDivider2, true)
+                this.movieDetailsProductionCountry.text = it
+            }
         }
     }
 
