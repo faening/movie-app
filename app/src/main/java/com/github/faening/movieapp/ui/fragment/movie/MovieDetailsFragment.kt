@@ -67,21 +67,18 @@ class MovieDetailsFragment : Fragment() {
 
             movie.releaseDate?.let {
                 setComponentVisibility(this.movieDetailsReleaseDate, true)
-                setComponentVisibility(this.movieDetailsDivider1, true)
                 this.movieDetailsReleaseDate.text = it.substring(0, 4)
             }
 
             movie.adult?.let {
-                val parentalRatingAdult = getString(R.string.movie_detail_parental_rating_adult)
-                val parentalRatingGeneral = getString(R.string.movie_detail_parental_rating_general)
+                val parentalRatingAdult = getString(R.string.movie_details_parental_rating_adult)
+                val parentalRatingGeneral = getString(R.string.movie_details_parental_rating_general)
                 setComponentVisibility(this.movieDetailsParentalRating, true)
-                setComponentVisibility(this.movieDetailsDivider2, true)
                 this.movieDetailsParentalRating.text = if (it) parentalRatingAdult else parentalRatingGeneral
             }
 
             movie.productionCountries?.get(0)?.name?.let {
                 setComponentVisibility(this.movieDetailsProductionCountry, true)
-                setComponentVisibility(this.movieDetailsDivider2, true)
                 this.movieDetailsProductionCountry.text = it
             }
         }

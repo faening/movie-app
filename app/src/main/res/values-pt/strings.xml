@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Common -->
-    <string name="app_name">Movie App</string>
     <string name="search_hint">Pesquisar</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Onboarding Fragment-->
     <string name="onboarding_fragment_content_description_background_image">Imagem de Fundo</string>
@@ -57,8 +55,10 @@
     <string name="genre_item_show_all">Ver todos</string>
 
     <!-- Movie Detail Fragment -->
-    <string name="movie_detail_parental_rating_adult">18+</string>
-    <string name="movie_detail_parental_rating_general">Público Geral</string>
+    <string name="movie_details_parental_rating_adult">18+</string>
+    <string name="movie_details_parental_rating_general">Público Geral</string>
+    <string name="movie_details_content_description_button_play">Play Button</string>
+    <string name="movie_details_content_description_button_download">Download Button</string>
 
     <!-- Bottom Bar Menu -->
     <string name="bottom_bar_title_menu_home">Início</string>

@@ -56,8 +56,12 @@
     <string name="genre_item_show_all">Show All</string>
 
     <!-- Movie Detail Fragment -->
-    <string name="movie_detail_parental_rating_adult">18+</string>
-    <string name="movie_detail_parental_rating_general">General Public</string>
+    <string name="movie_details_parental_rating_adult">18+</string>
+    <string name="movie_details_parental_rating_general">General Public</string>
+    <string name="movie_details_button_play" translatable="false">Play</string>
+    <string name="movie_details_content_description_button_play">Play Button</string>
+    <string name="movie_details_button_download" translatable="false">Download</string>
+    <string name="movie_details_content_description_button_download">Download Button</string>
 
     <!-- Bottom Bar Menu -->
     <string name="bottom_bar_title_menu_home">Home</string>
