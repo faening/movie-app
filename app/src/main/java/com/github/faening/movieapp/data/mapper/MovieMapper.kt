@@ -8,18 +8,11 @@ import com.github.faening.movieapp.domain.model.Genre
 import com.github.faening.movieapp.domain.model.Movie
 import com.github.faening.movieapp.ui.model.GenrePresentation
 
-fun GenreResponse.toDomain(): Genre {
-    return Genre(
-        id = id,
-        name = name
-    )
-}
-
 fun MovieResponse.toDomain(): Movie {
     return Movie(
         adult = adult,
         backdropPath = backdropPath,
-        genreIds = genreIds,
+        genres = genres?.map { it.toDomain() },
         id = id,
         originalLanguage = originalLanguage,
         originalTitle = originalTitle,
@@ -32,6 +25,13 @@ fun MovieResponse.toDomain(): Movie {
         video = video,
         voteAverage = voteAverage,
         voteCount = voteCount
+    )
+}
+
+fun GenreResponse.toDomain(): Genre {
+    return Genre(
+        id = id,
+        name = name
     )
 }
 
