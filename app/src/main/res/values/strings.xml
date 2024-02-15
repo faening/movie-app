@@ -62,6 +62,7 @@
     <string name="movie_details_content_description_button_play">Play Button</string>
     <string name="movie_details_button_download" translatable="false">Download</string>
     <string name="movie_details_content_description_button_download">Download Button</string>
+    <string name="movie_details_genres">Genres</string>
 
     <!-- Bottom Bar Menu -->
     <string name="bottom_bar_title_menu_home">Home</string>

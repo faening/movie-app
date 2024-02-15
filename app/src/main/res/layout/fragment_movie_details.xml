@@ -94,7 +94,7 @@
                 android:id="@+id/movie_details_info_scroll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_small"
                 android:scrollbars="none"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -209,7 +209,23 @@
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            
+            <HorizontalScrollView
+                android:id="@+id/movie_details_genres_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movie_details_buttons_container">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/movie_details_genres"
+                    style="@style/CustomTextAppearance.TextBody"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Ficção científica, Aventura, Ação" />
+            </HorizontalScrollView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

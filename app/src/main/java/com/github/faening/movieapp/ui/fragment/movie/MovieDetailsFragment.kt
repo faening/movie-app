@@ -1,5 +1,6 @@
 package com.github.faening.movieapp.ui.fragment.movie
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -50,6 +51,7 @@ class MovieDetailsFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun configData(movie: Movie) {
         binding.apply {
             Glide
@@ -81,6 +83,9 @@ class MovieDetailsFragment : Fragment() {
                 setComponentVisibility(this.movieDetailsProductionCountry, true)
                 this.movieDetailsProductionCountry.text = it
             }
+
+            val genresText = getString(R.string.movie_details_genres)
+            this.movieDetailsGenres.text = "${genresText}: ${ movie.genres?.joinToString { it.name ?: ", " } }"
         }
     }
 
