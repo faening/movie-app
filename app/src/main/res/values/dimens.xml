@@ -26,12 +26,15 @@
     <dimen name="bottom_bar_menu_height">78dp</dimen>
 
     <!-- Buttons -->
-    <dimen name="button_height">56dp</dimen>
+    <dimen name="button_default_height">56dp</dimen>
+    <dimen name="button_smash_height">42dp</dimen>
+    <dimen name="button_icon_size">21dp</dimen>
     <dimen name="button_rounded_size">56dp</dimen>
     <dimen name="button_radius">100dp</dimen>
     <dimen name="button_elevation">4dp</dimen>
 
     <!-- Pils -->
+    <dimen name="pill_height">20dp</dimen>
     <dimen name="pill_radius">6dp</dimen>
 
     <!-- Inputs -->

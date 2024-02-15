@@ -53,16 +53,27 @@
 
     <!-- Buttons -->
     <color name="button_primary_background">@color/red</color>
-    <color name="button_primary_background_disabled">@color/red_200</color>
     <color name="button_primary_text">@color/white</color>
-    <color name="button_primary_text_disabled">@color/neutral_500</color>
 
     <color name="button_secondary_background">@color/white</color>
-    <color name="button_secondary_background_disabled">@color/neutral_500</color>
-    <color name="button_secondary_text">@color/black</color>
-    <color name="button_secondary_text_disabled">@color/neutral</color>
-    <color name="button_secondary_border">@color/black_500</color>
-    <color name="button_secondary_border_disabled">@color/black_500</color>
+    <color name="button_secondary_text">@color/red</color>
+    <color name="button_secondary_border">@color/red</color>
+
+    <color name="button_tertiary_background">@color/white</color>
+    <color name="button_tertiary_text">@color/black_500</color>
+    <color name="button_tertiary_border">@color/black_500</color>
+
+    <!-- Pills -->
+    <color name="pill_primary_background">@color/red</color>
+    <color name="pill_primary_text">@color/white</color>
+
+    <color name="pill_secondary_background">@color/white</color>
+    <color name="pill_secondary_text">@color/red</color>
+    <color name="pill_secondary_border">@color/red</color>
+
+    <color name="pill_tertiary_background">@color/white</color>
+    <color name="pill_tertiary_text">@color/black_500</color>
+    <color name="pill_tertiary_border">@color/black_500</color>
 
     <!-- Menu -->
     <color name="bottom_bar_menu_icon">@color/neutral_700</color>
