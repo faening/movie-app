@@ -3,8 +3,10 @@ package com.github.faening.movieapp.ui.fragment.movie
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
@@ -35,6 +37,8 @@ class MovieDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initializeToolbar(toolbar = binding.movieDetailsToolbar, showBackButton = true, backButtonLight = true)
         getMovieDetails()
+        initializeListeners()
+
     }
 
     private fun getMovieDetails() {
@@ -86,6 +90,29 @@ class MovieDetailsFragment : Fragment() {
 
             val genresText = getString(R.string.movie_details_genres)
             this.movieDetailsGenres.text = "${genresText}: ${ movie.genres?.joinToString { it.name ?: ", " } }"
+
+            this.movieDetailsOverview.text = movie.overview
+        }
+    }
+
+    private fun initializeListeners() {
+        buttonExpandOverviewListener()
+        movieDetailScrollListener()
+    }
+
+    private fun buttonExpandOverviewListener() {
+        binding.movieDetailsOverviewLinkExpand.setOnClickListener {
+            binding.movieDetailsOverview.maxLines = if (binding.movieDetailsOverview.maxLines == 3) Int.MAX_VALUE else 3
+            binding.movieDetailsOverviewLinkExpand.text = if (binding.movieDetailsOverview.maxLines == 3) getString(R.string.movie_details_overview_link_expand) else getString(R.string.movie_details_overview_link_collapse)
+        }
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    private fun movieDetailScrollListener() {
+        binding.movieDetailsScroll.setOnTouchListener { _, event ->
+            binding.movieDetailsInfoScroll.isHorizontalScrollBarEnabled = (event.action == MotionEvent.ACTION_UP)
+            binding.movieDetailsGenresScroll.isHorizontalScrollBarEnabled = (event.action == MotionEvent.ACTION_UP)
+            false
         }
     }
 

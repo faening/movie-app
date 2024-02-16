@@ -60,6 +60,8 @@
     <string name="movie_details_content_description_button_play">Play Button</string>
     <string name="movie_details_content_description_button_download">Download Button</string>
     <string name="movie_details_genres">Gêneros</string>
+    <string name="movie_details_overview_link_expand">Ver Mais</string>
+    <string name="movie_details_overview_link_collapse">Ver Menos</string>
 
     <!-- Bottom Bar Menu -->
     <string name="bottom_bar_title_menu_home">Início</string>
