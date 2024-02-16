@@ -1,8 +1,9 @@
 package com.github.faening.movieapp.data.api
 
 import com.github.faening.movieapp.BuildConfig
-import com.github.faening.movieapp.data.model.BasePaginationRemote
+import com.github.faening.movieapp.data.model.BasePaginationResponse
 import com.github.faening.movieapp.data.model.GenresResponse
+import com.github.faening.movieapp.data.model.MovieCreditsResponse
 import com.github.faening.movieapp.data.model.MovieResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -21,14 +22,14 @@ interface ServiceApi {
     suspend fun getAllMoviesByGenre(
         @Query("language") language: String?,
         @Query("with_genres") genreId: Int?,
-    ): BasePaginationRemote<List<MovieResponse>>
+    ): BasePaginationResponse<List<MovieResponse>>
 
     @GET("search/movie")
     @Headers("Authorization: Bearer ${BuildConfig.TMBD_API_TOKEN}")
     suspend fun searchMovies(
         @Query("language") language: String?,
         @Query("query") query: String,
-    ): BasePaginationRemote<List<MovieResponse>>
+    ): BasePaginationResponse<List<MovieResponse>>
 
     @GET("movie/{movie_id}")
     @Headers("Authorization: Bearer ${BuildConfig.TMBD_API_TOKEN}")
@@ -36,4 +37,11 @@ interface ServiceApi {
         @Path("movie_id") movieId: Int,
         @Query("language") language: String?
     ): MovieResponse
+
+    @GET("movie/{movie_id}/credits")
+    @Headers("Authorization: Bearer ${BuildConfig.TMBD_API_TOKEN}")
+    suspend fun getMovieCredits(
+        @Path("movie_id") movieId: Int,
+        @Query("language") language: String?
+    ): MovieCreditsResponse
 }

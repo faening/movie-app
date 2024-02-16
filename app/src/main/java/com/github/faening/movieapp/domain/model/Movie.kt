@@ -1,7 +1,6 @@
 package com.github.faening.movieapp.domain.model
 
 import android.os.Parcelable
-import com.github.faening.movieapp.data.model.CountryResponse
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

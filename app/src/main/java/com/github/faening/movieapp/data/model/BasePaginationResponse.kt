@@ -2,7 +2,7 @@ package com.github.faening.movieapp.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class BasePaginationRemote<out T>(
+data class BasePaginationResponse<out T>(
     @SerializedName("page")
     val page: Int?,
 

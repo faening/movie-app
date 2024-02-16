@@ -17,6 +17,4 @@ abstract class DomainModule {
 
     @Binds
     abstract fun bindsMovieRepositoryImp(movieRepositoryImp: MovieRepositoryImp): MovieRepository
-
-
 }

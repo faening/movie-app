@@ -2,6 +2,7 @@ package com.github.faening.movieapp.data.repository.movie
 
 import com.github.faening.movieapp.data.api.ServiceApi
 import com.github.faening.movieapp.data.model.GenresResponse
+import com.github.faening.movieapp.data.model.MovieCreditsResponse
 import com.github.faening.movieapp.data.model.MovieResponse
 import com.github.faening.movieapp.domain.repository.MovieRepository
 import javax.inject.Inject
@@ -31,6 +32,13 @@ class MovieRepositoryImp @Inject constructor(
 
     override suspend fun getMovieDetails(movieId: Int, language: String?): MovieResponse {
         return serviceApi.getMovieDetails(
+            movieId = movieId,
+            language = language
+        )
+    }
+
+    override suspend fun getMovieCredits(movieId: Int, language: String?): MovieCreditsResponse {
+        return serviceApi.getMovieCredits(
             movieId = movieId,
             language = language
         )
