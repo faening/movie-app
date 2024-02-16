@@ -86,9 +86,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/sign_up_email"
                 tools:ignore="LabelFor,TextFields" />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/sign_up_button_register"
-                style="@style/CustomTextAppearance.Button.Primary.WithElevation"
+                style="@style/CustomTextAppearance.Button.Primary"
                 android:layout_marginTop="@dimen/margin_medium"
                 android:text="@string/sign_up_fragment_text_button_sign_up"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -153,34 +153,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sign_up_divider_wrapper">
 
-                <androidx.appcompat.widget.LinearLayoutCompat
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/sign_up_button_create_account_with_facebook"
-                    style="@style/CustomTextAppearance.Button.Secondary.Rounded"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    style="@style/CustomTextAppearance.Button.Tertiary.Rounded"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:contentDescription="@string/sign_up_fragment_content_description_ic_facebook"
+                    app:icon="@drawable/ic_facebook_colorized" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/sign_up_icon_button_create_account_with_facebook"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/sign_up_fragment_content_description_ic_facebook"
-                        android:src="@drawable/ic_facebook_colorized" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/sign_up_button_create_account_with_google"
-                    style="@style/CustomTextAppearance.Button.Secondary.Rounded"
-                    android:layout_marginStart="@dimen/margin_medium"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/sign_up_icon_button_create_account_with_google"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/sign_up_fragment_content_description_ic_google"
-                        android:src="@drawable/ic_google_colorized" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                    style="@style/CustomTextAppearance.Button.Tertiary.Rounded"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:contentDescription="@string/sign_up_fragment_content_description_ic_google"
+                    app:icon="@drawable/ic_google_colorized" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat

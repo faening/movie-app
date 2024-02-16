@@ -166,47 +166,21 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/movie_details_info_scroll">
 
-                <androidx.appcompat.widget.LinearLayoutCompat
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/movie_details_button_play"
-                    style="@style/CustomTextAppearance.Button.Primary.Smash"
+                    style="@style/CustomTextAppearance.Button.Primary.Smash.IconTint"
                     android:layout_marginEnd="@dimen/margin_small"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    tools:ignore="UseCompoundDrawables">
+                    android:text="@string/movie_details_button_play"
+                    app:icon="@drawable/ic_play" />
 
-                    <androidx.constraintlayout.utils.widget.ImageFilterView
-                        android:id="@+id/movie_details_icon_button_play"
-                        style="@style/CustomTextAppearance.Button.Primary.Icon"
-                        android:contentDescription="@string/movie_details_content_description_button_play"
-                        android:src="@drawable/ic_play_white" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/movie_details_text_button_play"
-                        style="@style/CustomTextAppearance.Button.Primary.Text"
-                        android:text="@string/movie_details_button_play" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/movie_details_button_download"
-                    style="@style/CustomTextAppearance.Button.Secondary.Smash"
+                    style="@style/CustomTextAppearance.Button.Secondary.Smash.IconTint"
                     android:layout_marginStart="@dimen/margin_small"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    tools:ignore="UseCompoundDrawables">
-
-                    <androidx.constraintlayout.utils.widget.ImageFilterView
-                        android:id="@+id/movie_details_icon_button_download"
-                        style="@style/CustomTextAppearance.Button.Secondary.Icon"
-                        android:contentDescription="@string/movie_details_content_description_button_download"
-                        android:src="@drawable/ic_download_filled_red" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/movie_details_text_button_download"
-                        style="@style/CustomTextAppearance.Button.Secondary.Text"
-                        android:text="@string/movie_details_button_download" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                    android:text="@string/movie_details_button_download"
+                    app:icon="@drawable/ic_download_filled_red" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <HorizontalScrollView

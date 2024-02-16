@@ -54,13 +54,16 @@
     <!-- Buttons -->
     <color name="button_primary_background">@color/red</color>
     <color name="button_primary_text">@color/white</color>
+    <color name="button_primary_icon">@color/white</color>
 
     <color name="button_secondary_background">@color/white</color>
     <color name="button_secondary_text">@color/red</color>
+    <color name="button_secondary_icon">@color/red</color>
     <color name="button_secondary_border">@color/red</color>
 
     <color name="button_tertiary_background">@color/white</color>
     <color name="button_tertiary_text">@color/black_500</color>
+    <color name="button_tertiary_icon">@color/black_500</color>
     <color name="button_tertiary_border">@color/black_500</color>
 
     <!-- Pills -->

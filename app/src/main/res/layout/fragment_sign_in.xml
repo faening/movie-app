@@ -97,10 +97,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sign_in_password" />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/sign_in_button_login"
-                style="@style/CustomTextAppearance.Button.Primary.WithElevation"
+                style="@style/CustomTextAppearance.Button.Primary"
                 android:layout_marginTop="@dimen/margin_medium"
+                android:elevation="@dimen/button_elevation"
                 android:text="@string/sign_in_fragment_text_button_sign_in"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -160,38 +161,20 @@
                 android:gravity="center"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sign_in_divider_wrapper">
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/sign_in_button_login_with_facebook"
-                    style="@style/CustomTextAppearance.Button.Secondary.Rounded"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/movie_details_button_login_with_facebook"
+                    style="@style/CustomTextAppearance.Button.Tertiary.Rounded"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    app:icon="@drawable/ic_facebook_colorized" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/sign_in_icon_button_login_with_facebook"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/sign_in_fragment_content_description_ic_facebook"
-                        android:src="@drawable/ic_facebook_colorized" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/sign_in_button_login_with_google"
-                    style="@style/CustomTextAppearance.Button.Secondary.Rounded"
-                    android:layout_marginStart="@dimen/margin_medium"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/sign_in_icon_button_login_with_google"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/sign_in_fragment_content_description_ic_google"
-                        android:src="@drawable/ic_google_colorized" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/movie_details_button_login_with_google"
+                    style="@style/CustomTextAppearance.Button.Tertiary.Rounded"
+                    android:layout_marginStart="@dimen/margin_small"
+                    app:icon="@drawable/ic_google_colorized" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat

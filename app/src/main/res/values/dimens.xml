@@ -27,8 +27,9 @@
 
     <!-- Buttons -->
     <dimen name="button_default_height">56dp</dimen>
+    <dimen name="button_default_icon_size">28dp</dimen>
     <dimen name="button_smash_height">42dp</dimen>
-    <dimen name="button_icon_size">21dp</dimen>
+    <dimen name="button_smash_icon_size">21dp</dimen>
     <dimen name="button_rounded_size">56dp</dimen>
     <dimen name="button_radius">100dp</dimen>
     <dimen name="button_elevation">4dp</dimen>
