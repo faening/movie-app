@@ -6,13 +6,14 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.github.faening.movieapp.databinding.GenreItemBinding
+import com.github.faening.movieapp.R
+import com.github.faening.movieapp.databinding.FragmentHomeMoviesByGenreItemBinding
 import com.github.faening.movieapp.ui.model.GenrePresentation
 
 class MoviesByGenreAdapter(
-    var buttonShowAllListener: (Int, String) -> Unit,
+    private var buttonShowAllListener: (Int, String) -> Unit,
     private val onMovieClickListener: (Int?) -> Unit
-) : ListAdapter<GenrePresentation, MoviesByGenreAdapter.ViewHolder>(DIFF_CALLBACK) {
+) : ListAdapter<GenrePresentation, MoviesByGenreAdapter.MoviesByGenreViewHolder>(DIFF_CALLBACK) {
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<GenrePresentation>() {
             override fun areItemsTheSame(oldItem: GenrePresentation, newItem: GenrePresentation): Boolean {
@@ -22,35 +23,43 @@ class MoviesByGenreAdapter(
             override fun areContentsTheSame(oldItem: GenrePresentation, newItem: GenrePresentation): Boolean {
                 return oldItem == newItem
             }
-
         }
     }
 
-    inner class ViewHolder(val binding: GenreItemBinding) : RecyclerView.ViewHolder(binding.root)
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            GenreItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesByGenreViewHolder {
+        val binding = FragmentHomeMoviesByGenreItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MoviesByGenreViewHolder(binding, onMovieClickListener, buttonShowAllListener)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MoviesByGenreViewHolder, position: Int) {
         val genre = getItem(position)
-        val movieAdapter = MovieAdapter(
-            context = holder.binding.root.context,
-            layoutInflater = com.github.faening.movieapp.R.layout.movie_item_home,
-            onMovieClickListener = onMovieClickListener
-        )
-        val layoutManager = LinearLayoutManager(holder.binding.root.context, LinearLayoutManager.HORIZONTAL, false)
+        holder.bind(genre)
+    }
 
-        with(holder.binding) {
-            genreItemName.text = genre.name
-            genreItemShowAll.setOnClickListener { genre.id?.let { buttonShowAllListener(genre.id, genre.name ?: "") } }
-            genreItemRecyclerView.layoutManager = layoutManager
-            genreItemRecyclerView.setHasFixedSize(true)
-            genreItemRecyclerView.adapter = movieAdapter
+    inner class MoviesByGenreViewHolder(
+        private val binding: FragmentHomeMoviesByGenreItemBinding,
+        private val onMovieClickListener: (Int?) -> Unit,
+        private val buttonShowAllListener: (Int, String) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) {
+        private val movieAdapter = MovieAdapter(
+            context = binding.root.context, layoutInflater = R.layout.fragment_home_movie_item, onMovieClickListener = onMovieClickListener
+        )
+
+        init {
+            with(binding.genreItemRecyclerView) {
+                layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                setHasFixedSize(true)
+                adapter = movieAdapter
+            }
         }
 
-        movieAdapter.submitList(genre.movies)
+        fun bind(genre: GenrePresentation) {
+            with(binding) {
+                genreItemName.text = genre.name
+                genreItemShowAll.setOnClickListener { genre.id?.let { buttonShowAllListener(it, genre.name ?: "") } }
+            }
+
+            movieAdapter.submitList(genre.movies)
+        }
     }
 }

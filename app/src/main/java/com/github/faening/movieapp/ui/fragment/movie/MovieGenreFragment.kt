@@ -30,7 +30,7 @@ class MovieGenreFragment : Fragment() {
     private val movieAdapter by lazy {
         MovieAdapter(
             context = requireContext(),
-            layoutInflater = com.github.faening.movieapp.R.layout.movie_item
+            layoutInflater = R.layout.fragment_movie_genre_item
         ) { movieId ->
             movieId?.let {
                 val action = MainGraphDirections.actionGlobalMovieDetailsFragment(it)

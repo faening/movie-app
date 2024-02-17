@@ -5,7 +5,6 @@
     android:id="@+id/movie_item_card"
     android:layout_width="@dimen/movie_item_width"
     android:layout_height="@dimen/movie_item_height"
-    android:layout_marginVertical="@dimen/margin_medium"
     android:layout_marginStart="@dimen/margin_medium"
     app:cardCornerRadius="@dimen/movie_item_corner_radius">
 

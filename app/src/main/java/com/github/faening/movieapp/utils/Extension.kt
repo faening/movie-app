@@ -1,6 +1,7 @@
 package com.github.faening.movieapp.utils
 
 import android.content.Context
+import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
@@ -80,4 +81,12 @@ fun String.isEmailValid(): Boolean {
 fun String.isPasswordValid(): Boolean {
     val passwordPattern = Regex("^(?=.*[a-zA-Z\\d@#\$%^&+=!]).{6,}\$")
     return passwordPattern.matches(this)
+}
+
+fun Int.dpToPx(context: Context): Int {
+    return TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_DIP,
+        this.toFloat(),
+        context.resources.displayMetrics
+    ).toInt()
 }
