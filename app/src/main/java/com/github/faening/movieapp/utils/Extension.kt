@@ -8,6 +8,9 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.github.faening.movieapp.R
+import com.google.android.material.imageview.ShapeableImageView
+import com.google.android.material.shape.CornerFamily
+import com.google.android.material.shape.ShapeAppearanceModel
 import com.google.android.material.snackbar.Snackbar
 
 fun Fragment.initializeToolbar(
@@ -29,6 +32,16 @@ fun Fragment.initializeToolbar(
     toolbar.setNavigationOnClickListener {
         activity?.onBackPressedDispatcher?.onBackPressed()
     }
+}
+
+fun Fragment.setShapeableImageViewBottomRoundedCorners(imageView: ShapeableImageView, radius: Float) {
+    val shapeAppearanceModel = ShapeAppearanceModel()
+        .toBuilder()
+        .setBottomRightCorner(CornerFamily.ROUNDED, radius)
+        .setBottomLeftCorner(CornerFamily.ROUNDED, radius)
+        .build()
+
+    imageView.shapeAppearanceModel = shapeAppearanceModel
 }
 
 fun Fragment.hideKeyboard() {

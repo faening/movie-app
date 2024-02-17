@@ -15,6 +15,7 @@ hilt = "2.50"
 lifecycle = "2.7.0"
 navigation = "2.7.7"
 glide = "4.16.0"
+circle-image-view = "3.1.0"
 retrofit = "2.9.0"
 ok-http = "4.12.0"
 secrets-gradle = "2.0.1"
@@ -68,6 +69,10 @@ safe-args = { group = "androidx.navigation", name = "navigation-safe-args-gradle
 # Glide
 # https://github.com/bumptech/glide
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+
+# Circle Image View
+# https://github.com/hdodenhof/CircleImageView
+circle-image-view = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circle-image-view" }
 
 # Retrofit
 # https://square.github.io/retrofit/
