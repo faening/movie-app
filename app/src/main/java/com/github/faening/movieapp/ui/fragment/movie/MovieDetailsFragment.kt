@@ -41,7 +41,6 @@ class MovieDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initializeToolbar(toolbar = binding.movieDetailsToolbar, showBackButton = true, backButtonLight = true)
-        setShapeableImageViewBottomRoundedCorners(binding.movieDetailsCover, 48f)
         fetchAndObserveMovieDetails()
         fetchAndObserveMovieCredits()
         setupViewListeners()
