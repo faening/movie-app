@@ -105,13 +105,14 @@ class MovieDetailsFragment : Fragment() {
             }
 
             movie.genres?.let {
-                setComponentVisibility(movieDetailsGenres, true)
+                setComponentVisibility(movieDetailsGenresScroll, true)
                 val genresText = getString(R.string.movie_details_genres)
                 movieDetailsGenres.text = "${genresText}: ${movie.genres.joinToString { it.name ?: ", " }}"
             }
 
             movie.overview?.let {
                 setComponentVisibility(movieDetailsOverview, true)
+                setComponentVisibility(movieDetailsOverviewLinkExpand, true)
                 this.movieDetailsOverview.text = movie.overview
             }
         }
@@ -145,6 +146,14 @@ class MovieDetailsFragment : Fragment() {
         }
     }
 
+    private fun updateProgressBarVisibility() {
+        setComponentVisibility(binding.movieDetailsProgressbar, isMovieDetailsLoading || isMovieCreditsLoading)
+    }
+
+    private fun updateMovieDetailsViewVisibility() {
+        setComponentVisibility(binding.movieDetailsContent, !(isMovieDetailsLoading || isMovieCreditsLoading))
+    }
+
     private fun setupAndPopulateCastRecyclerView(casts: List<Cast>) {
         binding.movieDetailsCastRecyclerView.apply {
             setComponentVisibility(this, true)
@@ -155,7 +164,6 @@ class MovieDetailsFragment : Fragment() {
 
     private fun setupViewListeners() {
         setupExpandOverviewButtonListener()
-        setupMovieDetailScrollListener()
     }
 
     private fun setupExpandOverviewButtonListener() {
@@ -169,22 +177,5 @@ class MovieDetailsFragment : Fragment() {
         binding.movieDetailsOverviewLinkExpand.text =
             if (binding.movieDetailsOverview.maxLines == 3) getString(R.string.movie_details_overview_link_expand)
             else getString(R.string.movie_details_overview_link_collapse)
-    }
-
-    @SuppressLint("ClickableViewAccessibility")
-    private fun setupMovieDetailScrollListener() {
-        binding.movieDetailsScroll.setOnTouchListener { _, event ->
-            binding.movieDetailsInfoScroll.isHorizontalScrollBarEnabled = (event.action == MotionEvent.ACTION_UP)
-            binding.movieDetailsGenresScroll.isHorizontalScrollBarEnabled = (event.action == MotionEvent.ACTION_UP)
-            false
-        }
-    }
-
-    private fun updateProgressBarVisibility() {
-        setComponentVisibility(binding.movieDetailsProgressbar, isMovieDetailsLoading || isMovieCreditsLoading)
-    }
-
-    private fun updateMovieDetailsViewVisibility() {
-        setComponentVisibility(binding.movieDetailsContent, !(isMovieDetailsLoading || isMovieCreditsLoading))
     }
 }

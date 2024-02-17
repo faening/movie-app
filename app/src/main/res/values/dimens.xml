@@ -62,7 +62,7 @@
     <dimen name="movie_item_corner_radius">12dp</dimen>
 
     <!-- Movie Details Fragment -->
-    <dimen name="movie_details_fragment_cover_height">320dp</dimen>
+    <dimen name="movie_details_fragment_cover_height">310dp</dimen>
 
     <!-- Cast Item -->
     <dimen name="cast_item_width">200dp</dimen>
