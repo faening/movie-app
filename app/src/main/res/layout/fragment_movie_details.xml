@@ -66,7 +66,7 @@
                 android:id="@+id/movie_details_body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/padding_medium"
+                android:paddingVertical="@dimen/padding_medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/movie_details_cover">
@@ -76,6 +76,7 @@
                     style="@style/CustomTextAppearance.TextHeadline3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
                     android:layout_marginEnd="@dimen/margin_large"
                     android:ellipsize="end"
                     android:maxLines="1"
@@ -88,6 +89,7 @@
                     android:id="@+id/movie_details_options_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_medium"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="@+id/movie_details_title"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +115,9 @@
                     android:id="@+id/movie_details_info_scroll"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
                     android:layout_marginTop="@dimen/margin_small"
+                    android:clipToPadding="false"
                     android:scrollbars="none"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -179,6 +183,7 @@
                     android:id="@+id/movie_details_buttons_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
                     android:layout_marginTop="@dimen/margin_large"
                     android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -206,6 +211,7 @@
                     android:id="@+id/movie_details_genres_scroll"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
                     android:layout_marginTop="@dimen/margin_large"
                     android:scrollbars="none"
                     android:visibility="gone"
@@ -227,6 +233,7 @@
                     style="@style/CustomTextAppearance.TextBody"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
                     android:layout_marginTop="@dimen/margin_small"
                     android:ellipsize="end"
                     android:maxLines="3"
@@ -242,6 +249,7 @@
                     style="@style/CustomTextAppearance.TextBody.Link"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
                     android:layout_marginTop="@dimen/margin_small"
                     android:text="@string/movie_details_overview_link_expand"
                     android:visibility="gone"
@@ -254,7 +262,9 @@
                     android:id="@+id/movie_details_cast_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/padding_medium"
                     android:layout_marginTop="@dimen/margin_medium"
+                    android:clipToPadding="false"
                     android:orientation="horizontal"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -265,9 +275,6 @@
                     tools:listitem="@layout/cast_item"
                     tools:visibility="visible" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

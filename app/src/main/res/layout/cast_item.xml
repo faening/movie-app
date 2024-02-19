@@ -5,7 +5,7 @@
     android:id="@+id/cast_item_container"
     android:layout_width="@dimen/cast_item_width"
     android:layout_height="wrap_content"
-    android:padding="@dimen/padding_small">
+    android:paddingVertical="@dimen/padding_small">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/cast_item_image"
