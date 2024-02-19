@@ -40,5 +40,5 @@
         app:layout_constraintTop_toBottomOf="@+id/genre_item_name"
         tools:itemCount="3"
         tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/fragment_home_movie_item" />
+        tools:listitem="@layout/home_movie_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

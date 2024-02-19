@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.github.faening.movieapp.R
-import com.github.faening.movieapp.databinding.FragmentHomeMoviesByGenreItemBinding
+import com.github.faening.movieapp.databinding.HomeMoviesByGenreItemBinding
 import com.github.faening.movieapp.presentation.model.GenrePresentation
 
 class MoviesByGenreAdapter(
@@ -27,7 +27,7 @@ class MoviesByGenreAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesByGenreViewHolder {
-        val binding = FragmentHomeMoviesByGenreItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = HomeMoviesByGenreItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MoviesByGenreViewHolder(binding, onMovieClickListener, buttonShowAllListener)
     }
 
@@ -37,12 +37,12 @@ class MoviesByGenreAdapter(
     }
 
     inner class MoviesByGenreViewHolder(
-        private val binding: FragmentHomeMoviesByGenreItemBinding,
+        private val binding: HomeMoviesByGenreItemBinding,
         private val onMovieClickListener: (Int?) -> Unit,
         private val buttonShowAllListener: (Int, String) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         private val movieAdapter = MovieAdapter(
-            context = binding.root.context, layoutInflater = R.layout.fragment_home_movie_item, onMovieClickListener = onMovieClickListener
+            context = binding.root.context, layoutInflater = R.layout.home_movie_item, onMovieClickListener = onMovieClickListener
         )
 
         init {

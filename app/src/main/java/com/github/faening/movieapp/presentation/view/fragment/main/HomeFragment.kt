@@ -20,6 +20,7 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
+
     private val binding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<HomeViewModel>()
     private lateinit var moviesByGenreAdapter: MoviesByGenreAdapter
@@ -100,4 +101,5 @@ class HomeFragment : Fragment() {
             }
         }
     }
+
 }

@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
 import com.github.faening.movieapp.R
-import com.github.faening.movieapp.databinding.FragmentHomeMovieItemBinding
-import com.github.faening.movieapp.databinding.FragmentMovieGenreItemBinding
+import com.github.faening.movieapp.databinding.GenreMovieItemBinding
+import com.github.faening.movieapp.databinding.HomeMovieItemBinding
 import com.github.faening.movieapp.domain.model.Movie
 import com.github.faening.movieapp.utils.dpToPx
 
@@ -33,11 +33,11 @@ class MovieAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        return if (layoutInflater == R.layout.fragment_home_movie_item) {
-            val binding = FragmentHomeMovieItemBinding.inflate(LayoutInflater.from(context), parent, false)
+        return if (layoutInflater == R.layout.home_movie_item) {
+            val binding = HomeMovieItemBinding.inflate(LayoutInflater.from(context), parent, false)
             MovieInFragmentHomeViewHolder(binding, onMovieClickListener)
         } else {
-            val binding = FragmentMovieGenreItemBinding.inflate(LayoutInflater.from(context), parent, false)
+            val binding = GenreMovieItemBinding.inflate(LayoutInflater.from(context), parent, false)
             MovieInFragmentGenreViewHolder(binding, onMovieClickListener)
         }
     }
@@ -76,7 +76,7 @@ class MovieAdapter(
     }
 
     class MovieInFragmentHomeViewHolder(
-        private val binding: FragmentHomeMovieItemBinding,
+        private val binding: HomeMovieItemBinding,
         private val onMovieClickListener: (Int?) -> Unit
     ) : MovieViewHolder(binding, onMovieClickListener) {
         override fun loadImage(posterPath: String?) {
@@ -96,7 +96,7 @@ class MovieAdapter(
     }
 
     class MovieInFragmentGenreViewHolder(
-        private val binding: FragmentMovieGenreItemBinding,
+        private val binding: GenreMovieItemBinding,
         private val onMovieClickListener: (Int?) -> Unit
     ) : MovieViewHolder(binding, onMovieClickListener) {
         override fun loadImage(posterPath: String?) {

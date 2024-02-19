@@ -5,7 +5,7 @@
     android:id="@+id/movie_genre_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.view.fragment.movie.MovieGenreFragment">
+    tools:context=".presentation.view.fragment.genre.GenreMoviesFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/movie_genre_appbar"
@@ -59,7 +59,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:itemCount="2"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/fragment_movie_genre_item" />
+            tools:listitem="@layout/genre_movie_item" />
 
         <ProgressBar
             android:id="@+id/movie_genre_progress_bar"

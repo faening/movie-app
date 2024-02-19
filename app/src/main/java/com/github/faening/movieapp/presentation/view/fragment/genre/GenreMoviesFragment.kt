@@ -1,7 +1,6 @@
-package com.github.faening.movieapp.presentation.view.fragment.movie
+package com.github.faening.movieapp.presentation.view.fragment.genre
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -14,23 +13,24 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.ferfalk.simplesearchview.SimpleSearchView
 import com.github.faening.movieapp.MainGraphDirections
 import com.github.faening.movieapp.R
-import com.github.faening.movieapp.databinding.FragmentMovieGenreBinding
+import com.github.faening.movieapp.databinding.FragmentGenreMoviesBinding
 import com.github.faening.movieapp.presentation.view.adapter.MovieAdapter
+import com.github.faening.movieapp.presentation.viewmodel.MovieGenreViewModel
 import com.github.faening.movieapp.utils.StateView
 import com.github.faening.movieapp.utils.hideKeyboard
 import com.github.faening.movieapp.utils.initializeToolbar
 import com.github.faening.movieapp.utils.setComponentVisibility
-import com.github.faening.movieapp.presentation.viewmodel.MovieGenreViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MovieGenreFragment : Fragment() {
-    private val binding by lazy { FragmentMovieGenreBinding.inflate(layoutInflater) }
+class GenreMoviesFragment : Fragment() {
+
+    private val binding by lazy { FragmentGenreMoviesBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<MovieGenreViewModel>()
     private val movieAdapter by lazy {
         MovieAdapter(
             context = requireContext(),
-            layoutInflater = R.layout.fragment_movie_genre_item
+            layoutInflater = R.layout.genre_movie_item
         ) { movieId ->
             movieId?.let {
                 val action = MainGraphDirections.actionGlobalMovieDetailsFragment(it)
@@ -38,7 +38,7 @@ class MovieGenreFragment : Fragment() {
             }
         }
     }
-    private val args by lazy { MovieGenreFragmentArgs.fromBundle(requireArguments()) }
+    private val args by lazy { GenreMoviesFragmentArgs.fromBundle(requireArguments()) }
 
     @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +84,6 @@ class MovieGenreFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-                Log.d("SimpleSearchView", "Text changed:$newText")
                 return false
             }
 
@@ -148,4 +147,5 @@ class MovieGenreFragment : Fragment() {
             }
         }
     }
+
 }
