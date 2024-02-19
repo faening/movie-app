@@ -63,6 +63,15 @@
     <string name="movie_details_overview_link_expand">Ver Mais</string>
     <string name="movie_details_overview_link_collapse">Ver Menos</string>
 
+    <!-- Movie Trailer Fragment -->
+
+
+    <!-- Similar Movies Fragment -->
+    <string name="similar_movies_tab_layout_title">Silimares</string>
+
+    <!-- Movie Comments Fragment -->
+    <string name="movie_comments_tab_layout_title">Comentários</string>
+
     <!-- Bottom Bar Menu -->
     <string name="bottom_bar_title_menu_home">Início</string>
     <string name="bottom_bar_title_menu_search">Pesquisar</string>

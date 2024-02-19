@@ -14,15 +14,18 @@ import com.github.faening.movieapp.databinding.FragmentMovieDetailsBinding
 import com.github.faening.movieapp.domain.model.Cast
 import com.github.faening.movieapp.domain.model.Movie
 import com.github.faening.movieapp.presentation.view.adapter.CastAdapter
+import com.github.faening.movieapp.presentation.view.adapter.ViewPagerAdapter
+import com.github.faening.movieapp.presentation.viewmodel.MovieDetailsViewModel
 import com.github.faening.movieapp.utils.StateView
 import com.github.faening.movieapp.utils.initializeToolbar
 import com.github.faening.movieapp.utils.setComponentVisibility
 import com.github.faening.movieapp.utils.setShapeableImageViewBottomRoundedCorners
-import com.github.faening.movieapp.presentation.viewmodel.MovieDetailsViewModel
+import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MovieDetailsFragment : Fragment() {
+
     private val binding by lazy { FragmentMovieDetailsBinding.inflate(layoutInflater) }
     private val args by lazy { MovieDetailsFragmentArgs.fromBundle(requireArguments()) }
     private val castAdapter by lazy { CastAdapter(requireContext()) }
@@ -30,10 +33,7 @@ class MovieDetailsFragment : Fragment() {
     private var isMovieDetailsLoading = false
     private var isMovieCreditsLoading = false
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return binding.root
     }
 
@@ -46,6 +46,7 @@ class MovieDetailsFragment : Fragment() {
         fetchAndObserveMovieDetails()
         fetchAndObserveMovieCredits()
         setupViewListeners()
+        setupTabLayout()
     }
 
     private fun fetchAndObserveMovieDetails() {
@@ -179,4 +180,33 @@ class MovieDetailsFragment : Fragment() {
             if (binding.movieDetailsOverview.maxLines == 3) getString(R.string.movie_details_overview_link_expand)
             else getString(R.string.movie_details_overview_link_collapse)
     }
+
+    private fun setupTabLayout() {
+        val viewPagerAdapter = ViewPagerAdapter(requireActivity())
+
+        viewPagerAdapter.addFragment(
+            fragment = MovieTrailerFragment(),
+            titleResId = R.string.movie_trailer_tab_layout_title
+        )
+
+        viewPagerAdapter.addFragment(
+            fragment = SimilarMoviesFragment(),
+            titleResId = R.string.similar_movies_tab_layout_title
+        )
+
+        viewPagerAdapter.addFragment(
+            fragment = MovieCommentsFragment(),
+            titleResId = R.string.movie_comments_tab_layout_title
+        )
+
+        with(binding) {
+            movieDetailsViewPager.adapter = viewPagerAdapter
+            movieDetailsViewPager.offscreenPageLimit = viewPagerAdapter.itemCount
+
+            TabLayoutMediator(movieDetailsTabLayout, movieDetailsViewPager) { tab, position ->
+                tab.text = getString(viewPagerAdapter.getTitleResId(position))
+            }.attach()
+        }
+    }
+
 }

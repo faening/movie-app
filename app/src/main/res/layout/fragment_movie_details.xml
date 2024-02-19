@@ -42,6 +42,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ContentDescription"
+                tools:layout_height="120dp"
                 tools:src="@drawable/img_movie_poster" />
 
             <androidx.appcompat.widget.Toolbar
@@ -262,10 +263,10 @@
                     android:id="@+id/movie_details_cast_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingHorizontal="@dimen/padding_medium"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:clipToPadding="false"
                     android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/padding_medium"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -274,6 +275,30 @@
                     tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/cast_item"
                     tools:visibility="visible" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/movie_details_tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:background="@android:color/transparent"
+                    android:elevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/movie_details_cast_recycler_view"
+                    app:tabTextAppearance="@style/CustomTextAppearance.TextTabLayout" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/movie_details_view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="@dimen/margin_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/movie_details_tab_layout"
+                    tools:layout_height="50dp" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

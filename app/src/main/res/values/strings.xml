@@ -66,6 +66,15 @@
     <string name="movie_details_overview_link_expand">View More</string>
     <string name="movie_details_overview_link_collapse">Show Less</string>
 
+    <!-- Movie Trailer Fragment -->
+    <string name="movie_trailer_tab_layout_title" translatable="false">Trailers</string>
+
+    <!-- Similar Movies Fragment -->
+    <string name="similar_movies_tab_layout_title">Similar Movies</string>
+
+    <!-- Movie Comments Fragment -->
+    <string name="movie_comments_tab_layout_title">Comments</string>
+
     <!-- Bottom Bar Menu -->
     <string name="bottom_bar_title_menu_home">Home</string>
     <string name="bottom_bar_title_menu_search">Search</string>
