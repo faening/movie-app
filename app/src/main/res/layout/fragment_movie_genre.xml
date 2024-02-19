@@ -5,7 +5,7 @@
     android:id="@+id/movie_genre_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.movie.MovieGenreFragment">
+    tools:context=".presentation.view.fragment.movie.MovieGenreFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/movie_genre_appbar"

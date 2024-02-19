@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/menu_home"
-        android:name="com.github.faening.movieapp.ui.fragment.main.HomeFragment"
+        android:name="com.github.faening.movieapp.presentation.view.fragment.main.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,27 +16,27 @@
     </fragment>
     <fragment
         android:id="@+id/menu_search"
-        android:name="com.github.faening.movieapp.ui.fragment.main.SearchFragment"
+        android:name="com.github.faening.movieapp.presentation.view.fragment.main.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/menu_favorite"
-        android:name="com.github.faening.movieapp.ui.fragment.main.FavoriteFragment"
+        android:name="com.github.faening.movieapp.presentation.view.fragment.main.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/menu_download"
-        android:name="com.github.faening.movieapp.ui.fragment.main.DownloadFragment"
+        android:name="com.github.faening.movieapp.presentation.view.fragment.main.DownloadFragment"
         android:label="fragment_download"
         tools:layout="@layout/fragment_download" />
     <fragment
         android:id="@+id/menu_profile"
-        android:name="com.github.faening.movieapp.ui.fragment.main.ProfileFragment"
+        android:name="com.github.faening.movieapp.presentation.view.fragment.main.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/movieGenreFragment"
-        android:name="com.github.faening.movieapp.ui.fragment.movie.MovieGenreFragment"
+        android:name="com.github.faening.movieapp.presentation.view.fragment.movie.MovieGenreFragment"
         android:label="fragment_movie_genre"
         tools:layout="@layout/fragment_movie_genre" >
         <argument
@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/movieDetailsFragment"
-        android:name="com.github.faening.movieapp.ui.fragment.movie.MovieDetailsFragment"
+        android:name="com.github.faening.movieapp.presentation.view.fragment.movie.MovieDetailsFragment"
         android:label="fragment_movie_details"
         tools:layout="@layout/fragment_movie_details" >
         <argument

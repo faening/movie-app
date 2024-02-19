@@ -8,6 +8,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 class ServiceProvider {
+    companion object {
+        private const val DEFAULT_TIMEOUT = 30L
+    }
 
     private val client = OkHttpClient
         .Builder()
@@ -26,8 +29,4 @@ class ServiceProvider {
         .build()
 
     fun <API> createService(apiClass: Class<API>): API = retrofit.create(apiClass)
-
-    companion object {
-        private const val DEFAULT_TIMEOUT = 30L
-    }
 }

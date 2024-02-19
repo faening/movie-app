@@ -8,4 +8,4 @@
     android:name="androidx.navigation.fragment.NavHostFragment"
     app:defaultNavHost="true"
     app:navGraph="@navigation/auth_graph"
-    tools:context=".ui.activity.AuthActivity" />
+    tools:context=".presentation.view.activity.AuthActivity" />

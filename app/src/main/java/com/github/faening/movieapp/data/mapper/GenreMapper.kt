@@ -2,7 +2,7 @@ package com.github.faening.movieapp.data.mapper
 
 import com.github.faening.movieapp.data.model.GenreResponse
 import com.github.faening.movieapp.domain.model.Genre
-import com.github.faening.movieapp.ui.model.GenrePresentation
+import com.github.faening.movieapp.presentation.model.GenrePresentation
 
 fun GenreResponse.toDomain(): Genre {
     return Genre(

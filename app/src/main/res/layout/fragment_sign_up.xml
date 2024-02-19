@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".ui.fragment.auth.SignUpFragment">
+    tools:context=".presentation.view.fragment.auth.SignUpFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/sign_up_container"
