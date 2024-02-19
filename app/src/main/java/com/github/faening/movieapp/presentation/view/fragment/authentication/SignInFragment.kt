@@ -1,4 +1,4 @@
-package com.github.faening.movieapp.presentation.view.fragment.auth
+package com.github.faening.movieapp.presentation.view.fragment.authentication
 
 import android.content.Intent
 import android.os.Bundle
@@ -25,6 +25,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SignInFragment : Fragment() {
+
     private val binding by lazy { FragmentSignInBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<SignInViewModel>()
 
@@ -122,4 +123,5 @@ class SignInFragment : Fragment() {
         val progressLoadingImage = R.drawable.img_loading
         Glide.with(requireContext()).load(progressLoadingImage).into(progressLoading)
     }
+
 }

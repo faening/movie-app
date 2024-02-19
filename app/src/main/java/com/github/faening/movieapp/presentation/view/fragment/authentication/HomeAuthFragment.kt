@@ -1,4 +1,4 @@
-package com.github.faening.movieapp.presentation.view.fragment.auth
+package com.github.faening.movieapp.presentation.view.fragment.authentication
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +12,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeAuthFragment : Fragment() {
+
     private val binding by lazy { FragmentHomeAuthBinding.inflate(layoutInflater) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -39,4 +40,5 @@ class HomeAuthFragment : Fragment() {
             findNavController().navigate(R.id.action_homeAuthFragment_to_signUpFragment)
         }
     }
+
 }

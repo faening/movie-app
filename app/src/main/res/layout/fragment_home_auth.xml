@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".presentation.view.fragment.auth.HomeAuthFragment">
+    tools:context=".presentation.view.fragment.authentication.HomeAuthFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/home_auth_container"
