@@ -80,9 +80,16 @@
     </style>
 
     <style name="CustomTextAppearance.TextTabLayout">
-        <item name="android:fontFamily">@font/urbanist_700</item>
-        <item name="android:textColor">@color/text_body</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:fontFamily">@font/urbanist_400</item>
         <item name="android:textSize">@dimen/text_body</item>
+        <item name="tabTextColor">@color/text_body</item>
+        <item name="tabIndicatorFullWidth">true</item>
+    </style>
+
+    <style name="CustomTextAppearance.TextTabLayout.Selected">
+        <item name="android:fontFamily">@font/urbanist_600</item>
+        <item name="tabSelectedTextColor">@color/red</item>
     </style>
 
     <!-- Buttons -->

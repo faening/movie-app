@@ -237,13 +237,15 @@
                     android:layout_marginHorizontal="@dimen/margin_medium"
                     android:layout_marginTop="@dimen/margin_small"
                     android:ellipsize="end"
+                    android:justificationMode="inter_word"
                     android:maxLines="3"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/movie_details_genres_scroll"
                     tools:text="When her duties take her to an anomalous space rift linked to a Kree revolutionary, the powers of Carol Danvers, Captain Marvel, become intertwined with those of Kamala Khan, Ms. Marvel, and those of Carol's niece, S.A.B.E.R. astronaut, Captain Monica Rambeau."
-                    tools:visibility="visible" />
+                    tools:visibility="visible"
+                    tools:targetApi="o" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/movie_details_overview_link_expand"
@@ -281,12 +283,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/margin_medium"
-                    android:layout_marginTop="@dimen/margin_large"
-                    android:background="@android:color/transparent"
+                    android:layout_marginTop="@dimen/margin_medium"
                     android:elevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/movie_details_cast_recycler_view"
+                    app:tabIndicator="@drawable/bg_tab_layout_underline"
+                    app:tabSelectedTextAppearance="@style/CustomTextAppearance.TextTabLayout.Selected"
                     app:tabTextAppearance="@style/CustomTextAppearance.TextTabLayout" />
 
                 <androidx.viewpager2.widget.ViewPager2
