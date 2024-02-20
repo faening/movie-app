@@ -3,8 +3,8 @@ package com.github.faening.movieapp.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.github.faening.movieapp.data.mapper.toPresentation
-import com.github.faening.movieapp.domain.usecase.movie.GetMoviesByGenreUseCase
-import com.github.faening.movieapp.domain.usecase.movie.GetAllGenresUseCase
+import com.github.faening.movieapp.domain.usecase.api.movie.GetMoviesByGenreUseCase
+import com.github.faening.movieapp.domain.usecase.api.genre.GetMovieGenresUseCase
 import com.github.faening.movieapp.utils.Constants.Movie
 import com.github.faening.movieapp.utils.StateView
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,13 +14,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getAllGenresUseCase: GetAllGenresUseCase,
+    private val getMovieGenresUseCase: GetMovieGenresUseCase,
     private val getMoviesByGenreUseCase: GetMoviesByGenreUseCase
 ) : ViewModel() {
     fun getAllGenres() = liveData(Dispatchers.IO) {
         try {
             emit(StateView.Loading())
-            val genres = getAllGenresUseCase.invoke(
+            val genres = getMovieGenresUseCase.invoke(
                 language = Movie.LANGUAGE
             ).map { it.toPresentation() }
             emit(StateView.Success(genres))

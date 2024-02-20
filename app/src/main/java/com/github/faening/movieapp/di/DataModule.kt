@@ -1,6 +1,7 @@
 package com.github.faening.movieapp.di
 
-import com.github.faening.movieapp.data.api.ServiceApi
+import com.github.faening.movieapp.data.api.GenreServiceApi
+import com.github.faening.movieapp.data.api.MovieServiceApi
 import com.github.faening.movieapp.network.ServiceProvider
 import dagger.Module
 import dagger.Provides
@@ -14,7 +15,12 @@ class DataModule {
     fun provideServiceProvider() = ServiceProvider()
 
     @Provides
-    fun provideServiceApi(serviceProvider: ServiceProvider) : ServiceApi {
-        return serviceProvider.createService(ServiceApi::class.java)
+    fun provideMovieServiceApi(service: ServiceProvider) : MovieServiceApi {
+        return service.createService(MovieServiceApi::class.java)
+    }
+
+    @Provides
+    fun provideGenreServiceApi(service: ServiceProvider) : GenreServiceApi {
+        return service.createService(GenreServiceApi::class.java)
     }
 }

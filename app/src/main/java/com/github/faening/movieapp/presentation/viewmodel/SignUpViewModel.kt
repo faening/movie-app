@@ -2,7 +2,7 @@ package com.github.faening.movieapp.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.github.faening.movieapp.domain.usecase.auth.SignUpUseCase
+import com.github.faening.movieapp.domain.usecase.authentication.SignUpUseCase
 import com.github.faening.movieapp.utils.StateView
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers

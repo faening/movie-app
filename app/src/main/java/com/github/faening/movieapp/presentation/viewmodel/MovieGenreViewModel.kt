@@ -2,8 +2,8 @@ package com.github.faening.movieapp.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.github.faening.movieapp.domain.usecase.movie.GetMoviesByGenreUseCase
-import com.github.faening.movieapp.domain.usecase.movie.SearchMoviesUseCase
+import com.github.faening.movieapp.domain.usecase.api.movie.GetMoviesByGenreUseCase
+import com.github.faening.movieapp.domain.usecase.api.movie.SearchMoviesUseCase
 import com.github.faening.movieapp.utils.Constants
 import com.github.faening.movieapp.utils.StateView
 import dagger.hilt.android.lifecycle.HiltViewModel
