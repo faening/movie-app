@@ -190,7 +190,7 @@ class MovieDetailsFragment : Fragment() {
         )
 
         viewPagerAdapter.addFragment(
-            fragment = SimilarMoviesFragment(),
+            fragment = SimilarMoviesFragment.newInstance(args.movieId),
             titleResId = R.string.similar_movies_tab_layout_title
         )
 

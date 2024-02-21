@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/movie_details_scroll"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:fillViewport="true"
     tools:context=".presentation.view.fragment.movie.MovieDetailsFragment">
 
@@ -67,8 +67,10 @@
                 android:id="@+id/movie_details_body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="@dimen/padding_medium"
+                android:layout_marginTop="@dimen/margin_medium"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/movie_details_cover">
 
@@ -243,9 +245,9 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/movie_details_genres_scroll"
+                    tools:targetApi="o"
                     tools:text="When her duties take her to an anomalous space rift linked to a Kree revolutionary, the powers of Carol Danvers, Captain Marvel, become intertwined with those of Kamala Khan, Ms. Marvel, and those of Carol's niece, S.A.B.E.R. astronaut, Captain Monica Rambeau."
-                    tools:visibility="visible"
-                    tools:targetApi="o" />
+                    tools:visibility="visible" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/movie_details_overview_link_expand"
@@ -295,8 +297,9 @@
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/movie_details_view_pager"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/margin_medium"
+                    android:paddingTop="@dimen/padding_medium"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/movie_details_tab_layout"

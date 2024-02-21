@@ -37,4 +37,11 @@ interface MovieServiceApi {
         @Path("movie_id") movieId: Int,
         @Query("language") language: String?
     ): MovieCreditsResponse
+
+    @GET("movie/{movie_id}/similar")
+    @Headers("Authorization: Bearer ${BuildConfig.TMBD_API_TOKEN}")
+    suspend fun fetchSimilarMovies(
+        @Path("movie_id") movieId: Int,
+        @Query("language") language: String?,
+    ): BasePaginationResponse<List<MovieResponse>>
 }

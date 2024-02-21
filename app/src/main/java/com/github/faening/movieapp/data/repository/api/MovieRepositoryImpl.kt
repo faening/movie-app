@@ -37,4 +37,11 @@ class MovieRepositoryImpl @Inject constructor(
             language = language
         ).toDomain()
     }
+
+    override suspend fun fetchSimilarMovies(movieId: Int, language: String?): List<Movie> {
+        return service.fetchSimilarMovies(
+            movieId = movieId,
+            language = language
+        ).results?.map { it.toDomain() } ?: emptyList()
+    }
 }
