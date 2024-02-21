@@ -38,6 +38,11 @@
     <dimen name="pill_height">20dp</dimen>
     <dimen name="pill_radius">6dp</dimen>
 
+    <!-- Cards -->
+    <dimen name="card_radius">16dp</dimen>
+    <dimen name="card_height">220dp</dimen>
+    <dimen name="card_width_small">160dp</dimen>
+
     <!-- Inputs -->
     <dimen name="input_height">56dp</dimen>
     <dimen name="input_radius">100dp</dimen>
