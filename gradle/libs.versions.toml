@@ -27,7 +27,6 @@ simple-search-view = "0.2.1"
 android-application = "8.2.1"
 kotlin = "1.9.10"
 google-services = "4.4.0"
-play-services-ads-lite = "22.6.0"
 
 [libraries]
 # Common
@@ -96,8 +95,6 @@ secrets-gradle = { group = "com.google.android.libraries.mapsplatform.secrets-gr
 # Simple Search View
 # https://github.com/Ferfalk/SimpleSearchView
 simple-search-view = { group = "com.github.Ferfalk", name = "SimpleSearchView", version.ref = "simple-search-view" }
-
-play-services-ads-lite = { group = "com.google.android.gms", name = "play-services-ads-lite", version.ref = "play-services-ads-lite" }
 
 # Tests
 junit = { group = "junit", name = "junit", version.ref = "junit" }

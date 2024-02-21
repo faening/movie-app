@@ -76,7 +76,6 @@ dependencies {
     implementation(libs.ok.http)
     implementation(libs.ok.http.logging.interceptor)
     implementation(libs.simple.search.view)
-    implementation(libs.play.services.ads.lite)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso)
