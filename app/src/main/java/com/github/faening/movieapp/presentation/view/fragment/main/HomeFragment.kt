@@ -10,10 +10,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.github.faening.movieapp.MainGraphDirections
 import com.github.faening.movieapp.databinding.FragmentHomeBinding
-import com.github.faening.movieapp.presentation.view.adapter.MoviesByGenreAdapter
 import com.github.faening.movieapp.presentation.model.GenrePresentation
-import com.github.faening.movieapp.utils.StateView
+import com.github.faening.movieapp.presentation.view.adapter.GenreWithMoviesAdapter
 import com.github.faening.movieapp.presentation.viewmodel.HomeViewModel
+import com.github.faening.movieapp.utils.StateView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -23,7 +23,20 @@ class HomeFragment : Fragment() {
 
     private val binding by lazy { FragmentHomeBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<HomeViewModel>()
-    private lateinit var moviesByGenreAdapter: MoviesByGenreAdapter
+    private val genreWithMoviesAdapter by lazy {
+        GenreWithMoviesAdapter(
+            { movieId ->
+                movieId?.let {
+                    val action =  MainGraphDirections.actionGlobalMovieDetailsFragment(it)
+                    findNavController().navigate(action)
+                }
+            },
+            { genreId, genreName ->
+                val action = HomeFragmentDirections.actionMenuHomeToMovieGenreFragment(genreId, genreName)
+                findNavController().navigate(action)
+            },
+        )
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return binding.root
@@ -36,22 +49,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun initializeRecyclerView() {
-        moviesByGenreAdapter = MoviesByGenreAdapter(
-            { genreId, genreName ->
-                val action = HomeFragmentDirections.actionMenuHomeToMovieGenreFragment(genreId, genreName)
-                findNavController().navigate(action)
-            },
-            { movieId ->
-                movieId?.let {
-                    val action =  MainGraphDirections.actionGlobalMovieDetailsFragment(it)
-                    findNavController().navigate(action)
-                }
-            }
-        )
-
         with(binding.homeList) {
             setHasFixedSize(true)
-            adapter = moviesByGenreAdapter
+            adapter = genreWithMoviesAdapter
         }
     }
 
@@ -64,7 +64,7 @@ class HomeFragment : Fragment() {
 
                 is StateView.Success -> {
                     val genres = stateView.data ?: emptyList()
-                    moviesByGenreAdapter.submitList(genres)
+                    genreWithMoviesAdapter.submitList(genres)
                     getMoviesByGenre(genres)
                 }
 
@@ -90,7 +90,7 @@ class HomeFragment : Fragment() {
                         genresMutableList[index] = genre.copy(movies = movies)
                         lifecycleScope.launch {
                             delay(1000)
-                            moviesByGenreAdapter.submitList(genresMutableList)
+                            genreWithMoviesAdapter.submitList(genresMutableList)
                         }
                     }
 

@@ -40,7 +40,7 @@
 
     <!-- Cards -->
     <dimen name="card_radius">16dp</dimen>
-    <dimen name="card_height">220dp</dimen>
+    <dimen name="card_height">230dp</dimen>
     <dimen name="card_width_small">160dp</dimen>
 
     <!-- Inputs -->

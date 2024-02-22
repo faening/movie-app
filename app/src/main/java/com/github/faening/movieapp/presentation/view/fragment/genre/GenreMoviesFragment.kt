@@ -14,8 +14,9 @@ import com.ferfalk.simplesearchview.SimpleSearchView
 import com.github.faening.movieapp.MainGraphDirections
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentGenreMoviesBinding
-import com.github.faening.movieapp.presentation.view.adapter.MovieAdapter
+import com.github.faening.movieapp.presentation.view.adapter.MediaAdapter
 import com.github.faening.movieapp.presentation.viewmodel.MovieGenreViewModel
+import com.github.faening.movieapp.utils.ItemLayoutType
 import com.github.faening.movieapp.utils.StateView
 import com.github.faening.movieapp.utils.hideKeyboard
 import com.github.faening.movieapp.utils.initializeToolbar
@@ -27,10 +28,11 @@ class GenreMoviesFragment : Fragment() {
 
     private val binding by lazy { FragmentGenreMoviesBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<MovieGenreViewModel>()
-    private val movieAdapter by lazy {
-        MovieAdapter(
+    private val args by lazy { GenreMoviesFragmentArgs.fromBundle(requireArguments()) }
+    private val mediaAdapter by lazy {
+        MediaAdapter(
             context = requireContext(),
-            layoutInflater = R.layout.genre_movie_item
+            itemLayoutType = ItemLayoutType.LARGE
         ) { movieId ->
             movieId?.let {
                 val action = MainGraphDirections.actionGlobalMovieDetailsFragment(it)
@@ -38,7 +40,6 @@ class GenreMoviesFragment : Fragment() {
             }
         }
     }
-    private val args by lazy { GenreMoviesFragmentArgs.fromBundle(requireArguments()) }
 
     @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,8 +71,7 @@ class GenreMoviesFragment : Fragment() {
     private fun initializeRecyclerView() {
         with(binding.movieGenreRecyclerView) {
             layoutManager = GridLayoutManager(context, 2)
-            setHasFixedSize(true)
-            adapter = movieAdapter
+            adapter = mediaAdapter
         }
     }
 
@@ -93,15 +93,15 @@ class GenreMoviesFragment : Fragment() {
         })
 
         binding.movieGenreSearchView.setOnSearchViewListener(object : SimpleSearchView.SearchViewListener {
-            override fun onSearchViewShown() { }
+            override fun onSearchViewShown() {}
 
-            override fun onSearchViewShownAnimation() { }
+            override fun onSearchViewShownAnimation() {}
 
             override fun onSearchViewClosed() {
                 getMoviesByGenre()
             }
 
-            override fun onSearchViewClosedAnimation() { }
+            override fun onSearchViewClosedAnimation() {}
         })
     }
 
@@ -114,7 +114,7 @@ class GenreMoviesFragment : Fragment() {
                 }
 
                 is StateView.Success -> {
-                    movieAdapter.submitList(stateView.data ?: emptyList())
+                    mediaAdapter.submitList(stateView.data ?: emptyList())
                     setComponentVisibility(binding.movieGenreProgressBar, false)
                     setComponentVisibility(binding.movieGenreRecyclerView, true)
                 }
@@ -136,7 +136,7 @@ class GenreMoviesFragment : Fragment() {
                 }
 
                 is StateView.Success -> {
-                    movieAdapter.submitList(stateView.data ?: emptyList())
+                    mediaAdapter.submitList(stateView.data ?: emptyList())
                     setComponentVisibility(binding.movieGenreProgressBar, false)
                     setComponentVisibility(binding.movieGenreRecyclerView, true)
                 }

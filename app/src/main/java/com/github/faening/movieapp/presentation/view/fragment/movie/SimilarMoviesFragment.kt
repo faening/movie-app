@@ -9,11 +9,11 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.github.faening.movieapp.MainGraphDirections
-import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentSimilarMoviesBinding
 import com.github.faening.movieapp.domain.model.Movie
-import com.github.faening.movieapp.presentation.view.adapter.MovieAdapter
+import com.github.faening.movieapp.presentation.view.adapter.MediaAdapter
 import com.github.faening.movieapp.presentation.viewmodel.SimilarMoviesViewModel
+import com.github.faening.movieapp.utils.ItemLayoutType
 import com.github.faening.movieapp.utils.StateView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,10 +22,11 @@ class SimilarMoviesFragment : Fragment() {
 
     private val binding by lazy { FragmentSimilarMoviesBinding.inflate(layoutInflater) }
     private val viewModel by viewModels<SimilarMoviesViewModel>()
-    private val movieAdapter by lazy {
-        MovieAdapter(
+
+    private val mediaAdapter by lazy {
+        MediaAdapter(
             context = requireContext(),
-            layoutInflater = R.layout.genre_movie_item
+            itemLayoutType = ItemLayoutType.LARGE
         ) { movieId ->
             movieId?.let {
                 val action = MainGraphDirections.actionGlobalMovieDetailsFragment(it)
@@ -67,7 +68,7 @@ class SimilarMoviesFragment : Fragment() {
     private fun setupAndPopulateSimilarMoviesRecyclerView(movies: List<Movie>) {
         binding.similarMoviesRecyclerView.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
-            adapter = movieAdapter.also { it.submitList(movies) }
+            adapter = mediaAdapter.also { it.submitList(movies) }
         }
     }
 
