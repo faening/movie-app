@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.github.faening.movieapp.MainGraphDirections
+import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentSimilarMoviesBinding
 import com.github.faening.movieapp.domain.model.Movie
 import com.github.faening.movieapp.presentation.view.adapter.MediaAdapter
@@ -29,8 +31,12 @@ class SimilarMoviesFragment : Fragment() {
             itemLayoutType = ItemLayoutType.LARGE
         ) { movieId ->
             movieId?.let {
+                /**
+                 * O método `navigate` com um `NavOptions` limpa a pilha de backstack até a primeira instância do `MovieDetailsFragment`.
+                 */
                 val action = MainGraphDirections.actionGlobalMovieDetailsFragment(it)
-                findNavController().navigate(action)
+                val navOption = NavOptions.Builder().setPopUpTo(R.id.movieDetailsFragment, true).build()
+                findNavController().navigate(action, navOption)
             }
         }
     }
