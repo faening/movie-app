@@ -40,7 +40,7 @@
 
     <!-- Cards -->
     <dimen name="card_radius">16dp</dimen>
-    <dimen name="card_height">230dp</dimen>
+    <dimen name="card_height">248dp</dimen>
     <dimen name="card_width_small">160dp</dimen>
 
     <!-- Inputs -->
@@ -67,7 +67,7 @@
     <dimen name="movie_item_corner_radius">12dp</dimen>
 
     <!-- Movie Details Fragment -->
-    <dimen name="movie_details_fragment_cover_height">310dp</dimen>
+    <dimen name="movie_details_fragment_cover_height">312dp</dimen>
     <dimen name="movie_details_fragment_body_translation_y">-16dp</dimen>
     <dimen name="movie_details_fragment_body_radius">16dp</dimen>
 
