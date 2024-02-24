@@ -6,6 +6,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class MovieCredits(
     val id: Int?,
-    val cast: List<Cast>?,
-    val crew: List<Crew>?
+    val movieCreditsCast: List<MovieCreditsCast>?,
+    val movieCreditsCrew: List<MovieCreditsCrew>?
 ) : Parcelable

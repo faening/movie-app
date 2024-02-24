@@ -1,10 +1,10 @@
 package com.github.faening.movieapp.data.mapper
 
-import com.github.faening.movieapp.data.model.CrewResponse
-import com.github.faening.movieapp.domain.model.Crew
+import com.github.faening.movieapp.data.model.MovieCreditsCastResponse
+import com.github.faening.movieapp.domain.model.MovieCreditsCast
 
-fun CrewResponse.toDomain(): Crew {
-    return Crew(
+fun MovieCreditsCastResponse.toDomain(): MovieCreditsCast {
+    return MovieCreditsCast(
         adult = adult,
         gender = gender,
         id = id,
@@ -13,8 +13,9 @@ fun CrewResponse.toDomain(): Crew {
         originalName = originalName,
         popularity = popularity,
         profilePath = profilePath,
+        castId = castId,
+        character = character,
         creditId = creditId,
-        department = department,
-        job = job
+        order = order
     )
 }

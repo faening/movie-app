@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentMovieDetailsBinding
-import com.github.faening.movieapp.domain.model.Cast
+import com.github.faening.movieapp.domain.model.MovieCreditsCast
 import com.github.faening.movieapp.domain.model.Movie
 import com.github.faening.movieapp.presentation.view.adapter.CastAdapter
 import com.github.faening.movieapp.presentation.view.adapter.ViewPagerAdapter
@@ -134,7 +134,7 @@ class MovieDetailsFragment : Fragment() {
                     updateMovieDetailsViewVisibility()
 
                     stateView.data?.let { movieCredits ->
-                        movieCredits.cast?.let { castList ->
+                        movieCredits.movieCreditsCast?.let { castList ->
                             setupAndPopulateCastRecyclerView(castList)
                         }
                     }
@@ -156,11 +156,11 @@ class MovieDetailsFragment : Fragment() {
         setComponentVisibility(binding.movieDetailsContent, !(isMovieDetailsLoading || isMovieCreditsLoading))
     }
 
-    private fun setupAndPopulateCastRecyclerView(casts: List<Cast>) {
+    private fun setupAndPopulateCastRecyclerView(movieCreditsCasts: List<MovieCreditsCast>) {
         binding.movieDetailsCastRecyclerView.apply {
             setComponentVisibility(this, true)
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            adapter = castAdapter.also { it.submitList(casts) }
+            adapter = castAdapter.also { it.submitList(movieCreditsCasts) }
         }
     }
 

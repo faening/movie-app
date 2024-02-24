@@ -6,7 +6,7 @@ import com.github.faening.movieapp.domain.model.MovieCredits
 fun MovieCreditsResponse.toDomain(): MovieCredits {
     return MovieCredits(
         id = id,
-        cast = cast?.map { it.toDomain() },
-        crew = crew?.map { it.toDomain() }
+        movieCreditsCast = cast?.map { it.toDomain() },
+        movieCreditsCrew = crew?.map { it.toDomain() }
     )
 }

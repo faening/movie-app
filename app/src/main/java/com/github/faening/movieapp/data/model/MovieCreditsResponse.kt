@@ -7,8 +7,8 @@ data class MovieCreditsResponse(
     val id: Int?,
 
     @SerializedName("cast")
-    val cast: List<CastResponse>?,
+    val cast: List<MovieCreditsCastResponse>?,
 
     @SerializedName("crew")
-    val crew: List<CrewResponse>?
+    val crew: List<MovieCreditsCrewResponse>?
 )

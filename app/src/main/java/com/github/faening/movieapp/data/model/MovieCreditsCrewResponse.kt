@@ -2,7 +2,7 @@ package com.github.faening.movieapp.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class CrewResponse(
+data class MovieCreditsCrewResponse(
     @SerializedName("adult")
     val adult: Boolean?,
 

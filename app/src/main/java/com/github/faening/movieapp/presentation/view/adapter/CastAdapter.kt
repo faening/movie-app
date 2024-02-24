@@ -10,18 +10,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.CastItemBinding
-import com.github.faening.movieapp.domain.model.Cast
+import com.github.faening.movieapp.domain.model.MovieCreditsCast
 
 class CastAdapter(
     private val context: Context,
-) : ListAdapter<Cast, CastAdapter.CastViewHolder>(DIFF_CALLBACK) {
+) : ListAdapter<MovieCreditsCast, CastAdapter.CastViewHolder>(DIFF_CALLBACK) {
     companion object {
-        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Cast>() {
-            override fun areItemsTheSame(oldItem: Cast, newItem: Cast): Boolean {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<MovieCreditsCast>() {
+            override fun areItemsTheSame(oldItem: MovieCreditsCast, newItem: MovieCreditsCast): Boolean {
                 return oldItem.id == newItem.id
             }
 
-            override fun areContentsTheSame(oldItem: Cast, newItem: Cast): Boolean {
+            override fun areContentsTheSame(oldItem: MovieCreditsCast, newItem: MovieCreditsCast): Boolean {
                 return oldItem == newItem
             }
         }
@@ -38,11 +38,11 @@ class CastAdapter(
     }
 
     inner class CastViewHolder(val binding: CastItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(cast: Cast) {
+        fun bind(movieCreditsCast: MovieCreditsCast) {
             binding.apply {
-                loadAndApplyImage(cast.profilePath, castItemImage)
-                this.castItemName.text = cast.name
-                this.castItemCast.text = cast.knownForDepartment
+                loadAndApplyImage(movieCreditsCast.profilePath, castItemImage)
+                this.castItemName.text = movieCreditsCast.name
+                this.castItemCast.text = movieCreditsCast.knownForDepartment
             }
         }
     }

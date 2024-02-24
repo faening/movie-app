@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Country(
+data class MovieCountry(
     val iso31661: String?,
     val name: String?
 ) : Parcelable

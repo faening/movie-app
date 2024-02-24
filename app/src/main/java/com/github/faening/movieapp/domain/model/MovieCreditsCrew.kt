@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Cast(
+data class MovieCreditsCrew(
     val adult: Boolean?,
     val gender: Int?,
     val id: Int?,
@@ -13,8 +13,7 @@ data class Cast(
     val originalName: String?,
     val popularity: Double?,
     val profilePath: String?,
-    val castId: Int?,
-    val character: String?,
     val creditId: String?,
-    val order: Int?
+    val department: String?,
+    val job: String?
 ) : Parcelable

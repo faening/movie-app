@@ -13,7 +13,7 @@ data class Movie(
     override val overview: String?,
     override val popularity: Float?,
     override val posterPath: String?,
-    val productionCountries: List<Country>?,
+    val productionCountries: List<MovieCountry>?,
     val releaseDate: String?,
     val title: String?,
     val video: Boolean?,
