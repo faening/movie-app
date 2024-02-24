@@ -4,6 +4,7 @@ import com.github.faening.movieapp.data.api.MovieServiceApi
 import com.github.faening.movieapp.data.mapper.toDomain
 import com.github.faening.movieapp.domain.model.Movie
 import com.github.faening.movieapp.domain.model.MovieCredits
+import com.github.faening.movieapp.domain.model.MovieReview
 import com.github.faening.movieapp.domain.repository.MovieRepository
 import javax.inject.Inject
 
@@ -40,6 +41,13 @@ class MovieRepositoryImpl @Inject constructor(
 
     override suspend fun fetchSimilarMovies(movieId: Int, language: String?): List<Movie> {
         return service.fetchSimilarMovies(
+            movieId = movieId,
+            language = language
+        ).results?.map { it.toDomain() } ?: emptyList()
+    }
+
+    override suspend fun fetchMovieReviews(movieId: Int, language: String?): List<MovieReview> {
+        return service.fetchMovieReviews(
             movieId = movieId,
             language = language
         ).results?.map { it.toDomain() } ?: emptyList()

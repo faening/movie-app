@@ -4,6 +4,7 @@ import com.github.faening.movieapp.BuildConfig
 import com.github.faening.movieapp.data.model.BasePaginationResponse
 import com.github.faening.movieapp.data.model.MovieCreditsResponse
 import com.github.faening.movieapp.data.model.MovieResponse
+import com.github.faening.movieapp.data.model.MovieReviewResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Path
@@ -44,4 +45,11 @@ interface MovieServiceApi {
         @Path("movie_id") movieId: Int,
         @Query("language") language: String?,
     ): BasePaginationResponse<List<MovieResponse>>
+
+    @GET("movie/{movie_id}/reviews")
+    @Headers("Authorization: Bearer ${BuildConfig.TMBD_API_TOKEN}")
+    suspend fun fetchMovieReviews(
+        @Path("movie_id") movieId: Int,
+        @Query("language") language: String?,
+    ): BasePaginationResponse<List<MovieReviewResponse>>
 }
