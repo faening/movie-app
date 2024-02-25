@@ -74,4 +74,9 @@
     <!-- Cast Item -->
     <dimen name="cast_item_width">200dp</dimen>
     <dimen name="cast_item_image_size">56dp</dimen>
+
+    <!-- Review Item -->
+    <dimen name="review_item_user_image_size">56dp</dimen>
+    <dimen name="review_item_rating_icon_size">12dp</dimen>
+
 </resources>

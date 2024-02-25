@@ -65,12 +65,12 @@
 
     <!-- Movie Trailer Fragment -->
 
-
     <!-- Similar Movies Fragment -->
     <string name="similar_movies_tab_layout_title">Silimares</string>
 
-    <!-- Movie Comments Fragment -->
-    <string name="movie_comments_tab_layout_title">Comentários</string>
+    <!-- Movie Reviews Fragment -->
+    <string name="movie_reviews_tab_layout_title">Comentários</string>
+    <string name="movie_reviews_sufix_days_ago">dias atrás</string>
 
     <!-- Bottom Bar Menu -->
     <string name="bottom_bar_title_menu_home">Início</string>

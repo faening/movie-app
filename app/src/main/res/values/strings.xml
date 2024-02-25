@@ -72,8 +72,9 @@
     <!-- Similar Movies Fragment -->
     <string name="similar_movies_tab_layout_title">Similar Movies</string>
 
-    <!-- Movie Comments Fragment -->
-    <string name="movie_comments_tab_layout_title">Comments</string>
+    <!-- Movie Reviews Fragment -->
+    <string name="movie_reviews_tab_layout_title">Comments</string>
+    <string name="movie_reviews_sufix_days_ago">days ago</string>
 
     <!-- Bottom Bar Menu -->
     <string name="bottom_bar_title_menu_home">Home</string>

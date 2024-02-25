@@ -17,6 +17,7 @@ import com.github.faening.movieapp.presentation.view.adapter.CastAdapter
 import com.github.faening.movieapp.presentation.view.adapter.ViewPagerAdapter
 import com.github.faening.movieapp.presentation.viewmodel.MovieDetailsViewModel
 import com.github.faening.movieapp.utils.StateView
+import com.github.faening.movieapp.utils.ViewPager2ViewHeightAnimator
 import com.github.faening.movieapp.utils.initializeToolbar
 import com.github.faening.movieapp.utils.setComponentVisibility
 import com.github.faening.movieapp.utils.setShapeableImageViewBottomRoundedCorners
@@ -183,6 +184,10 @@ class MovieDetailsFragment : Fragment() {
 
     private fun setupTabLayout() {
         val viewPagerAdapter = ViewPagerAdapter(requireActivity())
+        val viewPagerHeightAnimator = ViewPager2ViewHeightAnimator()
+
+        viewPagerHeightAnimator.viewPager2 = binding.movieDetailsViewPager
+        viewPagerHeightAnimator.viewPager2?.adapter = viewPagerAdapter
 
         viewPagerAdapter.addFragment(
             fragment = MovieTrailerFragment(),
@@ -195,17 +200,19 @@ class MovieDetailsFragment : Fragment() {
         )
 
         viewPagerAdapter.addFragment(
-            fragment = MovieCommentsFragment(),
-            titleResId = R.string.movie_comments_tab_layout_title
+            fragment = MovieReviewsFragment.newInstance(args.movieId),
+            titleResId = R.string.movie_reviews_tab_layout_title
         )
 
-        with(binding) {
-            movieDetailsViewPager.adapter = viewPagerAdapter
-            movieDetailsViewPager.offscreenPageLimit = viewPagerAdapter.itemCount
+        viewPagerHeightAnimator.viewPager2?.let { vp2HeightAnimator ->
+            with(binding) {
+                movieDetailsViewPager.adapter = viewPagerAdapter
+                movieDetailsViewPager.offscreenPageLimit = viewPagerAdapter.itemCount
 
-            TabLayoutMediator(movieDetailsTabLayout, movieDetailsViewPager) { tab, position ->
-                tab.text = getString(viewPagerAdapter.getTitleResId(position))
-            }.attach()
+                TabLayoutMediator(movieDetailsTabLayout, vp2HeightAnimator) { tab, position ->
+                    tab.text = getString(viewPagerAdapter.getTitleResId(position))
+                }.attach()
+            }
         }
     }
 
