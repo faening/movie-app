@@ -2,6 +2,8 @@
     <!-- Common -->
     <string name="app_name" translatable="false">Movie App</string>
     <string name="search_hint">Search</string>
+    <string name="read_more">Read More</string>
+    <string name="read_less">Read Less</string>
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 
     <!-- Onboarding Fragment -->

@@ -2,6 +2,8 @@
 <resources>
     <!-- Common -->
     <string name="search_hint">Pesquisar</string>
+    <string name="read_more">Leia Mais</string>
+    <string name="read_less">Leia Menos</string>
 
     <!-- Onboarding Fragment-->
     <string name="onboarding_fragment_content_description_background_image">Imagem de Fundo</string>
