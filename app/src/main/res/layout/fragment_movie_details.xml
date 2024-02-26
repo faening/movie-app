@@ -237,30 +237,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/margin_medium"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:ellipsize="end"
+                    android:layout_marginTop="4dp"
                     android:justificationMode="inter_word"
-                    android:maxLines="3"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/movie_details_genres_scroll"
+                    tools:maxLines="3"
                     tools:targetApi="o"
                     tools:text="When her duties take her to an anomalous space rift linked to a Kree revolutionary, the powers of Carol Danvers, Captain Marvel, become intertwined with those of Kamala Khan, Ms. Marvel, and those of Carol's niece, S.A.B.E.R. astronaut, Captain Monica Rambeau."
-                    tools:visibility="visible" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/movie_details_overview_link_expand"
-                    style="@style/CustomTextAppearance.TextBody.Link"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/margin_medium"
-                    android:layout_marginTop="@dimen/margin_small"
-                    android:text="@string/movie_details_overview_link_expand"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/movie_details_overview"
                     tools:visibility="visible" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -274,7 +259,7 @@
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/movie_details_overview_link_expand"
+                    app:layout_constraintTop_toBottomOf="@+id/movie_details_overview"
                     tools:itemCount="2"
                     tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/cast_item"

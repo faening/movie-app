@@ -13,11 +13,14 @@ import com.github.faening.movieapp.R
 import com.github.faening.movieapp.databinding.FragmentMovieDetailsBinding
 import com.github.faening.movieapp.domain.model.MovieCreditsCast
 import com.github.faening.movieapp.domain.model.Movie
+import com.github.faening.movieapp.helper.ReadMoreLessHelper
 import com.github.faening.movieapp.presentation.view.adapter.CastAdapter
 import com.github.faening.movieapp.presentation.view.adapter.ViewPagerAdapter
 import com.github.faening.movieapp.presentation.viewmodel.MovieDetailsViewModel
 import com.github.faening.movieapp.utils.StateView
 import com.github.faening.movieapp.utils.ViewPager2ViewHeightAnimator
+import com.github.faening.movieapp.utils.fadeIn
+import com.github.faening.movieapp.utils.fadeOut
 import com.github.faening.movieapp.utils.initializeToolbar
 import com.github.faening.movieapp.utils.setComponentVisibility
 import com.github.faening.movieapp.utils.setShapeableImageViewBottomRoundedCorners
@@ -46,7 +49,6 @@ class MovieDetailsFragment : Fragment() {
 
         fetchAndObserveMovieDetails()
         fetchAndObserveMovieCredits()
-        setupViewListeners()
         setupTabLayout()
     }
 
@@ -115,8 +117,14 @@ class MovieDetailsFragment : Fragment() {
 
             movie.overview?.let {
                 setComponentVisibility(movieDetailsOverview, true)
-                setComponentVisibility(movieDetailsOverviewLinkExpand, true)
-                this.movieDetailsOverview.text = movie.overview
+                ReadMoreLessHelper.addReadMoreText(
+                    context = requireContext(),
+                    description = it,
+                    textView = movieDetailsOverview,
+                    maxLines = 3,
+                    fadeIn = { view, initialValue -> fadeIn(view, initialValue) },
+                    fadeOut = { view, finalValue -> fadeOut(view, finalValue) },
+                )
             }
         }
     }
@@ -163,23 +171,6 @@ class MovieDetailsFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = castAdapter.also { it.submitList(movieCreditsCasts) }
         }
-    }
-
-    private fun setupViewListeners() {
-        setupExpandOverviewButtonListener()
-    }
-
-    private fun setupExpandOverviewButtonListener() {
-        binding.movieDetailsOverviewLinkExpand.setOnClickListener {
-            toggleOverviewTextAndButton()
-        }
-    }
-
-    private fun toggleOverviewTextAndButton() {
-        binding.movieDetailsOverview.maxLines = if (binding.movieDetailsOverview.maxLines == 3) Int.MAX_VALUE else 3
-        binding.movieDetailsOverviewLinkExpand.text =
-            if (binding.movieDetailsOverview.maxLines == 3) getString(R.string.movie_details_overview_link_expand)
-            else getString(R.string.movie_details_overview_link_collapse)
     }
 
     private fun setupTabLayout() {
