@@ -12,15 +12,14 @@ plugins {
 
 android {
     namespace = "com.github.faening.movieapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.github.faening.movieapp"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
-        versionName = "1.0"
-
+        versionName = "0.0.18"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -48,8 +47,6 @@ android {
         compose = true
         viewBinding = true
     }
-
-
 }
 
 dependencies {
