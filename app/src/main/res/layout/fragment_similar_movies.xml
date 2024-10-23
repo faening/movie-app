@@ -16,6 +16,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:itemCount="2"
-        tools:listitem="@layout/genre_movie_item" />
+        tools:itemCount="2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
