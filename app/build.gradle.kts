@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.constraint.layout)
     implementation(libs.material)
+    implementation(libs.core.ktx)
 
     // Compose
     val composeBom = platform(libs.compose.bom)
@@ -77,6 +78,7 @@ dependencies {
     // Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
 
     // Lifecycle
     implementation(libs.lifecycle.viewmodel)
@@ -85,6 +87,7 @@ dependencies {
     // Navigation
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    implementation(libs.androidx.navigation.compose)
 
     // Glide
     implementation(libs.glide)

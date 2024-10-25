@@ -5,6 +5,7 @@
     <string name="read_more">Read More</string>
     <string name="read_less">Read Less</string>
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="button_title" translatable="false">Button Title</string>
 
     <!-- Onboarding Fragment -->
     <string name="onboarding_fragment_content_description_background_image">Background Image</string>
