@@ -13,22 +13,23 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Button
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.graphics.toColor
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.github.faening.movieapp.R
-import com.github.faening.movieapp.presentation.view.screen.component.button.ButtonProperties
-import com.github.faening.movieapp.presentation.view.screen.component.button.FilledButton
+import com.github.faening.movieapp.presentation.view.component.button.ButtonProperties
+import com.github.faening.movieapp.presentation.view.component.button.FilledButton
+import com.github.faening.movieapp.presentation.view.component.button.OutlineButton
 
 @Composable
 // @HiltViewModel
@@ -46,16 +47,16 @@ fun HomeAuthScreen(
     val presentationText = stringResource(R.string.home_auth_fragment_title)
 
     val buttonFacebookTitle = R.string.home_auth_fragment_text_button_continue_with_facebook
-    val buttonFacebookIcon = R.drawable.ic_facebook_colorized
+    val buttonFacebookIcon = R.drawable.ic_facebook_outlined
     val buttonFacebookIconDescription = R.string.home_auth_fragment_text_button_continue_with_facebook
 
     val buttonGoogleTitle = R.string.home_auth_fragment_text_button_continue_with_google
-    val buttonGoogleIcon = R.drawable.ic_google_colorized
+    val buttonGoogleIcon = R.drawable.ic_google_sharp
     val buttonGoogleIconDescription = R.string.home_auth_fragment_text_button_continue_with_google
 
     val dividerText = stringResource(R.string.home_auth_fragment_text_social_or_password)
 
-    val buttonSignInTitle = stringResource(R.string.home_auth_fragment_text_button_sign_in_with_password)
+    val buttonSignInTitle = R.string.home_auth_fragment_text_button_sign_in_with_password
 
     val textDontHaveAccount = stringResource(R.string.home_auth_fragment_text_dont_have_an_account)
     val linkDontHaveAccount = stringResource(R.string.home_auth_fragment_text_sign_up)
@@ -74,10 +75,10 @@ fun HomeAuthScreen(
                 .width(IntrinsicSize.Max)
                 .height(coverImageHeight)
         )
-        Spacer(modifier =Modifier.height(paddingExtraLarge))
+        Spacer(modifier = Modifier.height(paddingExtraLarge))
         Text(text = presentationText)
-        Spacer(modifier =Modifier.height(paddingExtraLarge))
-        FilledButton(
+        Spacer(modifier = Modifier.height(paddingExtraLarge))
+        OutlineButton(
             onClick = { navigateToSignIn(navController) },
             properties = ButtonProperties(
                 text = buttonFacebookTitle,
@@ -87,7 +88,7 @@ fun HomeAuthScreen(
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(paddingMedium))
-        FilledButton(
+        OutlineButton(
             onClick = { navigateToSignIn(navController) },
             properties = ButtonProperties(
                 text = buttonGoogleTitle,
@@ -106,14 +107,14 @@ fun HomeAuthScreen(
             Text(text = dividerText)
         }
         Spacer(modifier = Modifier.height(paddingExtraLarge))
-        Button(
+        FilledButton(
             onClick = { navigateToSignIn(navController) },
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(IntrinsicSize.Min)
-        ) {
-            Text(text = buttonSignInTitle)
-        }
+            properties = ButtonProperties(
+                text = buttonSignInTitle,
+                iconDescription = buttonGoogleIconDescription
+            ),
+            modifier = Modifier.fillMaxWidth()
+        )
         Spacer(modifier = Modifier.height(paddingExtraLarge))
         Row {
             Text(text = textDontHaveAccount)
